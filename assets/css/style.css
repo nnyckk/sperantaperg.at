@@ -222,9 +222,7 @@ nav .menu-icon {
         transition: .2s;
     }
     .menu-icon:hover {
-        background-color: var(--backgroundColor-hover);
-        border-radius: 20em;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5em;
     }
-    
-    
 }
