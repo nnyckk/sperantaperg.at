@@ -207,7 +207,11 @@ nav .menu-icon {
         transition: .5s;
     }
     .nav-links ul li:hover::after {
-        width: 0%
+        width: 0%;
+        color: var(--firstAccentColor);
+    }
+    .nav-links ul li:hover {
+        color: var(--firstAccentColor);
     }
 
     nav .menu-icon {
