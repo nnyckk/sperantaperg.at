@@ -232,13 +232,13 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    padding: 2% 10%;
+    padding: 2em 10em;
 
-    transition: background .3s, padding .3s .2s;
+    transition: background .2s, padding .2s .2s;
 }
 #navigationWrapper.scrolled {
     background-color: var(--background-color);
-    padding: 0.75% 10%;
+    padding: 0.75em 10em;
 }
 .logo img {
     width: 15em;
@@ -385,6 +385,7 @@ header {
     .navigation-wrapper {
         padding: 2em 1.5em;
         background-color: var(--background-color);
+        transition: padding .1s;
     }
     #navigationWrapper.scrolled {
         padding: 1em 1em;
