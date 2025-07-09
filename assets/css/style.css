@@ -336,7 +336,7 @@ header {
         opacity: 0;
         pointer-events: none;
 
-        transition: .7s;
+        transition: .5s;
     }
     .nav-links ul {
         height: 80%;
