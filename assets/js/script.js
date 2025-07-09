@@ -14,16 +14,14 @@ const navbar = document.getElementById("navigationWrapper");
 
 
 
-// Navigation Burger Menu;
-const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("nav-icon-hamburger");
+    const navMenu = document.getElementById("nav-menu");
+    const navBar = document.getElementById("navigationWrapper");
 
-function showMenu(){
-    navLinks.style.opacity = "1";
-    navLinks.style.pointerEvents = "auto"
-}
-function hideMenu(){
-    navLinks.style.opacity = "0";
-    navLinks.style.pointerEvents = "none"
-}
-
-
+    hamburger.addEventListener("click", function () {
+      this.classList.toggle("open");
+      navMenu.classList.toggle("active");
+      navBar.classList.toggle("active");
+    });
+  });
