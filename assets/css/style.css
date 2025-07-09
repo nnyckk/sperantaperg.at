@@ -216,22 +216,19 @@ header {
     }
     .navigation-wrapper {
         padding: 5% 3%;
-        position: relative;
     }
     .logo img {
         width: 12em;
     }
-    .hamburger-menu-icon {
+    .menu-icon {
         display: block;
         cursor: pointer;
     }
     .close-menu-icon {
-        display: block;
         position: absolute;
-        top: 1em;
-        right: 1em;
-
-        width: 5em;
+        bottom: 3em;
+        left: 1em;
+        width: 7em;
     }
     .nav-links .icon-design {
         display: block;
@@ -256,7 +253,7 @@ header {
         opacity: 0;
         pointer-events: none;
 
-        transition: .3s;
+        transition: .7s;
     }
     .nav-links ul {
         height: 80%;
