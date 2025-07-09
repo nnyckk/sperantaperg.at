@@ -32,5 +32,4 @@ const currentPath = window.location.pathname;
       link.classList.add("active");
     }
   });
-  console.log(window.location.pathname);
   });
