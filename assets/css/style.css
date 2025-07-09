@@ -127,6 +127,7 @@ a {
 #nav-icon-hamburger {
     width: 3.75em;
     height: 2.45em;
+    display: none;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -140,7 +141,7 @@ a {
 }
 
 #nav-icon-hamburger span {
-    display: block;
+    display: none;
     position: absolute;
     height: 5px;
     width: 100%;
@@ -373,25 +374,23 @@ header {
 
 
 @media (max-width: 1130px) {
+/* SHOW THE HAMBURGER MENU */
+    #nav-icon-hamburger {
+       display: block;
+    }
+    #nav-icon-hamburger span {
+        display: block;
+    }
+/* ====================== */
     .navigation-wrapper {
-        padding: 5% 3%;
+        padding: 2em 1.5em;
         background-color: var(--background-color);
     }
     #navigationWrapper.scrolled {
-        padding: 2% 3%;
+        padding: 1em 1em;
     }
     .logo img {
         width: 12em;
-    }
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        width: 4em;
-    }
-    .close-menu-icon {
-        position: absolute;
-        top: 1.5em;
-        right: 1em;
     }
     .nav-links .icon-design {
         display: block;
@@ -422,17 +421,17 @@ header {
         pointer-events: auto;
     }
     .navigation-wrapper.active {
-        padding: 5% 3% !important;
+        padding: 2em 1.5em !important;
         transition: 0.1s;
     }
     .nav-links ul {
-        height: 80%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-content: flex-start;
         flex-grow: 1;
-    
+        margin-top: 15em;
         padding: 0em 5em 0em 7em;
     }
     .nav-links ul li {

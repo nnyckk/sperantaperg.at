@@ -1,19 +1,3 @@
-
-// Navigation Wrapper background colored on scroll;
-const navbar = document.getElementById("navigationWrapper");
-  
-  function handleScroll() {
-      if (window.scrollY > 30) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-  }
-  window.addEventListener("scroll", handleScroll);
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("nav-icon-hamburger");
     const navMenu = document.getElementById("nav-menu");
@@ -24,4 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.toggle("active");
       navBar.classList.toggle("active");
     });
+
+
+    // Navigation Wrapper background colored on scroll;
+    const navbar = document.getElementById("navigationWrapper");
+    function handleScroll() {
+    if (window.scrollY > 30) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+}
+window.addEventListener("scroll", handleScroll);
   });
