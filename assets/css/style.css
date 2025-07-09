@@ -218,8 +218,7 @@ header {
     About-Us Section
    ================== */
 .about-us {
-    padding-top: 7em;
-    padding-bottom: 7em;
+    padding: 6.25em 0;
     text-align: center;
 }
 .about-us h2 {
