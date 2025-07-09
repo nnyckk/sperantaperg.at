@@ -73,20 +73,29 @@ html {
     --accent-color:             hsl(194, 98%, 66%);
 
     /* Hover Colors */
-    --background-color-hover:   #393f3f;         /* slightly lighter */
-    --whiteTextColor-hover:     #FFFFFF;         /* fully white */
-    --accent-color-hover:        hsl(194, 98%, 45%);        /* darker blue hover */
+    --background-color-hover:   hsl(180, 5%, 31%);         /* slightly lighter */
+    --whiteTextColor-hover:     hsl(0, 0%, 100%);         /* fully white */
+    --accent-color-hover:       hsl(194, 98%, 45%);        /* darker blue hover */
+}
+
+li {
+    list-style: none;;
+}
+a {
+    text-decoration: none;
 }
 
 .container {
-    padding: 0% 10%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 0 1.875rem;
 }
 .btn {
   background-color: var(--accent-color);
-  border: 1px solid transparent;
+  border: none;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
   color: var(--white-text-color);
   cursor: pointer;
   text-transform: uppercase;
@@ -161,12 +170,8 @@ header {
     gap: 2em;
     text-transform: uppercase;
 }
-.nav-links ul li {
-    list-style: none;
-}
 .nav-links ul li a {
     color: var(--white-text-color);
-    text-decoration: none;
     font-weight: bold;
 
     padding: .5em .5em;
@@ -209,8 +214,74 @@ header {
     font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
 }
 
+/* ==================
+    About-Us Section
+   ================== */
+.about-us {
+    padding-top: 7em;
+    padding-bottom: 7em;
+    text-align: center;
+}
+.about-us h2 {
+    color: var(--background-color);
+    opacity: .7;
+    margin-bottom: .8em;
+    font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
+    text-transform: uppercase;
+}
+.about-us h1 {
+    color: var(--accent-color-hover);
+    max-width: 27em;
+    margin: 0 auto 2.5em;
+    font-size: clamp(1.5rem, 1.2727rem + 0.9697vw, 2rem);
+    font-weight: 400;
+}
+.pillars-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2em;
+}
+.pillars-item {
+    padding: 0 1.875em 1.875em;
+}
+.pillars-item-icon img {
+    max-width: 200px;
+}
+.pillars-item-text h3 {
+    color: var(--background-color);
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    font-weight: 900;
+    font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
+}
+.pillars-item-text p {
+    color: var(--background-color);
+    opacity: .9;
+    font-weight: 400;
+    font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
+}
+.pillars-more a {
+    font-weight: 700;
+    font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
+    padding: .5em .5em;
+    color: var(--accent-color);
+    text-transform: uppercase;
 
-@media (max-width: 980px) {
+    transition: .2s;
+}
+.pillars-more a::before {
+    content: '>';
+}
+.pillars-more a:hover {
+    color: var(--accent-color-hover);
+}
+
+
+
+
+
+
+@media (max-width: 1024px) {
     .container {
         padding: 5% 3%;
     }
@@ -271,4 +342,13 @@ header {
     .nav-links ul li {
         font-size: 2em;
     }
+    .pillars-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
 }
+
+@media (max-width: 600px) {
+    .pillars-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
