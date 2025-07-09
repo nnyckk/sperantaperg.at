@@ -267,6 +267,7 @@ header {
     color: var(--accent-color);
     text-transform: uppercase;
     position: relative;
+    cursor: pointer;
 
     transition: .2s;
 }
@@ -276,7 +277,7 @@ header {
     position: absolute;
     left: -.2em;
     transform: translateX(-100%);
-    transition: .3s;
+    transition: .2s;
 
 }
 .pillars-more a:hover::before,
@@ -291,9 +292,6 @@ header {
 
 
 @media (max-width: 1130px) {
-    .container {
-        padding: 5% 3%;
-    }
     .navigation-wrapper {
         padding: 5% 3%;
     }
