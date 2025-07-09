@@ -217,18 +217,21 @@ header {
     .navigation-wrapper {
         padding: 5% 3%;
     }
+    #navigationWrapper.scrolled {
+        padding: 2% 3%;
+    }
     .logo img {
         width: 12em;
     }
     .menu-icon {
         display: block;
         cursor: pointer;
+        width: 4em;
     }
     .close-menu-icon {
         position: absolute;
-        bottom: 3em;
-        left: 1em;
-        width: 7em;
+        top: 1.5em;
+        right: 1em;
     }
     .nav-links .icon-design {
         display: block;
