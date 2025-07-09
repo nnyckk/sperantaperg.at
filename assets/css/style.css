@@ -84,8 +84,8 @@ li {
 a {
     text-decoration: none;
 }
-
-nav a.active {
+    /* URL ACTIVE */
+.nav-links a.active {
     color: var(--accent-color);
 }
 
