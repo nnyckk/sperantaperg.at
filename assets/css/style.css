@@ -290,7 +290,7 @@ header {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1130px) {
     .container {
         padding: 5% 3%;
     }
@@ -316,9 +316,9 @@ header {
     .nav-links .icon-design {
         display: block;
         position: absolute;
-        top: 7em;
-        left: -4em;
-        width: 45em;
+        top: -2em;
+        left: 10em;
+        width: 70em;
         height: auto;
         z-index: -1;
         opacity: .05;
@@ -346,7 +346,7 @@ header {
         align-content: flex-start;
         flex-grow: 1;
     
-        padding: 0em 2em 0em 2em;
+        padding: 0em 5em 0em 7em;
     }
     .nav-links ul li {
         font-size: 2em;
@@ -359,5 +359,13 @@ header {
 @media (max-width: 600px) {
     .pillars-list {
       grid-template-columns: repeat(1, 1fr);
+    }
+    .nav-links .icon-design {
+        top: 5em;
+        left: -4em;
+        width: 50em;
+    }
+    .nav-links ul {
+        padding: 0em 2em 0em 2em;
     }
   }
