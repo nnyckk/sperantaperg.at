@@ -398,6 +398,7 @@ header {
         top: -2em;
         left: 10em;
         width: 70em;
+        pointer-events: none;
         height: auto;
         opacity: .05;
     }
