@@ -233,7 +233,7 @@ header {
     color: var(--accent-color-hover);
     max-width: 27em;
     margin: 0 auto 2.5em;
-    font-size: clamp(1.5rem, 1.2727rem + 0.9697vw, 2rem);
+    font-size: clamp(1.2rem, 0.8364rem + 1.5515vw, 2rem);
     font-weight: 400;
 }
 .pillars-list {
@@ -271,6 +271,7 @@ header {
 }
 .pillars-more a::before {
     content: '>';
+    margin-right: .5em;
 }
 .pillars-more a:hover {
     color: var(--accent-color-hover);
