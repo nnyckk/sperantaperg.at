@@ -195,14 +195,15 @@ header {
     text-align: center;
 }
 .hero-box h1 {
-    font-size: clamp(2.5rem, 1.0526rem + 5.2632vw, 5rem);
+    font-size: clamp(2rem, 0.4091rem + 6.7879vw, 5.5rem);
 }
 .hero-box p {
     margin: .625em 0 2.5em;
-    font-size: clamp(1rem, 0.7105rem + 1.0526vw, 1.5rem);
+    font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
+    max-width: 29em;
 }
 .hero-btn {
-    font-size: clamp(1rem, 0.7105rem + 1.0526vw, 1.5rem);
+    font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
 }
 nav .menu-icon {
     display: none;
@@ -218,8 +219,11 @@ nav .menu-icon {
     .navigation-wrapper {
         padding: 5% 3%;
     }
+    .hero-box p {
+        margin: .625em 0em 2.5em;
+    }
     .logo img {
-        width: 13em;
+        width: 12em;
     }
     .nav-links ul li {
         display: block;
