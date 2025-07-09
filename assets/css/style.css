@@ -153,10 +153,10 @@ a {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .12s ease-in-out;
-    -moz-transition: .12s ease-in-out;
-    -o-transition: .12s ease-in-out;
-    transition: .12s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
   }
 
 #nav-icon-hamburger span:nth-child(1) {
@@ -385,7 +385,7 @@ header {
     .navigation-wrapper {
         padding: 2em 1.5em;
         background-color: var(--background-color);
-        transition: padding .1s;
+        transition: padding .2s;
     }
     #navigationWrapper.scrolled {
         padding: 1em 1em;
@@ -416,7 +416,7 @@ header {
         opacity: 0;
         pointer-events: none;
 
-        transition: .2s;
+        transition: .3s;
     }
     .nav-links.active {
         opacity: 1;
