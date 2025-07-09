@@ -177,8 +177,11 @@ header {
 .nav-links ul li:hover a{
     color: var(--accent-color);
 }
-.hamburger-menu-icon {
+.menu-icon {
     display: none;
+}
+.nav-links .icon-design {
+   display: none;
 }
 
 /* ==============
@@ -205,11 +208,6 @@ header {
 .hero-btn {
     font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
 }
-nav .menu-icon {
-    display: none;
-}
-
-
 
 
 @media (max-width: 980px) {
@@ -218,57 +216,59 @@ nav .menu-icon {
     }
     .navigation-wrapper {
         padding: 5% 3%;
-    }
-    .hero-box p {
-        margin: .625em 0em 2.5em;
+        position: relative;
     }
     .logo img {
         width: 12em;
     }
-    .nav-links ul li {
+    .hamburger-menu-icon {
         display: block;
-        padding-top: 1em;
-        font-size: 1.5em;
+        cursor: pointer;
     }
-    .nav-links ul:first-of-type{
-        margin-top: 7em;
+    .close-menu-icon {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+
+        width: 5em;
+    }
+    .nav-links .icon-design {
+        display: block;
+        position: absolute;
+        top: 7em;
+        left: -4em;
+        width: 45em;
+        height: auto;
+        z-index: -1;
+        opacity: .05;
     }
     .nav-links {
+        background-color: var(--background-color);
         position: absolute;
-        background: var(--backgroundColor);
         height: 100vh;
         width: 100%;
         top: 0;
-        right: 0px;
-        text-align: left;
-        padding: 0 10%;
-        z-index: 2;
+        right: 0;
+        z-index: 5;
+        overflow: hidden;
+
         opacity: 0;
         pointer-events: none;
-     
-        transition: .5s;
-    }
-    .nav-links ul li:hover::after {
-        width: 0%;
-        color: var(--firstAccentColor);
-    }
-    .nav-links ul li:hover {
-        color: var(--firstAccentColor);
-    }
 
-    nav .menu-icon {
-        display: block;
-        margin: 0.5em;
-        cursor: pointer;
-        padding: 0.5em;
-        position: absolute;
-        top: 0.5em;
-        right: 1em;
-
-        transition: .2s;
+        transition: .3s;
     }
-    .menu-icon:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 5em;
+    .nav-links ul {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-grow: 1;
+    
+        padding: 0em 2em 0em 2em;
+    }
+    .nav-links ul li {
+        font-size: 2em;
     }
 }

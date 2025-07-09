@@ -23,7 +23,6 @@ const navbar = document.getElementById("navigationWrapper");
 
 
 // Navigation Burger Menu;
-
 var navLinks = document.getElementById("navLinks");
 
 function showMenu(){
