@@ -183,7 +183,7 @@ header {
 /* ==============
     Hero Section
    ============== */
-.text-box {
+.hero-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -193,10 +193,10 @@ header {
     color: var(--white-text-color);
     text-align: center;
 }
-.text-box h1 {
+.hero-box h1 {
     font-size: clamp(2.5rem, -5rem + 13.3333vw, 5rem);
 }
-.text-box p {
+.hero-box p {
     margin: .625em 0 2.5em;
     font-size: clamp(1rem, -0.5rem + 2.6667vw, 1.5rem);
 }
