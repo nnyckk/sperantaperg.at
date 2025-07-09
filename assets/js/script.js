@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("scroll", handleScroll);
 
 
-
-
 // Active Link On URL Effects;
 const links = document.querySelectorAll("nav a");
 const currentPath = window.location.pathname;
