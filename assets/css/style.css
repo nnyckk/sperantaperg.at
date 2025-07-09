@@ -266,15 +266,23 @@ header {
     padding: .5em .5em;
     color: var(--accent-color);
     text-transform: uppercase;
+    position: relative;
 
     transition: .2s;
 }
 .pillars-more a::before {
     content: '>';
     margin-right: .5em;
+    position: absolute;
+    left: -.2em;
+    transform: translateX(-100%);
+    transition: .3s;
+
 }
+.pillars-more a:hover::before,
 .pillars-more a:hover {
     color: var(--accent-color-hover);
+    transform: translateX(0%);
 }
 
 
