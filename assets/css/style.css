@@ -375,8 +375,73 @@ header {
 }
 
 
+/* ===============
+    Latest Sermon
+   =============== */
+.latest-sermon {
+    background-color: var(--background-color);
+    padding: 6.25em 0;
+    position: relative;
+    overflow-x: hidden;
 
+    text-align: center;
+}
+.latest-sermon h2 {
+    margin-bottom: .8em;
+    opacity: .7;
 
+    font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
+    color: var(--white-text-color);
+    text-transform: uppercase;
+}
+.latest-sermon h1 {
+    max-width: 27em;
+    margin: 0 auto 1.2em;
+
+    font-size: clamp(2rem, 1.5455rem + 1.9394vw, 3rem);
+    color: var(--accent-color);
+    font-weight: 900;
+    font-style: italic;
+}
+.latest-seromon-more a {
+    font-weight: 700;
+    font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
+    padding: .5em .5em;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+
+    transition: .2s;
+}
+.latest-seromon-more a::before {
+    content: '>';
+    position: absolute;
+    left: -.2em;
+    transform: translateX(-100%);
+
+    margin-right: .5em;
+    transition: .2s;
+}
+.latest-seromon-more a:hover::before,
+.latest-seromon-more a:hover {
+    color: var(--accent-color-hover);
+    transform: translateX(0%);
+}
+.iframe-holder {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+.yt-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    margin-bottom: 2em;
+    width: 100%;
+    height: 100%;
+}
 
 
 @media (max-width: 1100px) {
