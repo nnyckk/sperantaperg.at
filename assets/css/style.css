@@ -129,8 +129,8 @@ a {
 /* Hamburger Menu Stlye */
 
 #nav-icon-hamburger {
-    width: 3.75em;
-    height: 2.45em;
+    width: 42px;
+    height: 31.5px;
     display: none;
     position: relative;
     -webkit-transform: rotate(0deg);
@@ -147,10 +147,10 @@ a {
 #nav-icon-hamburger span {
     display: none;
     position: absolute;
-    height: 5px;
+    height: 6.3%;
     width: 100%;
     background: var(--white-text-color);
-    border-radius: 3px;
+    border-radius: 6.3px;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -172,7 +172,7 @@ a {
 }
 
 #nav-icon-hamburger span:nth-child(2) {
-  top: 15px;
+  top: 12.6px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -180,7 +180,7 @@ a {
 }
 
 #nav-icon-hamburger span:nth-child(3) {
-  top: 30px;
+  top: 25.2px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -192,8 +192,8 @@ a {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: -3px;
-  left: 8px;
+  top: -2px;
+  left: 5.6px;
 }
 
 #nav-icon-hamburger.open span:nth-child(2) {
@@ -206,8 +206,8 @@ a {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 39px;
-  left: 8px;
+  top: 27.3px;
+  left: 5.6px;
 }
 
 /* ========
@@ -219,6 +219,7 @@ header {
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
   url('../img/background_hero.jpg') bottom/cover no-repeat;
+  position: relative;
 }
 
 /* ================
@@ -377,7 +378,7 @@ header {
 
 
 
-@media (max-width: 1130px) {
+@media (max-width: 1100px) {
 /* SHOW THE HAMBURGER MENU */
     #nav-icon-hamburger {
        display: block;
@@ -387,17 +388,16 @@ header {
     }
 /* ====================== */
     .navigation-wrapper {
-        padding: 2em 1.5em;
+        padding: 2em 2em;
         background-color: var(--background-color);
-        transition: padding .2s;
     }
     #navigationWrapper.scrolled {
-        padding: 1em 1em;
+        padding: 1em 2em;
     }
     .logo img {
-        width: 15em;
+        width: 12em;
     }
-    .nav-links .icon-design {
+    /* .nav-links .icon-design {
         display: block;
         position: absolute;
         top: -2em;
@@ -406,7 +406,7 @@ header {
         pointer-events: none;
         height: auto;
         opacity: .05;
-    }
+    } */
     .nav-links {
         background-color: var(--background-color);
         position: absolute;
@@ -416,7 +416,6 @@ header {
         right: 0;
         z-index: -1;
         overflow: hidden;
-
         opacity: 0;
         pointer-events: none;
 
@@ -426,22 +425,23 @@ header {
         opacity: 1;
         pointer-events: auto;
     }
-    .navigation-wrapper.active {
-        padding: 2em 1.5em !important;
+    /* .navigation-wrapper.active {
+        padding: 2em 3.5em !important;
         transition: 0.1s;
-    }
+    } */
     .nav-links ul {
-        height: 100%;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-content: flex-start;
+        align-items: flex-start;
         flex-grow: 1;
         margin-top: 15em;
-        padding: 0em 5em 0em 7em;
+        padding: 0em 2em;
+        
     }
-    .nav-links ul li {
+    .nav-links ul li a {
         font-size: 2em;
+        padding: 0;
     }
     .pillars-list {
         grid-template-columns: repeat(2, 1fr);
@@ -456,8 +456,5 @@ header {
         top: 5em;
         left: -4em;
         width: 50em;
-    }
-    .nav-links ul {
-        padding: 0em 2em 0em 2em;
     }
   }
