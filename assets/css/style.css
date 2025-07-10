@@ -78,6 +78,11 @@ html {
     --accent-color-hover:       hsl(194, 98%, 45%);        /* darker blue hover */
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
 li {
     list-style: none;;
 }
@@ -417,7 +422,7 @@ header {
         padding: 7em 2em 2em 2em;
 
         background-color: var(--background-color);
-        position: absolute;
+        position: fixed;
         height: 100vh;
         height: 100svh;
         width: 100%;

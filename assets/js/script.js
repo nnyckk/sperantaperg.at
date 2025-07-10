@@ -32,4 +32,10 @@ const currentPath = window.location.pathname;
       link.classList.add("active");
     }
   });
+
+
+    //NO Scroll when Phone Menu is open;
+  document.getElementById("nav-icon-hamburger").addEventListener("click", () => {
+    document.body.classList.toggle("no-scroll");
+  });
   });
