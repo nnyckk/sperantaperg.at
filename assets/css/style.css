@@ -423,7 +423,6 @@ header {
 
         background-color: var(--background-color);
         position: fixed;
-        height: 100vh;
         height: 100svh;
         width: 100%;
         top: 0;
