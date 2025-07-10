@@ -419,7 +419,7 @@ header {
         justify-content: space-between;
         gap: 10%;
 
-        padding: 7em 2em 7em 2em;
+        padding: 7em 2em 2em 2em;
 
         background-color: var(--background-color);
         position: fixed;
