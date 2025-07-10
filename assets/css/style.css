@@ -69,7 +69,7 @@
 
 html {
     --background-color:         hsl(220, 3%, 21%);
-    --white-text-color:         #fefcfb;
+    --white-text-color:         hsl(20, 60%, 99%);
     --accent-color:             hsl(194, 98%, 66%);
 
     /* Hover Colors */
