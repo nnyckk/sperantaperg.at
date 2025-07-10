@@ -352,7 +352,6 @@ header {
 .pillars-more a {
     font-weight: 700;
     font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
-    padding: .5em .5em;
     color: var(--accent-color);
     text-transform: uppercase;
     position: relative;
@@ -364,15 +363,14 @@ header {
     content: '>';
     position: absolute;
     left: -.2em;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
 
-    margin-right: .5em;
     transition: .2s;
 }
 .pillars-more a:hover::before,
 .pillars-more a:hover {
     color: var(--accent-color-hover);
-    transform: translateX(0%);
+    transform: translateX(-100%);
 }
 
 
@@ -407,7 +405,6 @@ header {
 .latest-seromon-more a {
     font-weight: 700;
     font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
-    padding: .5em .5em;
     color: var(--accent-color);
     text-transform: uppercase;
     position: relative;
@@ -419,15 +416,14 @@ header {
     content: '>';
     position: absolute;
     left: -.2em;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
 
-    margin-right: .5em;
     transition: .2s;
 }
 .latest-seromon-more a:hover::before,
 .latest-seromon-more a:hover {
     color: var(--accent-color-hover);
-    transform: translateX(0%);
+    transform: translateX(-100%);
 }
 .latest-sermon-content {
     display: flex;
@@ -440,8 +436,8 @@ header {
   .iframe-holder {
     position: relative;
     width: 100%;
-    max-width: 560px;
     aspect-ratio: 16 / 9;
+      
   }
   
   .iframe-holder iframe {
@@ -532,10 +528,6 @@ header {
         flex-grow: 1;
         gap: 2em;
     }
-    .latest-sermon-content {
-        width: 70%;
-        margin-bottom: 3.75rem;
-    }
 }
 
 @media (max-width: 600px) {
@@ -546,9 +538,5 @@ header {
         top: 5em;
         left: -4em;
         width: 50em;
-    }
-    .latest-sermon-content {
-        width: 100%;
-        margin-bottom: 3.75rem;
     }
   }
