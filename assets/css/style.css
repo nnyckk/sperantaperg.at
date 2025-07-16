@@ -371,7 +371,7 @@ header {
 /* ====================== */
     .navigation-wrapper {
         padding: 2em 2em;
-        background-color: var(--background-color);
+        background-color: var(--background-color-dark);
     }
     #navigationWrapper.scrolled {
         padding: 0.8em 2em;
