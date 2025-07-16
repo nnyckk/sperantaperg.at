@@ -141,5 +141,5 @@ html {
 }
 .text-content {
     font-weight: 400;
-    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
+    font-size: clamp(1rem, 0.7091rem + 0.3879vw, 1.2rem);
 }
