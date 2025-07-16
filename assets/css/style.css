@@ -186,11 +186,7 @@ header {
 }
 .hero h1 {
     font-size: clamp(1.4rem, -0.4636rem + 7.9515vw, 5.5rem);
-}
-.hero p {
-    max-width: 30em;
-    margin: .625em auto 2.5em;
-    font-size: clamp(0.8rem, 0.4818rem + 1.3576vw, 1.5rem);
+    margin: .625em auto 1em;
 }
 .hero-btn {
     font-size: clamp(0.8rem, 0.4818rem + 1.3576vw, 1.5rem);
@@ -199,20 +195,53 @@ header {
 /* ==================
     Visit Times
    ================== */
+.service-times .container-item-wrapper.service {
+    align-items: center;
+}
 .service-times .service-times-title {
-    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 2.7rem);
+    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 2.5rem);
     line-height: 1;
     text-transform: uppercase;
     
 }
 .service-times .service-times-subtitle {
-    font-size: clamp(1.2rem, 0.9273rem + 1.1636vw, 1.8rem);
+    font-size: clamp(1.2rem, 0.9273rem + 1.1636vw, 1.5rem);
     line-height: 1;
 }
 .service-times .service-times-p {
     margin-top: .3em;
     margin-bottom: 1em;
 }
+/* ==================
+    Welcome
+   ================== */
+
+.welcome .container-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em
+}
+.welcome .text-headline .title {
+    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
+    font-weight: 400;
+    color: #b2aeaa;
+    margin-bottom: 1em;
+}
+.welcome .text-headline .subtitle {
+    font-size: clamp(1.5rem, 1.0455rem + 1.9394vw, 2.5rem);
+    font-weight: 700;
+    line-height: .85;
+}
+.welcome .welcome-p {
+    font-size: clamp(0.7rem, 0.5636rem + 0.5818vw, 1rem);
+}
+.welcome .welcome-p p {
+    margin: 1.2em 0 1.2em;
+}
+
+
+
+
 
 /* ==================
     About-Us Section
@@ -433,6 +462,9 @@ header {
         flex-direction: row;
         flex-grow: 1;
         gap: 2em;
+    }
+    .container-item-wrapper {
+        flex-direction: column;
     }
 }
 
