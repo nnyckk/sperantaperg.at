@@ -222,7 +222,7 @@ header {
     border-radius: 0.5em
 }
 .welcome .text-headline .title {
-    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
+    font-size: clamp(1rem, 1rem + 0vw, 1rem);
     font-weight: 400;
     color: #b2aeaa;
     margin-bottom: 1em;
