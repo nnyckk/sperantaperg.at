@@ -388,7 +388,7 @@ header {
 
         padding: 7em 2em 2em 2em;
 
-        background-color: var(--background-color);
+        background-color: var(--background-color-dark);
         position: fixed;
         min-height: 100%;
         max-height: 100%;
@@ -406,10 +406,6 @@ header {
         opacity: 1;
         pointer-events: auto;
     }
-    /* .navigation-wrapper.active {
-        padding: 2em 3.5em !important;
-        transition: 0.1s;
-    } */
     .nav-links-list {
         display: flex;
         flex-direction: column;
