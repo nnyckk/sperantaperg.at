@@ -185,7 +185,7 @@ header {
     
 }
 .hero h1 {
-    font-size: clamp(1.5rem, -0.4636rem + 7.9515vw, 5.5rem);
+    font-size: clamp(2rem, 0.4091rem + 6.7879vw, 5.5rem);
     margin: .625em auto 1em;
 }
 .hero-btn {
