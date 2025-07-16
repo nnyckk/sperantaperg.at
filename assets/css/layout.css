@@ -124,9 +124,25 @@ html {
     padding: 6.25em 0;
     position: relative;
 
-    display: flex;
     align-items: center;
     justify-content: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
 }
 .container {
     max-width: 1200px;
@@ -135,7 +151,6 @@ html {
 }
 .container-item-wrapper {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1em;
 }

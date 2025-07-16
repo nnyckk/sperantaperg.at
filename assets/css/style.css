@@ -182,12 +182,10 @@ header {
 
     color: var(--white-text-color);
     text-align: center;
-    
 }
 .hero h1 {
     font-size: var(--fs-h1);
     text-transform: uppercase;
-    
 }
 .hero p {
     margin: 0.2em auto 1.5em auto;
@@ -201,19 +199,25 @@ header {
 .service-times .container-item-wrapper.service {
     align-items: center;
 }
+.service-times .service-times-title .marked {
+    display: inline-block;
+    line-height: 0em;
+    padding-bottom: .5em;
+    background-color: var(--first-accent-color);
+}
 .service-times .service-times-title {
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h3);
     line-height: var(--lh-heading);
-    text-transform: uppercase;
-    
+    margin-bottom: 1em;
 }
 .service-times .service-times-subtitle {
-    font-size: clamp(1.2rem, 0.9273rem + 1.1636vw, 1.5rem);
-    line-height: 1;
+    font-size: var(--fs-h5);
+    margin: 0.2em auto 0 auto;
+    max-width: 80%
 }
 .service-times .service-times-p {
-    margin-top: .3em;
-    margin-bottom: 1em;
+    max-width: 80%;
+    margin: 0.2em auto .5em auto;
 }
 /* ==================
     Welcome
@@ -474,15 +478,10 @@ header {
       grid-template-columns: repeat(1, 1fr);
     }
   }
-
-  @media (max-width: 1199px) {
-    .container-item {
-        flex-basis: calc(40.60% - clamp(0px, 40px, 9999px));
-    }
-  }
-  @media (max-width: 978px) {
-    .container-item {
-        flex-basis: calc(100% - clamp(0px, 40px, 9999px));
-    }
-  }
+  .service-times .service-times-subtitle {
+    max-width: 100%
+}
+.service-times .service-times-p {
+    max-width: 100%;
+}
 
