@@ -114,23 +114,19 @@ html {
 .container {
     max-width: 1200px;
     width: 88%;
+    margin: 0 auto;
 }
 .container-item-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 2em;
 }
 .container-item {
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: space-between;
-
-    margin-top: calc(10px);
-    margin-bottom: calc(10px);
-    margin-right: calc(20px);
-    margin-left: calc(20px);
 }
 .light {
     background-color: var(--background-color-light);

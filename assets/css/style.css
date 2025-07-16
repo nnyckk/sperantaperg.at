@@ -200,16 +200,18 @@ header {
     Visit Times
    ================== */
 .service-times .service-times-title {
-    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 3rem);
+    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 2.7rem);
     line-height: 1;
     text-transform: uppercase;
+    
 }
 .service-times .service-times-subtitle {
     font-size: clamp(1.2rem, 0.9273rem + 1.1636vw, 1.8rem);
     line-height: 1;
 }
 .service-times .service-times-p {
-    margin-bottom: .5em;
+    margin-top: .3em;
+    margin-bottom: 1em;
 }
 
 /* ==================
@@ -445,8 +447,13 @@ header {
   }
 
   @media (max-width: 1199px) {
-    .container-items {
-        flex-basis: calc(40.60% - clamp(0px,40px,9999px));
+    .container-item {
+        flex-basis: calc(40.60% - clamp(0px, 40px, 9999px));
+    }
+  }
+  @media (max-width: 978px) {
+    .container-item {
+        flex-basis: calc(100% - clamp(0px, 40px, 9999px));
     }
   }
 
