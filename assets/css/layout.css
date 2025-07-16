@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+/* =========================
+    Font-Family-Declaration
+   ========================= */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fontss/Montserrat-Italic.woff2') format('woff2'),
+        url('../fonts/Montserrat-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Black.woff2') format('woff2'),
+        url('../fonts/Montserrat-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+        url('../fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    --background-color-dark:         hsl(0, 0%, 0%);
+    --background-color-light:        hsl(0, 0%, 100%);
+    --white-text-color:              var(--background-color-light);
+    --dark-text-color:               var(--background-color-dark);
+    --first-accent-color:            hsl(210, 39%, 60%);
+    --second-accent-color:           hsl(21, 73%, 50%);
+    --third-accent-color:            hsl(44, 74%, 50%);
+
+    /* Hover Colors */
+    --first-accent-color-hover:      hsl(210, 39%, 50%);
+    --second-accent-color-hover:     hsl(21, 73%, 40%);
+    --third-accent-color-hover:      hsl(44, 74%, 40%);   
+}
+
+/* Button Style */
+.btn {
+    background-color: var(--first-accent-color);
+    border-radius: .25rem;
+    border: none;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  
+    color: var(--white-text-color);
+    text-transform: uppercase;
+    font-weight: 700;
+
+
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover,
+.btn:focus {
+    background-color: var(--first-accent-color-hover);
+}
+.btn:active {
+    background-color: var(--first-accent-color-hover);
+}
+
+
+/* Section Style */
+.big-container {
+    padding: 6.25em 0;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    max-width: 1200px;
+    width: 88%;
+}
+.container-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.container-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+
+    margin-top: calc(10px);
+    margin-bottom: calc(10px);
+    margin-right: calc(20px);
+    margin-left: calc(20px);
+}
+.light {
+    background-color: var(--background-color-light);
+    color: var(--dark-text-color);
+}
+.dark {
+    background-color: var(--background-color-dark);
+    color: var(--white-text-color);
+}
+.text-headline {
+    font-weight: 700;
+}
+.text-content {
+    font-weight: 400;
+    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
+}

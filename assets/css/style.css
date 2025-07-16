@@ -1,82 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat';
-}
 
-/* =========================
-    Font-Family-Declaration
-   ========================= */
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
-        url('../fonts/Montserrat-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fontss/Montserrat-Italic.woff2') format('woff2'),
-        url('../fonts/Montserrat-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-        url('../fonts/Montserrat-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Black.woff2') format('woff2'),
-        url('../fonts/Montserrat-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
-        url('../fonts/Montserrat-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
-        url('../fonts/Montserrat-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
 
 /* ==================
     Design-Variables
    ================== */
 
-html {
-    --background-color:         hsl(220, 3%, 21%);
-    --white-text-color:         hsl(20, 60%, 99%);
-    --accent-color:             hsl(194, 98%, 66%);
-
-    /* Hover Colors */
-    --background-color-hover:   hsl(180, 5%, 31%);         /* slightly lighter */
-    --whiteTextColor-hover:     hsl(0, 0%, 100%);         /* fully white */
-    --accent-color-hover:       hsl(194, 98%, 45%);        /* darker blue hover */
-}
 
 /* No scroll when Burger Menu is ON (JS) */
 .no-scroll {
@@ -85,7 +12,7 @@ html {
 }
 /* URL ACTIVE (JS) */
 .nav-links a.active {
-    color: var(--accent-color);
+    color: var(--first-accent-color);
 }
 
 
@@ -97,41 +24,7 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    max-width: 75rem;
-    padding: 0 1.875rem;
-}
-.btn {
-    background-color: var(--accent-color);
-    border-radius: .25rem;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  
-    color: var(--white-text-color);
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.25;
 
-    cursor: pointer;
-    transition: 250ms;
-}
-.btn:hover,
-.btn:focus {
-    background-color: var(--accent-color-hover);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
-.btn:hover {
-    transform: translateY(-1px);
-}
-.btn:active {
-    background-color: var(--accent-color-hover);
-    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-    transform: translateY(0);
-}
 
 /* Hamburger Menu Stlye */
 #nav-icon-hamburger {
@@ -240,7 +133,7 @@ header {
 }
 #navigationWrapper.scrolled {
     padding: 0.75em 10em;
-    background-color: var(--background-color);
+    background-color: var(--background-color-dark);
 }
 .logo img {
     width: 15em;
@@ -266,7 +159,7 @@ header {
     transition: .2s;
 }
 .nav-links-list li:hover a{
-    color: var(--accent-color);
+    color: var(--first-accent-color);
 }
 .nav-links .icon-design {
     display: none;
@@ -278,7 +171,7 @@ header {
 /* ==============
     Hero Section
    ============== */
-.hero-box {
+.hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -289,13 +182,14 @@ header {
 
     color: var(--white-text-color);
     text-align: center;
+    
 }
-.hero-box h1 {
+.hero h1 {
     font-size: clamp(1.4rem, -0.4636rem + 7.9515vw, 5.5rem);
 }
-.hero-box p {
-    max-width: 29em;
-    margin: .625em 0 2.5em;
+.hero p {
+    max-width: 30em;
+    margin: .625em auto 2.5em;
     font-size: clamp(0.8rem, 0.4818rem + 1.3576vw, 1.5rem);
 }
 .hero-btn {
@@ -303,10 +197,25 @@ header {
 }
 
 /* ==================
+    Visit Times
+   ================== */
+.service-times .service-times-title {
+    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 3rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+.service-times .service-times-subtitle {
+    font-size: clamp(1.2rem, 0.9273rem + 1.1636vw, 1.8rem);
+    line-height: 1;
+}
+.service-times .service-times-p {
+    margin-bottom: .5em;
+}
+
+/* ==================
     About-Us Section
    ================== */
 .about-us {
-    padding: 6.25em 0;
     text-align: center;
 }
 .about-us h2 {
@@ -379,7 +288,6 @@ header {
    =============== */
 .latest-sermon {
     background-color: var(--background-color);
-    padding: 6.25em 0;
     position: relative;
     overflow-x: hidden;
 
@@ -534,9 +442,11 @@ header {
     .pillars-list {
       grid-template-columns: repeat(1, 1fr);
     }
-    .nav-links .icon-design {
-        top: 5em;
-        left: -4em;
-        width: 50em;
+  }
+
+  @media (max-width: 1199px) {
+    .container-items {
+        flex-basis: calc(40.60% - clamp(0px,40px,9999px));
     }
   }
+
