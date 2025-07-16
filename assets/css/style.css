@@ -233,7 +233,7 @@ header {
     line-height: .85;
 }
 .welcome .welcome-p {
-    font-size: clamp(0.7rem, 0.5636rem + 0.5818vw, 1rem);
+    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
 }
 .welcome .welcome-p p {
     margin: 1.2em 0 1.2em;
