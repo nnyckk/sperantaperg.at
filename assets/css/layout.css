@@ -75,7 +75,23 @@ html {
     /* Hover Colors */
     --first-accent-color-hover:      hsl(210, 39%, 50%);
     --second-accent-color-hover:     hsl(21, 73%, 40%);
-    --third-accent-color-hover:      hsl(44, 74%, 40%);   
+    --third-accent-color-hover:      hsl(44, 74%, 40%); 
+    
+    
+    /* Base font sizes (clamp for responsiveness) */
+    --fs-h1:    clamp(2.5rem, 6vw, 4rem);       /* 40–64px */
+    --fs-h2:    clamp(2rem, 5vw, 3rem);         /* 32–48px */
+    --fs-h3:    clamp(1.5rem, 4vw, 2.25rem);    /* 24–36px */
+    --fs-h4:    clamp(1.25rem, 3vw, 1.75rem);   /* 20–28px */
+    --fs-h5:    clamp(1.125rem, 2vw, 1.5rem);   /* 18–24px */
+    --fs-h6:    clamp(1rem, 1.5vw, 1.25rem);    /* 16–20px */
+    --fs-body:  1rem;                           /* 16px */
+    --fs-small: 0.875rem;       
+    
+    
+    /* Line heights */
+    --lh-heading:   0.9;
+    --lh-body:      1.3;
 }
 
 /* Button Style */
@@ -88,6 +104,7 @@ html {
     color: var(--white-text-color);
     text-transform: uppercase;
     font-weight: 700;
+    font-size: var(--fs-h6);
 
 
     cursor: pointer;
@@ -126,7 +143,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     flex: 1;
 }
 .light {
@@ -144,3 +161,8 @@ html {
     font-weight: 400;
     font-size: clamp(1rem, 0.7091rem + 0.3879vw, 1.2rem);
 }
+.small-text {
+    font-size: var(--fs-small);
+    color: #b2aeaa;
+    font-weight: 400;
+  }

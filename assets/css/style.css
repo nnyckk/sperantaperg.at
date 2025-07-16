@@ -185,11 +185,14 @@ header {
     
 }
 .hero h1 {
-    font-size: clamp(2rem, 0.4091rem + 6.7879vw, 5.5rem);
-    margin: .625em auto .5em;
+    font-size: var(--fs-h1);
+    text-transform: uppercase;
+    
 }
-.hero-btn {
-    font-size: clamp(1rem, 0.5455rem + 1.9394vw, 2rem);
+.hero p {
+    margin: 0.2em auto 1.5em auto;
+    font-size: var(--fs-h4);
+    min-width: 70%;
 }
 
 /* ==================
@@ -199,8 +202,8 @@ header {
     align-items: center;
 }
 .service-times .service-times-title {
-    font-size: clamp(1.5rem, 0.8182rem + 2.9091vw, 2.5rem);
-    line-height: 1;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
     text-transform: uppercase;
     
 }
@@ -221,19 +224,17 @@ header {
     height: auto;
     border-radius: 0.5em
 }
-.welcome .text-headline .title {
-    font-size: clamp(1rem, 1rem + 0vw, 1rem);
-    font-weight: 400;
-    color: #b2aeaa;
+.welcome .text-headline .subtitle {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    font-weight: 700;
+}
+.welcome .welcome-title .title {
     margin-bottom: 1em;
 }
-.welcome .text-headline .subtitle {
-    font-size: clamp(1.5rem, 1.0455rem + 1.9394vw, 2.5rem);
-    font-weight: 700;
-    line-height: .85;
-}
 .welcome .welcome-p {
-    font-size: clamp(0.8rem, 0.7091rem + 0.3879vw, 1rem);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
 }
 .welcome .welcome-p p {
     margin: 1.2em 0 1.2em;
