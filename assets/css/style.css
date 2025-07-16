@@ -193,9 +193,9 @@ header {
     min-width: 70%;
 }
 
-/* ==================
+/* =============
     Visit Times
-   ================== */
+   ============= */
 .service-times .container-item-wrapper.service {
     align-items: center;
 }
@@ -213,10 +213,9 @@ header {
 .service-times .service-times-subtitle {
     font-size: var(--fs-h5);
     margin: 0.2em auto 0 auto;
-    max-width: 80%
+    max-width: 80% !important;
 }
 .service-times .service-times-p {
-    max-width: 80%;
     margin: 0.2em auto .5em auto;
 }
 /* ==================
