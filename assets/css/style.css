@@ -184,7 +184,7 @@ header {
   z-index: auto;
 
   background: linear-gradient( rgba(0, 0, 0, 0.3)),
-    url("/assets/img/hopeyouth.jpeg") center/cover no-repeat;
+    url("../assets/img/hopeyouth.jpeg") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -197,7 +197,7 @@ header {
   z-index: auto;
 
   background: linear-gradient(rgba(0, 0, 0, 0.3)),
-    url("/assets/img/kids.jpeg") center/cover no-repeat;
+    url("../assets/img/kids.jpeg") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
