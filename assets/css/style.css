@@ -202,22 +202,43 @@ header {
   margin-bottom: 0.5em;
 }
 .service-times .service-times-subtitle {
-  font-size: var(--fs-h6);
-  margin: 0.2em auto 0 auto;
-  max-width: 80%;
+  font-size: var(--fs-h4);
 }
 .service-times .service-times-p {
   margin: 0.2em auto 0.5em auto;
 }
-/* ==================
-    Welcome
-   ================== */
-
-.welcome .container-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5em;
+.service-times-grid-item {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(7, 1fr);
 }
+.service-times .image-cell img {
+    border: 5px solid var(--white-text-color);
+}
+.service-times .service-times-picture1{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    z-index: 1;
+}
+.service-times .service-times-picture2{
+    grid-column-start: 5;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    z-index: 2;
+}
+.service-times .service-times-picture3{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 8;
+    z-index: 3;
+}
+
+/* =========
+    Welcome
+   ========= */
 .welcome .text-headline .subtitle {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -465,8 +486,5 @@ header {
   }
   .service-times .service-times-p {
     max-width: 100%;
-  }
-  .service-times .container {
-    text-align: left;
   }
 }
