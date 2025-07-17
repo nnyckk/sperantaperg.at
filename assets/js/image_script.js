@@ -1,7 +1,7 @@
 
 // IMAGE FADE IN EFFECT
 function fadeInPeScroll() {
-    $('.image-cell').each(function(index) {
+    $('.image-cell-fadeIn').each(function(index) {
       const $this = $(this);
       const topImg = $this.offset().top;
       const bottomWindow = $(window).scrollTop() + $(window).height();

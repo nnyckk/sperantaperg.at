@@ -197,12 +197,12 @@ html {
     border-radius: .5em;
 }
 /* Image Fade in Effect */
-.image-cell {
+.image-cell-fadeIn {
     opacity: 0;
     transform: translateY(30px);
     transition: all .5s ease;
 }
-.image-cell.vizibila {
+.image-cell-fadeIn.vizibila {
     opacity: 1;
     transform: translateY(0);
 }
