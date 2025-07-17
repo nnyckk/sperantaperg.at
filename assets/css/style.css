@@ -210,7 +210,7 @@ header {
   transform: translate(-50%, -50%);
 
   color: var(--white-text-color);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
 
   transition: .3s;
 }
