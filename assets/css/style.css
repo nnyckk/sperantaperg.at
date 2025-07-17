@@ -257,6 +257,10 @@ header {
 .sermon .youtube-btn:hover {
   border: 2px solid var(--first-accent-color-hover);
 }
+.sermon .sermon-p .marked {
+  font-weight: 700;
+  font-size: var(--fs-h5);
+}
 
 
 
@@ -346,6 +350,9 @@ header {
     
     min-height: 20em;
   }
+  .sermon .container-item-wrapper {
+    flex-direction: column-reverse;
+}
   
 }
 
@@ -365,5 +372,9 @@ header {
     grid-row-end: 3;
     
     min-height: 15em;
+  }
+  .sermon .buttons-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

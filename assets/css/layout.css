@@ -316,7 +316,5 @@ a {
     .container-item-wrapper {
         flex-direction: column;
     }
-    .sermon .container-item-wrapper {
-        flex-direction: column-reverse;
-    }
+
 }
