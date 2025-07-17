@@ -1,7 +1,6 @@
-
-// Image fade in effect
+// FadeIn effect
 function fadeInOnScroll() {
-    $('.image-cell-fadeIn').each(function(index) {
+    $('.fadeIn').each(function(index) {
       const $this = $(this);
       const topImg = $this.offset().top;
       const bottomWindow = $(window).scrollTop() + $(window).height();

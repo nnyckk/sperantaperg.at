@@ -1,7 +1,3 @@
-/* ==================
-    Design-Variables
-   ================== */
-
 /* No scroll when Burger Menu is ON (JS) */
 .no-scroll {
   overflow: hidden;
@@ -12,89 +8,6 @@
   color: var(--first-accent-color);
 }
 
-/* List design */
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-
-/* Hamburger Menu Stlye */
-#nav-icon-hamburger {
-  width: 42px;
-  height: 31.5px;
-  display: none;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-}
-#nav-icon-hamburger span {
-  display: none;
-  position: absolute;
-  height: 6.3%;
-  width: 100%;
-  background: var(--white-text-color);
-  border-radius: 6.3px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-#nav-icon-hamburger span:nth-child(1) {
-  top: 0px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-#nav-icon-hamburger span:nth-child(2) {
-  top: 12.6px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-#nav-icon-hamburger span:nth-child(3) {
-  top: 25.2px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-#nav-icon-hamburger.open span:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: -2px;
-  left: 5.6px;
-}
-#nav-icon-hamburger.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-#nav-icon-hamburger.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 27.3px;
-  left: 5.6px;
-}
 
 /* ========
     Header
@@ -184,7 +97,6 @@ header {
 .hero p {
   margin: 0.2em auto 1.5em auto;
   font-size: var(--fs-h4);
-  min-width: 70%;
 }
 
 /* =============
@@ -203,6 +115,7 @@ header {
 }
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
+  line-height: var(--lh-heading-small);
 }
 .service-times .service-times-p {
   margin: 0.2em auto 0.5em auto;
@@ -242,7 +155,6 @@ header {
 .welcome .text-headline .subtitle {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
-  font-weight: 700;
 }
 .welcome .welcome-title .title {
   margin-bottom: 1em;
@@ -258,72 +170,7 @@ header {
 /* ==================
     About-Us Section
    ================== */
-.about-us {
-  text-align: center;
-}
-.about-us h2 {
-  margin-bottom: 0.8em;
-  opacity: 0.7;
 
-  font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
-  color: var(--background-color);
-  text-transform: uppercase;
-}
-.about-us h1 {
-  max-width: 27em;
-  margin: 0 auto 2.5em;
-
-  font-size: clamp(1.2rem, 0.8364rem + 1.5515vw, 2rem);
-  color: var(--accent-color-hover);
-  font-weight: 400;
-}
-.pillars-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 2em;
-}
-.pillars-item {
-  padding: 0 1.875em 1.875em;
-}
-.pillars-item-icon img {
-  max-width: 200px;
-}
-.pillars-item-text h3 {
-  color: var(--background-color);
-  text-transform: uppercase;
-  margin-bottom: 0.5em;
-  font-weight: 900;
-  font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
-}
-.pillars-item-text p {
-  color: var(--background-color);
-  opacity: 0.9;
-  font-weight: 400;
-  font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
-}
-.pillars-more a {
-  font-weight: 700;
-  font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
-  color: var(--accent-color);
-  text-transform: uppercase;
-  position: relative;
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-.pillars-more a::before {
-  content: ">";
-  position: absolute;
-  left: -0.2em;
-  transform: translateX(-200%);
-
-  transition: 0.2s;
-}
-.pillars-more a:hover::before,
-.pillars-more a:hover {
-  color: var(--accent-color-hover);
-  transform: translateX(-100%);
-}
 
 /* ===============
     Latest Sermon
@@ -399,14 +246,6 @@ header {
 }
 
 @media (max-width: 1100px) {
-  /* SHOW THE HAMBURGER MENU */
-  #nav-icon-hamburger {
-    display: block;
-  }
-  #nav-icon-hamburger span {
-    display: block;
-  }
-  /* ====================== */
   .navigation-wrapper {
     padding: 2em 2em;
     background-color: var(--background-color-dark);
@@ -451,13 +290,11 @@ header {
     width: 100%;
   }
   .nav-links-list li a {
-    font-size: clamp(2rem, 1.7727rem + 0.9697vw, 2.5rem);
+    font-size: var(--fs-h2);
     padding: 0;
     flex-grow: 1;
   }
-  .pillars-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  
 
   /* Social Media Links/Icons in Burger Menu */
   .socials {
@@ -472,19 +309,9 @@ header {
     flex-grow: 1;
     gap: 2em;
   }
-  .container-item-wrapper {
-    flex-direction: column;
-  }
+  
 }
 
 @media (max-width: 600px) {
-  .pillars-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .service-times .service-times-subtitle {
-    max-width: 100%;
-  }
-  .service-times .service-times-p {
-    max-width: 100%;
-  }
+  
 }
