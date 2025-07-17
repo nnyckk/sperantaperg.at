@@ -233,12 +233,10 @@ header {
 }
 
 
-   
-
-/* ===============
-    Latest Sermon
-   =============== */
-.latest-sermon {
+/* ========
+    Sermon
+   ======== */
+.sermon {
   background-color: var(--background-color);
   position: relative;
   overflow-x: hidden;

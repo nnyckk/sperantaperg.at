@@ -5,10 +5,10 @@ function fadeInOnScroll() {
       const topImg = $this.offset().top;
       const bottomWindow = $(window).scrollTop() + $(window).height();
 
-      if (bottomWindow > topImg + 150 && !$this.hasClass('visible')) {
+      if (bottomWindow > topImg + 100 && !$this.hasClass('visible')) {
         setTimeout(() => {
           $this.addClass('visible');
-        }, index * 300); // Delay for the images
+        }, index * 150); // Delay for the images
       }
     });
   }
