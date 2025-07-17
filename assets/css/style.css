@@ -329,6 +329,10 @@ header {
     gap: 2em;
   }
 
+
+  .service-times .service-times-title {
+   text-align: left;
+  }
   .departments .departments-grid-item {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
