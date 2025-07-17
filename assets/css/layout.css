@@ -191,9 +191,20 @@ html {
     color: #b2aeaa;
     font-weight: 400;
 }
+/* Image Style */
 .image-cell img {
     width: 100%;
     border-radius: .5em;
+}
+/* Image Fade in Effect */
+.image-cell {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .5s ease;
+}
+.image-cell.vizibila {
+    opacity: 1;
+    transform: translateY(0);
 }
 .plus-line {
     padding-top: 2em;
