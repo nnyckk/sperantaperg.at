@@ -218,7 +218,7 @@ a {
 }
 .container-item-wrapper {
     display: flex;
-    gap: 1em;
+    gap: 2em;
 }
 .container-item {
     display: flex;
@@ -315,5 +315,8 @@ a {
     /* COLUMN-view of the containers */
     .container-item-wrapper {
         flex-direction: column;
+    }
+    .sermon .container-item-wrapper {
+        flex-direction: column-reverse;
     }
 }

@@ -7,7 +7,12 @@
 .nav-links a.active {
   color: var(--first-accent-color);
 }
-
+.marked {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--first-accent-color);
+}
 
 /* ========
     Header
@@ -102,12 +107,6 @@ header {
 /* =============
     Visit Times
    ============= */
-.service-times .service-times-title .marked {
-  display: inline-block;
-  line-height: 0em;
-  padding-bottom: 0.5em;
-  background-color: var(--first-accent-color);
-}
 .service-times .service-times-title {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -118,7 +117,7 @@ header {
   line-height: var(--lh-heading-small);
 }
 .service-times .service-times-p {
-  margin: 0.2em auto 0.5em auto;
+  max-width: 100%;
 }
 .service-times-grid-item {
     grid-template-columns: repeat(9, 1fr);
@@ -170,7 +169,7 @@ header {
 .departments .departments-grid-item {
   grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    grid-gap: 1em;
+    grid-gap: 2em;
 }
 .departments .departments-hopeyouth {
   grid-column-start: 1;
@@ -236,75 +235,30 @@ header {
 /* ========
     Sermon
    ======== */
-.sermon {
-  background-color: var(--background-color);
-  position: relative;
-  overflow-x: hidden;
-
-  text-align: center;
+.sermon .text-headline .subtitle {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
 }
-.latest-sermon h2 {
-  margin-bottom: 0.8em;
-  opacity: 0.7;
-
-  font-size: clamp(1rem, 0.7727rem + 0.9697vw, 1.5rem);
-  color: var(--white-text-color);
-  text-transform: uppercase;
+.sermon .sermon-title .title {
+    margin-bottom: 1em;
 }
-.latest-sermon h1 {
-  max-width: 27em;
-  margin: 0 auto 1.2em;
-
-  font-size: clamp(2rem, 1.5455rem + 1.9394vw, 3rem);
-  color: var(--accent-color);
-  font-weight: 900;
-  font-style: italic;
+.sermon .sermon-p p {
+    margin: 1.2em 0 1.2em;
 }
-.latest-seromon-more a {
-  font-weight: 700;
-  font-size: clamp(1rem, 0.9091rem + 0.3879vw, 1.2rem);
-  color: var(--accent-color);
-  text-transform: uppercase;
-  position: relative;
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-.latest-seromon-more a::before {
-  content: ">";
-  position: absolute;
-  left: -0.2em;
-  transform: translateX(-200%);
-
-  transition: 0.2s;
-}
-.latest-seromon-more a:hover::before,
-.latest-seromon-more a:hover {
-  color: var(--accent-color-hover);
-  transform: translateX(-100%);
-}
-.latest-sermon-content {
+.sermon .buttons-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 0 auto 3em;
+  flex-direction: row;
+  gap: 1em;
+}
+.sermon .youtube-btn {
+  background-color: transparent;
+  border: 2px solid var(--first-accent-color);
+}
+.sermon .youtube-btn:hover {
+  border: 2px solid var(--first-accent-color-hover);
 }
 
-.iframe-holder {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
 
-.iframe-holder iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
 
 @media (max-width: 1100px) {
   .navigation-wrapper {
