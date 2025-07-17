@@ -202,7 +202,7 @@ html {
     transform: translateY(30px);
     transition: all .5s ease;
 }
-.image-cell-fadeIn.vizibila {
+.image-cell-fadeIn.visible {
     opacity: 1;
     transform: translateY(0);
 }
