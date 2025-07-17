@@ -38,4 +38,38 @@ const currentPath = window.location.pathname;
   document.getElementById("nav-icon-hamburger").addEventListener("click", () => {
     document.body.classList.toggle("no-scroll");
   });
-  });
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+});
+
+
+
+function fadeInPoze() {
+    $('.image-cell').each(function(index) {
+      const $this = $(this);
+      const topElem = $this.offset().top;
+      const bottomWindow = $(window).scrollTop() + $(window).height();
+
+      if (bottomWindow > topElem + 50 && !$this.hasClass('vizibila')) {
+        setTimeout(() => {
+          $this.addClass('vizibila');
+        }, index * 400); // întârziere între imagini
+      }
+    });
+  }
+
+  
+  
+    $(window).on('scroll', fadeInPoze);
+    fadeInPoze(); // verificare și la încărcare

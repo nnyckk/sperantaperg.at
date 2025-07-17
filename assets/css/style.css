@@ -214,6 +214,13 @@ header {
 .service-times .image-cell img {
     border: 5px solid var(--white-text-color);
 }
+.image-cell {
+    opacity: 0;
+    transition:  1s ease-in-out;
+}
+.vizibila {
+    opacity: 1;
+  }
 .service-times .service-times-picture1{
     grid-column-start: 1;
     grid-column-end: 6;
