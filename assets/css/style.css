@@ -33,7 +33,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   position: fixed;
   top: 0;
   z-index: 99;
@@ -53,7 +52,7 @@ header {
 .nav-links {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 .nav-links-list {
   display: flex;
@@ -64,7 +63,6 @@ header {
 .nav-links-list li a {
   padding: 0.5em 0.5em;
 
-  line-height: 2em;
   font-weight: bold;
   color: var(--white-text-color);
 
@@ -269,13 +267,17 @@ header {
     padding-bottom: 2em;
 }
 .donation .donation-title {
-    max-width: 25em;
+    /* max-width: 25em; */
     font-size: var(--fs-h3);
     line-height: var(--lh-heading);
 }
-.donation .donation-p p {
+.donation .small-text-light {
     max-width: 100%;
-    margin: 1.2em 0 1.2em;
+    margin-bottom: 0.5em;
+}
+.donation .donation-p p {
+  max-width: 100%;
+  margin: 1.2em 0 1.2em;
 }
 .donation .text-headline .subtitle {
     font-size: var(--fs-h4);
@@ -288,6 +290,13 @@ header {
     text-align: center;
     width: 50%;
 }
+#donation-btn {
+  background-color: #e53935;
+}
+#donation-btn:hover {
+  background-color: #c62828;
+  color: var(--white-text-color);
+}
 
 
 
@@ -299,6 +308,13 @@ header {
   }
   #navigationWrapper.scrolled {
     padding: 0.8em 2em;
+  }
+  #donation-btn {
+    padding: .2em;
+  }
+  #donation-btn:hover {
+    background-color: #c62828;
+    color: var(--white-text-color);
   }
   .logo img {
     width: 12em;
@@ -333,15 +349,13 @@ header {
   .nav-links-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
     width: 100%;
   }
   .nav-links-list li a {
     font-size: var(--fs-h2);
     padding: 0;
-    flex-grow: 1;
   }
-  
 
   /* Social Media Links/Icons in Burger Menu */
   .socials {
@@ -422,6 +436,6 @@ header {
   .donation .donation-container-button {
     align-items: center;
   }
-
+  
 
 }
