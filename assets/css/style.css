@@ -355,6 +355,7 @@ header {
   .nav-links-list li a {
     font-size: var(--fs-h2);
     padding: 0;
+    
   }
 
   /* Social Media Links/Icons in Burger Menu */
