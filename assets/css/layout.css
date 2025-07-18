@@ -65,7 +65,7 @@
 
 html {
     scroll-behavior: smooth;
-    
+
     --background-color-dark:         hsl(0, 0%, 0%);
     --background-color-light:        hsl(0, 0%, 100%);
     --white-text-color:              var(--background-color-light);
@@ -275,6 +275,11 @@ a {
 .small-text {
     font-size: var(--fs-small);
     color: #b2aeaa;
+    font-weight: 400;
+}
+.small-text-light {
+    font-size: var(--fs-small);
+    color: #595654;
     font-weight: 400;
 }
 /* Image Style */
