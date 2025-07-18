@@ -4,7 +4,7 @@
     height: 100vh;
   }
   /* URL ACTIVE (JS) */
-  .nav-links > *:not(:last-child).active {
+  .nav-links a.active {
     color: var(--first-accent-color);
   }
 
