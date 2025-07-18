@@ -265,23 +265,29 @@ header {
 /* ===========
     Donations
    =========== */
-
-.donation .text-headline .subtitle {
-    font-size: var(--fs-h2);
+.donation .donation-container {
+    padding-bottom: 2em;
+}
+.donation .donation-title {
+    max-width: 25em;
+    font-size: var(--fs-h3);
     line-height: var(--lh-heading);
 }
-.donation .donation-title .title {
-    margin-bottom: 1em;
-}
 .donation .donation-p p {
+    max-width: 100%;
     margin: 1.2em 0 1.2em;
 }
-.donation .donation-container-button {
-    align-items: center;
+.donation .text-headline .subtitle {
+    font-size: var(--fs-h4);
+    line-height: var(--lh-heading);
 }
-
-
-
+.donation .donation-container-button {
+  align-items: center;
+}
+.donation .donation-container-button a {
+    text-align: center;
+    width: 50%;
+}
 
 
 
@@ -378,10 +384,13 @@ header {
   }
   .sermon .container-item-wrapper {
     flex-direction: column-reverse;
-}
-.donation .donation-container-button {
-  align-items: flex-start;
-}
+  }
+  .donation .donation-title {
+    text-align: left;
+   }
+  .donation .donation-container-button {
+    align-items: flex-start;
+  }
   
 }
 

@@ -8,7 +8,7 @@ function fadeInOnScroll() {
       if (bottomWindow > topImg + 100 && !$this.hasClass('visible')) {
         setTimeout(() => {
           $this.addClass('visible');
-        }, index * 150); // Delay for the images
+        }, index * 100); // Delay for the images
       }
     });
   }
