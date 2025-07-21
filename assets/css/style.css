@@ -258,12 +258,11 @@ header {
 
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
   .service-times .service-times-title {
    text-align: left;
   }
-
-
+  
   /* Departments grid in two rows */
   .departments .departments-grid-item {
     grid-template-columns: 1fr;
