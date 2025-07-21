@@ -5,7 +5,7 @@
   height: 100vh;
 }
 /* URL ACTIVE (JS) */
-.nav-links a.active {
+nav a.active {
   color: var(--first-accent-color);
 }
 .dropdown-line {
