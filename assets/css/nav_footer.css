@@ -295,9 +295,9 @@
     transition: none;
   }
   .dropdown li a {
-    padding: 0.2em 0 !important;
+    padding: 0.2em 0;
     font-size: var(--fs-h4);
-    color: var(--white-text-color) !important;
+    color: var(--white-text-color);
   }
   .dropdown li a:hover {
     color: var(--first-accent-color) !important;
