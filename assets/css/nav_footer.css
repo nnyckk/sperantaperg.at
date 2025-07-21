@@ -300,7 +300,7 @@
   .dropdown li a {
     padding: 0.2em 0;
     font-size: var(--fs-h4);
-    color: var(--white-text-color);
+    color: var(--white-text-color) !important;
   }
   .dropdown li a:hover {
     color: var(--first-accent-color) !important;
