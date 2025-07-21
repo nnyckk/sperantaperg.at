@@ -6,7 +6,7 @@
 }
 /* URL ACTIVE (JS) */
 nav a.active {
-  color: var(--first-accent-color);
+  color: var(--first-accent-color) !important;
 }
 .dropdown-line {
   display: none;
