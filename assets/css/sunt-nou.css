@@ -18,7 +18,7 @@
 }
 
 /* ==============
-      Hero Section
+    Hero Section
    ============== */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
 
-  height: 65vh;
+  height: 70vh;
   width: 100%;
 
   text-align: center;
@@ -159,42 +159,5 @@
 }
 
 @media (max-width: 600px) {
-  .departments .departments-hopeyouth {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-
-    min-height: 15em;
-  }
-  .departments .departments-kids {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-
-    min-height: 15em;
-  }
-  .sermon .buttons-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .donation .donation-container-button a {
-    width: 100%;
-    text-align: center;
-  }
-  .donation .donation-container-button {
-    align-items: center;
-  }
-
-  .donation .donation-background-art img {
-    position: absolute;
-    top: -400%;
-    rotate: -15deg;
-    right: -10%;
-    width: 150%;
-    z-index: 0;
-    opacity: 0.1;
-    pointer-events: none;
-  }
+  
 }

@@ -1,0 +1,124 @@
+.marked {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--first-accent-color);
+}
+.marked-kids {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--second-accent-color);
+}
+.kids-btn {
+  background-color: var(--second-accent-color) !important;
+}
+.kids-btn:hover {
+  background-color: var(--second-accent-color-hover) !important;
+}
+
+/* ==============
+      Hero Section
+     ============== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../img/word_image.JPG") center/cover no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 70vh;
+  width: 100%;
+
+  text-align: center;
+}
+.hero h1 {
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+.hero p {
+  margin: 0.2em auto 1.5em auto;
+  font-size: var(--fs-h4);
+}
+
+/* =======
+    About
+   ======= */
+   .about .text-headline .subtitle {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading-small);
+  }
+  .about .about-title .title {
+    margin-bottom: 1em;
+  }
+  .about .about-p p {
+    margin: 1.2em 0 1.2em;
+  }
+
+/* ========
+    Vision
+   ======== */
+.vision .grid-item {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+.vision-card {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  background-color: var(--white-text-color);
+  transition: transform 0.3s ease;
+}
+.vision-card:hover {
+  transform: translateY(-5px);
+}
+.vision-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  height: 100%;
+  padding: 1em;
+}
+.vision-card-content h2 {
+  font-size: var(--fs-h4);
+  margin: 0 0 .5em;
+  color: var(--background-color-dark);
+}
+.vision-card-content p {
+  margin: 0 0 1em 0;
+  font-size: var(--fs-body);
+  color: var(--background-color-dark);
+}
+
+
+@media (max-width: 1250px) {
+  .vision .grid-item {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2em;
+  }
+  .vision-card {
+    width: 16.5em;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+}
+
+@media (max-width: 600px) {
+  .vision .grid-item {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .vision-card {
+    width: 15em;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+}
