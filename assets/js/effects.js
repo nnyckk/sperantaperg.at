@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const topImg = $this.offset().top;
       const bottomWindow = $(window).scrollTop() + $(window).height();
 
-      if (bottomWindow > topImg + 100 && !$this.hasClass("visible")) {
+      if (bottomWindow > topImg + 80 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 100); // Delay for the images
+        }, index * 50); // Delay for the images
       }
     });
   }

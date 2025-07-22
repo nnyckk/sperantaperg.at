@@ -81,6 +81,9 @@
 /* =============
     Visit Times
    ============= */
+.service-times {
+  padding-top: 0em !important;
+}
 .service-times .service-times-title {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -139,8 +142,6 @@
   width: 100%;
 }
 
-
-
 @media (max-width: 1250px) {
   .first-time .first-time-title {
     text-align: left;
@@ -149,9 +150,11 @@
     text-align: left;
     font-size: var(--fs-body);
   }
-
   .question .container-item-wrapper:nth-child(odd) {
     flex-direction: column-reverse;
+  }
+  .service-times .service-times-title {
+    text-align: left;
   }
 }
 
