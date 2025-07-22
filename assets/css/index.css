@@ -91,7 +91,7 @@ header {
    ========= */
 .welcome .text-headline .subtitle {
   font-size: var(--fs-h2);
-  line-height: var(--lh-heading);
+  line-height: var(--lh-heading-small);
 }
 .welcome .welcome-title .title {
   margin-bottom: 1em;
@@ -175,7 +175,7 @@ header {
    ======== */
 .sermon .text-headline .subtitle {
     font-size: var(--fs-h2);
-    line-height: var(--lh-heading);
+    line-height: var(--lh-heading-small);
 }
 .sermon .sermon-title .title {
     margin-bottom: 1em;
@@ -224,7 +224,7 @@ header {
 }
 .donation .text-headline .subtitle {
     font-size: var(--fs-h4);
-    line-height: var(--lh-heading);
+    line-height: var(--lh-heading-small);
 }
 .donation .donation-container-button {
   align-items: center;

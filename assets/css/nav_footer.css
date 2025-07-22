@@ -114,6 +114,7 @@
 
 /* Donation Button */
 #donation-btn {
+  padding: .5em 1em ;
   background-color: transparent;
   border: 1px solid var(--white-text-color);
 }
@@ -307,10 +308,6 @@
   .dropdown li a:hover {
     color: var(--first-accent-color) !important;
   }
-  #donation-btn {
-    background-color: #e53935;
-    border: none;
-  }
   #donation-btn:hover {
     background-color: #c62828;
     border: none;
@@ -318,7 +315,9 @@
   #donation-btn {
     margin-top: 1em;
     display: inline-block;
-    padding: 0.3em;
+    padding: 0.3em .7em;
+    background-color: #e53935;
+    border: none;
   }
 }
 @media (max-width: 800px) {

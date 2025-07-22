@@ -1,30 +1,197 @@
+.marked {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--first-accent-color);
+}
+.marked-kids {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--second-accent-color);
+}
+.kids-btn {
+  background-color: var(--second-accent-color) !important;
+}
+.kids-btn:hover {
+  background-color: var(--second-accent-color-hover) !important;
+}
 
-  /* ==============
+/* ==============
       Hero Section
-     ============== */
-  .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-    url("../img/background_hero.jpg") center/cover no-repeat;
+   ============== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../img/sunt_nou_background.jpg") center/cover no-repeat;
 
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 65vh;
+  width: 100%;
+
+  text-align: center;
+}
+.hero h1 {
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+.hero p {
+  margin: 0.2em auto 1.5em auto;
+  font-size: var(--fs-h4);
+}
+
+/* ====================
+    Welcome First Time
+   ==================== */
+.first-time .first-time-title {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  margin-bottom: 0.5em;
+}
+.first-time .first-time-subtitle {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading-small);
+}
+.first-time .first-time-p {
+  max-width: 100%;
+}
+
+/* ===========
+    Questions
+   =========== */
+.question:nth-of-type(odd) .container-item-wrapper {
+  flex-direction: row-reverse;
+}
+.question {
+  padding-top: 0 !important;
+}
+.question .text-headline .subtitle {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-small);
+}
+.question .question-title .title {
+  margin-bottom: 1em;
+}
+.question .question-p p {
+  margin: 1.2em 0 1.2em;
+}
+
+/* =============
+    Visit Times
+   ============= */
+.service-times .service-times-title {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  margin-bottom: 0.5em;
+}
+.service-times .service-times-subtitle {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading-small);
+}
+.service-times .service-times-p {
+  max-width: 100%;
+}
+.service-times-grid-item {
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+.service-times .image-cell img {
+  border: 5px solid var(--white-text-color);
+}
+.service-times .service-times-picture1 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  z-index: 1;
+}
+.service-times .service-times-picture2 {
+  grid-column-start: 5;
+  grid-column-end: 10;
+  grid-row-start: 3;
+  grid-row-end: 6;
+  z-index: 2;
+}
+.service-times .service-times-picture3 {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  z-index: 3;
+}
+
+/* =====
+    Map
+   ===== */
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+@media (max-width: 1250px) {
+  .first-time .first-time-title {
+    text-align: left;
+  }
+  .first-time .first-time-subtitle {
+    text-align: left;
+    font-size: var(--fs-body);
+  }
+
+  .question .container-item-wrapper:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 600px) {
+  .departments .departments-hopeyouth {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    min-height: 15em;
+  }
+  .departments .departments-kids {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    min-height: 15em;
+  }
+  .sermon .buttons-group {
     flex-direction: column;
-    justify-content: center;
-  
-    height: 65vh;
+    align-items: flex-start;
+  }
+  .donation .donation-container-button a {
     width: 100%;
-
     text-align: center;
   }
-  .hero h1 {
-    font-size: var(--fs-h1);
-    text-transform: uppercase;
-  }
-  .hero p {
-    margin: 0.2em auto 1.5em auto;
-    font-size: var(--fs-h4);
+  .donation .donation-container-button {
+    align-items: center;
   }
 
-  /* =========
-      Welcome
-     ========= */
-  
+  .donation .donation-background-art img {
+    position: absolute;
+    top: -400%;
+    rotate: -15deg;
+    right: -10%;
+    width: 150%;
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
