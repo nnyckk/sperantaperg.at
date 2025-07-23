@@ -159,5 +159,8 @@
 }
 
 @media (max-width: 600px) {
-  
+ .question .container-item-wrapper {
+    display: flex;
+    gap: 0.5em;
+}
 }
