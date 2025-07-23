@@ -137,6 +137,9 @@
 }
 
 @media (max-width: 1025px) {
+  .about .container-item-wrapper {
+    gap: 0em;
+  }
   .vision .grid-item {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
