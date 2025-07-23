@@ -258,7 +258,7 @@ header {
 
 
 
-@media (max-width: 1250px) {
+@media (max-width: 1025px) {
   .service-times .service-times-title {
    text-align: left;
   }

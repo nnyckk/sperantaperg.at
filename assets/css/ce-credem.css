@@ -139,12 +139,18 @@
 
 
 
-
-@media (max-width: 1250px) {
+@media (max-width: 1025px) {
   .vision .grid-item {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 2em;
+  }
+  .vision-card:hover .overlay {
+    opacity: 0; /* disable hover on mobile */
+  }
+  .vision-card.active .overlay {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 

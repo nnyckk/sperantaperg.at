@@ -17,4 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
     $(window).on("scroll", fadeInOnScroll);
     fadeInOnScroll();
   });
+
+  
+});
+
+//Ce-Credem Page, tap on card to show overlay on mobile
+document.addEventListener("DOMContentLoaded", function() {
+  window.toggleOverlay = function(card) {
+    if (window.innerWidth <= 1025) {
+      document.querySelectorAll('.vision-card').forEach(el => {
+        if (el !== card) el.classList.remove('active');
+      });
+      card.classList.toggle('active');
+    }
+  };
 });
