@@ -90,6 +90,7 @@
   width: auto;
   height: auto;
   background-color: var(--white-text-color);
+  position: relative;
 }
 .vision-card-content {
   display: flex;
@@ -109,40 +110,35 @@
   color: var(--background-color-dark);
 }
 .vision-card-content p:last-child {
-  margin: 2em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
-.tooltip {
-  position: relative;
-  cursor: default;
-  color: var(--first-accent-color);
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-.tooltip-text {
-  visibility: hidden;
-  min-width: 15em;
-  line-height: var(--lh-body);
-  background-color: #333;
-  color: var(--white-text-color);
-  text-align: start;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
+.overlay {
   position: absolute;
-  z-index: 1;
-  bottom: 125%; /* position above the word */
-  left: 50%;
-  white-space: normal;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--first-accent-color);
+  color: var(--white-text-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5em;
+  padding: 1.2em;
   opacity: 0;
-  transition: 0.2s;
+  transition: opacity 0.3s;
+  text-align: start;
 }
 
-.tooltip:hover .tooltip-text {
-  visibility: visible;
+.vision-card:hover .overlay {
   opacity: 1;
 }
+
+
+
+
 
 @media (max-width: 1250px) {
   .vision .grid-item {
@@ -156,5 +152,11 @@
   .vision .grid-item {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);
+  }
+  .vision-card-content {
+    text-align: start;
+  }
+  .vision-card-content h2 {
+    font-size: var(--fs-h3);
   }
 }
