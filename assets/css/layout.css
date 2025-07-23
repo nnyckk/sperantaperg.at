@@ -247,6 +247,9 @@ a {
     background-color: var(--background-color-dark);
     color: var(--white-text-color);
 }
+.felx-direction-row-reverse {
+    flex-direction: row-reverse;
+}
 .flex-column {
     display: flex;
     flex-direction: column;
