@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.addEventListener('click', function(event) {
-      const modalOverlay = document.querySelector('.iframe-content-for--blessed-yes'); // adaptează selectorul dacă știi care e
+      const modalOverlay = document.querySelector('.iframed'); // adaptează selectorul dacă știi care e
       if (modalOverlay && event.target === modalOverlay) {
         ChurchCenterModal.close();
       }
