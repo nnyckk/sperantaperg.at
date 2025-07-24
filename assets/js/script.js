@@ -40,12 +40,4 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", () => {
       document.body.classList.toggle("no-scroll");
     });
-
-
-    document.addEventListener('click', function(event) {
-      const modalOverlay = document.querySelector('.iframed'); // adaptează selectorul dacă știi care e
-      if (modalOverlay && event.target === modalOverlay) {
-        ChurchCenterModal.close();
-      }
-    });
 });

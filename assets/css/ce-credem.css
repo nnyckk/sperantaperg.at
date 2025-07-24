@@ -92,26 +92,30 @@
   background-color: var(--white-text-color);
   position: relative;
   cursor: pointer;
+
+  border-left: 1em solid var(--first-accent-color);
 }
 .vision-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 
   height: 100%;
   padding: 1em;
 }
 .vision-card-content h2 {
+  text-align: start;
   font-size: var(--fs-h4);
-  margin: 0 0 0.5em;
+  margin: 0 0 0.5em .5em;
+  font-weight: 500;
   color: var(--background-color-dark);
+  line-height: var(--lh-heading-small);
 }
 .vision-card-content p {
+  text-align: start;
   font-size: var(--fs-body);
+  line-height: var(--lh-body);
   color: var(--background-color-dark);
-}
-.vision-card-content p:last-child {
-  margin: 1em 0 0 0;
 }
 
 .overlay {
@@ -126,7 +130,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
   padding: 1.2em;
   opacity: 0;
   transition: opacity 0.3s;
