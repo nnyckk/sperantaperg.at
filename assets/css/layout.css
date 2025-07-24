@@ -66,8 +66,8 @@
 html {
     scroll-behavior: smooth;
 
-    --background-color-dark:         hsl(0, 0%, 0%);
-    --background-color-light:        hsl(0, 0%, 100%);
+    --background-color-dark:         hsl(0, 0%, 10%);
+    --background-color-light:        hsl(210, 39%, 98%);
     --white-text-color:              var(--background-color-light);
     --dark-text-color:               var(--background-color-dark);
     --first-accent-color:            hsl(210, 39%, 60%);
