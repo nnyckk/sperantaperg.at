@@ -53,6 +53,7 @@ header {
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
+  margin-bottom: 0.2em;
 }
 .service-times .service-times-p {
   max-width: 100%;

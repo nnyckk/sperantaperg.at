@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // FadeIn effect
+  // FadeIn effect normal
   function fadeInOnScroll() {
     $(".fadeIn").each(function (index) {
       const $this = $(this);
@@ -16,6 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
   $(document).ready(function () {
     $(window).on("scroll", fadeInOnScroll);
     fadeInOnScroll();
+  });
+
+
+  // FadeIn effect delay
+  function fadeInOnScrollDelay() {
+    $(".fadeInDelay").each(function (index) {
+      const $this = $(this);
+      const topImg = $this.offset().top;
+      const bottomWindow = $(window).scrollTop() + $(window).height();
+
+      if (bottomWindow > topImg + 200 && !$this.hasClass("visible")) {
+        setTimeout(() => {
+          $this.addClass("visible");
+        }, index * 500); // Delay for the images
+      }
+    });
+  }
+  $(document).ready(function () {
+    $(window).on("scroll", fadeInOnScrollDelay);
+    fadeInOnScrollDelay();
   });
 });
 

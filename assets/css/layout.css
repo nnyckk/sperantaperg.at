@@ -306,6 +306,16 @@ a {
     opacity: 1;
     transform: translateY(0);
 }
+/* Image Fade in Effect */
+.fadeInDelay {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .5s ease;
+}
+.fadeInDelay.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 .plus-line {
