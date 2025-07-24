@@ -91,6 +91,7 @@
   height: auto;
   background-color: var(--white-text-color);
   position: relative;
+  cursor: pointer;
 }
 .vision-card-content {
   display: flex;
@@ -132,8 +133,9 @@
   text-align: start;
 }
 
-.vision-card:hover .overlay {
+.vision-card.active .overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 1025px) {
@@ -145,13 +147,7 @@
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 2em;
   }
-  .vision-card:hover .overlay {
-    opacity: 0; /* disable hover on mobile */
-  }
-  .vision-card.active .overlay {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  
 }
 
 @media (max-width: 600px) {
