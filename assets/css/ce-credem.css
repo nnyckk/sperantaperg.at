@@ -67,8 +67,8 @@
 /* ========
     Vision
    ======== */
-.vision-title-container {
-  margin-bottom: 2em !important;
+.vision .vision-title {
+  margin-bottom: 2em;
 }
 .vision .text-headline .subtitle {
   font-size: var(--fs-h2);
@@ -106,7 +106,7 @@
 .vision-card-content h2 {
   text-align: start;
   font-size: var(--fs-h4);
-  margin: 0 0 0.5em .5em;
+  margin: 0 0 0.5em 0.5em;
   font-weight: 500;
   color: var(--background-color-dark);
   line-height: var(--lh-heading-small);
@@ -117,7 +117,6 @@
   line-height: var(--lh-body);
   color: var(--background-color-dark);
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -137,11 +136,83 @@
   transition: opacity 0.3s;
   text-align: start;
 }
-
 .vision-card.active .overlay {
   opacity: 1;
   pointer-events: auto;
 }
+
+
+/* =======
+    Credo
+   ======= */
+   .credo .credo-title {
+    margin-bottom: 2em;
+   }
+  .credo .text-headline .subtitle {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading-small);
+  }
+  .credo .credo-title .title {
+    margin-bottom: 1em;
+  }
+  .credo .about-p p {
+    margin: 1.2em 0 1.2em;
+  }
+
+  .accordion {
+    width: 80%;
+    margin: auto;
+  }
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+
+    color: var(--first-accent-color);
+    font-size: var(--fs-h4);
+    background: transparent;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, padding .3s;
+  }
+  .accordion-item:first-of-type {
+    border-top: 2px solid var(--first-accent-color);
+  }
+  .accordion-item {
+    border-bottom: 2px solid var(--first-accent-color);
+  }
+  .accordion-title:hover {
+    background: rgba(113, 153, 193, .2);
+    padding-left: 1.5em;
+  }
+  .accordion-content p {
+    margin: 0 0 1.2em 0;
+    line-height: var(--lh-body);
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: .2s ease;
+  }
+  
+  .accordion-item.active .accordion-title {
+    background: transparent;
+    padding-left: .5em;
+  }
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+  /* Rotește săgeata când este activ */
+  .accordion-item.active .arrow {
+    transform: rotate(90deg); /* ▶ devine ▼ */
+  }
 
 @media (max-width: 1025px) {
   .about .container-item-wrapper {
@@ -152,7 +223,10 @@
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 2em;
   }
-  
+  .accordion {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 @media (max-width: 600px) {

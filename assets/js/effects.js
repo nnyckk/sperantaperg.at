@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeInOnScroll();
   });
 
-
   // FadeIn effect delay
   function fadeInOnScrollDelay() {
     $(".fadeInDelay").each(function (index) {
@@ -47,4 +46,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     card.classList.toggle("active");
   };
+});
+
+//Accordion
+const accordionItems = document.querySelectorAll(".accordion-item");
+accordionItems.forEach((item) => {
+  const title = item.querySelector(".accordion-title");
+  const content = item.querySelector(".accordion-content");
+
+  title.addEventListener("click", () => {
+    const isOpen = item.classList.contains("active");
+
+    // Close
+    accordionItems.forEach((i) => {
+      i.classList.remove("active");
+      i.querySelector(".accordion-content").style.maxHeight = null;
+    });
+
+    // Open if it is closed
+    if (!isOpen) {
+      item.classList.add("active");
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".accordion-item.active").forEach((item) => {
+    const content = item.querySelector(".accordion-content");
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
 });

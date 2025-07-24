@@ -40,4 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", () => {
       document.body.classList.toggle("no-scroll");
     });
+
+
 });
