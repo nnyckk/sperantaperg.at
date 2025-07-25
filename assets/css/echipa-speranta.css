@@ -1,0 +1,180 @@
+.marked {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--first-accent-color);
+}
+
+/* ==============
+    Hero Section
+   ============== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../img//backgrounds/echipa_speranta_background.jpg") center/cover
+      no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 70vh;
+  width: 100%;
+
+  text-align: center;
+}
+.hero h1 {
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+.hero p {
+  margin: 0.2em auto 1.5em auto;
+  font-size: var(--fs-h4);
+}
+
+/* ========
+    Pastor
+   ======== */
+#pastor-img {
+  display: flex;
+  align-items: center;
+}
+#pastor-img img {
+  width: 100%;
+  height: 25em;
+  object-fit: cover;
+}
+#pastor-img {
+  padding: 0.5em;
+  border-radius: 1em;
+  background-color: var(--background-color-dark);
+}
+.pastor .text-headline .subtitle {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-small);
+}
+.pastor .pastor-title .title {
+  color: var(--first-accent-color);
+  margin-top: 0.2em;
+  font-size: var(--fs-h6);
+  line-height: var(--lh-heading-small);
+  text-transform: uppercase;
+}
+.pastor .pastor-p p {
+  margin: 1.2em 0 1.2em;
+}
+
+/* ===========
+    Spiritual
+   =========== */
+.team-title .title {
+  font-size: var(--fs-h5);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.spiritual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(0, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  max-width: 85%;
+  margin: 0 auto;
+}
+.spiritual-grid-small {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+.spiritual-grid-big {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.team-card {
+  color: var(--background-color-dark);
+  background-color: var(--background-color-light);
+  border-radius: 1em;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+}
+.team-card img {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+.team-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: var(--fs-h4);
+}
+.team-card p {
+  color: var(--first-accent-color-hover);
+  font-size: var(--fs-body);
+}
+
+/* dark mode */
+.team-card-dark {
+  color: var(--background-color-light);
+  background-color: var(--background-color-dark);
+  border-radius: 1em;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+.team-card-dark:hover {
+  transform: translateY(-5px);
+}
+.team-card-dark img {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+.team-card-dark h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: var(--fs-h4);
+}
+.team-card-dark p {
+  color: var(--first-accent-color);
+  font-size: var(--fs-body);
+}
+
+@media (max-width: 1025px) {
+  .spiritual-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  .spiritual-grid-small {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  .spiritual-grid-big {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .spiritual-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .spiritual-grid-small {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .spiritual-grid-big {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
