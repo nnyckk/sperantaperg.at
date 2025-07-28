@@ -33,7 +33,7 @@
     background-color: var(--background-color-dark);
   }
   .logo img {
-    width: 9em;
+    width: 15em;
   }
   .nav-links {
     display: flex;
@@ -206,7 +206,7 @@
   
   @media (max-width: 1150px) {
     .logo img {
-      width: 8em;
+      width: 12em;
     }
     .nav-links-list li a {
       font-size: var(--fs-body);
@@ -226,7 +226,7 @@
       color: var(--third-accent-color) !important;
     }
     .logo img {
-      width: 7em;
+      width: 17em;
     }
     .nav-links {
       display: flex;
@@ -322,7 +322,7 @@
   }
   @media (max-width: 800px) {
     .logo img {
-      width: 6em;
+      width: 13em;
     }
     .nav-links-list li a {
       font-size: var(--fs-h2);
