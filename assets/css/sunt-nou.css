@@ -144,6 +144,12 @@
   .service-times .service-times-title {
     text-align: left;
   }
+  .container-buttons-group {
+    align-items: flex-start !important;
+  }
+  .buttons-group {
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 600px) {
@@ -152,6 +158,6 @@
   }
   .buttons-group {
     flex-direction: column;
-    align-items: flex-start;
   }
+  
 }
