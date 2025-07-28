@@ -230,6 +230,7 @@ a {
     justify-content: center;
     flex: 1;
 
+    overflow: hidden;
     position: relative;
 }
 .grid-item {

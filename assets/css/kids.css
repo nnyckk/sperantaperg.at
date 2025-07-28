@@ -145,7 +145,7 @@
     font-size: var(--fs-h4);
   }
   .team-card-dark p {
-    color: var(--first-accent-color);
+    color: var(--third-accent-color);
     font-size: var(--fs-body);
     font-weight: 500;
   }
@@ -180,11 +180,7 @@
     text-decoration: underline;
     opacity: 1;
   }
-  .email svg {
-    vertical-align: middle;
-    margin-right: 6px;
-    fill: #1f6aba6a; /* culoare iconiță */
-  }
+  
 
   .leader .leader-background-art img {
     position: absolute;

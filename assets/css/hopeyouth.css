@@ -90,13 +90,10 @@
   margin: 1.2em 0 1.2em;
 }
 
+
 /* ========
     Leader
    ======== */
-
-.leader {
-  overflow: hidden;
-}
 
 .leader-title .title {
   font-size: var(--fs-h5);
@@ -146,7 +143,7 @@
   font-size: var(--fs-h4);
 }
 .team-card-dark p {
-  color: var(--first-accent-color);
+  color: var(--second-accent-color);
   font-size: var(--fs-body);
   font-weight: 500;
 }
@@ -181,17 +178,13 @@
   text-decoration: underline;
   opacity: 1;
 }
-.email svg {
-  vertical-align: middle;
-  margin-right: 6px;
-  fill: #1f6aba6a; /* culoare iconiță */
-}
 
-.leader .leader-background-art img {
+
+.leader-background-art img {
   position: absolute;
-  bottom: -20%;
-  left: -20%;
-  width: 110%;
+  bottom: -25%;
+  right: -20%;
+  width: 100%;
   z-index: 0;
   opacity: 1;
   pointer-events: none;
