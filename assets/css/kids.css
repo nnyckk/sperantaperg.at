@@ -93,6 +93,10 @@
   /* ========
       Leader
      ======== */
+     .leader {
+      overflow: hidden;
+    }
+
   .leader-title .title {
     font-size: var(--fs-h5);
     text-align: center;
@@ -108,6 +112,7 @@
     justify-content: center;
     max-width: 100%;
     margin: 0 auto;
+    z-index: 3;
   }
   
   /* dark mode */
@@ -179,6 +184,16 @@
     vertical-align: middle;
     margin-right: 6px;
     fill: #1f6aba6a; /* culoare iconiță */
+  }
+
+  .leader .leader-background-art img {
+    position: absolute;
+    bottom: -20%;
+    left: -20%;
+    width: 110%;
+    z-index: 0;
+    opacity: .08;
+    pointer-events: none;
   }
   
   
