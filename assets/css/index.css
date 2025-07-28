@@ -161,12 +161,12 @@ header {
 /* Hover effects */
 .departments .departments-kids:hover .departments-title,
 .departments .departments-kids:hover .overlay {
-  color: var(--second-accent-color);
+  color: var(--third-accent-color);
   opacity: 1;
 }
 .departments .departments-hopeyouth:hover .departments-title,
 .departments .departments-hopeyouth:hover .overlay {
-  color: var(--third-accent-color);
+  color: var(--second-accent-color);
   opacity: 1;
 }
 

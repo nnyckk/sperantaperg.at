@@ -8,13 +8,13 @@
   display: inline-block;
   line-height: 0em;
   padding-bottom: 0.5em;
-  background-color: var(--second-accent-color);
+  background-color: var(--third-accent-color);
 }
 .kids-btn {
-  background-color: var(--second-accent-color) !important;
+  background-color: var(--third-accent-color) !important;
 }
 .kids-btn:hover {
-  background-color: var(--second-accent-color-hover) !important;
+  background-color: var(--third-accent-color-hover) !important;
 }
 
 /* ==============
@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
 
-  height: 70vh;
+  height: 100vh;
   width: 100%;
 
   text-align: center;

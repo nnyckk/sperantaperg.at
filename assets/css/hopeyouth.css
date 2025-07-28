@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
 
-  height: 70vh;
+  height: 100vh;
   width: 100%;
 
   text-align: center;
@@ -90,17 +90,17 @@
   margin: 1.2em 0 1.2em;
 }
 
-/* ===========
-    Spiritual
-   =========== */
-.team-title .title {
+/* ========
+    Leader
+   ======== */
+.leader-title .title {
   font-size: var(--fs-h5);
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1em;
 }
 
-.spiritual-grid {
+.leader-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(0, 1fr);
@@ -256,7 +256,11 @@
 }
 
 @media (max-width: 1025px) {
-  .spiritual-grid {
+  .service-times .service-times-title {
+    text-align: left;
+  }
+
+  .leader-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
   }
@@ -317,7 +321,7 @@
 }
 
 @media (max-width: 600px) {
-  .spiritual-grid {
+  .leader-grid {
     grid-template-columns: repeat(1, 1fr);
   }
   .grid-gallery {
