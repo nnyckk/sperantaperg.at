@@ -81,9 +81,9 @@
 /* =============
     Visit Times
    ============= */
-.service-times {
+/* .service-times {
   padding-top: 0em !important;
-}
+} */
 .service-times .service-times-title {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -92,9 +92,8 @@
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
-
 }
-.service-times .service-times-p {
+.service-times .service-times-p p {
   margin: 1.2em 0 1.2em;
 }
 .service-times-grid-item {
@@ -104,26 +103,14 @@
 .service-times .image-cell img {
   border: 5px solid var(--white-text-color);
 }
-.service-times .service-times-picture1 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 8;
-  z-index: 1;
+.container-buttons-group {
+  align-items: center !important;
 }
-.service-times .service-times-picture2 {
-  grid-column-start: 5;
-  grid-column-end: 10;
-  grid-row-start: 4;
-  grid-row-end: 7;
-  z-index: 3;
-}
-.service-times .service-times-picture3 {
-  grid-column-start: 1;
-  grid-column-end: 7;
-  grid-row-start: 1;
-  grid-row-end: 7;
-  z-index: 2;
+.buttons-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
 }
 
 /* =====
@@ -162,5 +149,9 @@
 @media (max-width: 600px) {
   .question .container-item-wrapper {
     gap: 0.5em;
+  }
+  .buttons-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
