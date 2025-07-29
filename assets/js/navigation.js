@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Hamburger Menu Effect;
+  // HAMBURGER NAV-MENU ON OFF;
   const hamburger = document.getElementById("nav-icon-hamburger");
   const navMenu = document.getElementById("nav-menu");
   const navBar = document.getElementById("navigationWrapper");
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navBar.classList.toggle("active");
   });
 
-  // Navigation Wrapper background colored on scroll;
+  // NAVIGATION WRAPPER PADDING SHRINK AND BACKGROUND COLOR ON SCROLL;
   const navbar = document.getElementById("navigationWrapper");
   function handleScroll() {
     if (window.scrollY > 30) {
@@ -21,25 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("scroll", handleScroll);
 
-  // Active Link On URL Effects;
+  // NAVIGATION LINKS COLORED IF ON THE SAME PAGE AS THE LINK;
   const links = document.querySelectorAll("nav a");
   const currentPath = window.location.pathname;
 
   links.forEach((link) => {
     const href = link.getAttribute("href");
-
-    // Handle relative paths
     if (href && currentPath.includes(href)) {
       link.classList.add("active");
     }
   });
 
-  //NO Scroll when Phone Menu is open;
+  //IF PHONE MENU IS ON, THEN SCROLL OFF;
   document
     .getElementById("nav-icon-hamburger")
     .addEventListener("click", () => {
       document.body.classList.toggle("no-scroll");
     });
-
-
 });

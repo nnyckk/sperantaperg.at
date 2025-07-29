@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // FadeIn effect normal
+  // FADEIN EFFECT;
   function fadeInOnScroll() {
     $(".fadeIn").each(function (index) {
       const $this = $(this);
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bottomWindow > topImg + 100 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 50); // Delay for the images
+        }, index * 50); // DELAY;
       }
     });
   }
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeInOnScroll();
   });
 
-  // FadeIn effect delay
+  // FADEIN EFFECT WITH MORE DELAY;
   function fadeInOnScrollDelay() {
     $(".fadeInDelay").each(function (index) {
       const $this = $(this);
@@ -28,51 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bottomWindow > topImg + 80 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 500); // Delay for the images
+        }, index * 500); // DELAY;
       }
     });
   }
   $(document).ready(function () {
     $(window).on("scroll", fadeInOnScrollDelay);
     fadeInOnScrollDelay();
-  });
-});
-
-//Ce-Credem Page, tap on card to show overlay on mobile
-document.addEventListener("DOMContentLoaded", function () {
-  window.toggleOverlay = function (card) {
-    document.querySelectorAll(".vision-card").forEach((el) => {
-      if (el !== card) el.classList.remove("active");
-    });
-    card.classList.toggle("active");
-  };
-});
-
-//Accordion
-const accordionItems = document.querySelectorAll(".accordion-item");
-accordionItems.forEach((item) => {
-  const title = item.querySelector(".accordion-title");
-  const content = item.querySelector(".accordion-content");
-
-  title.addEventListener("click", () => {
-    const isOpen = item.classList.contains("active");
-
-    // Close
-    accordionItems.forEach((i) => {
-      i.classList.remove("active");
-      i.querySelector(".accordion-content").style.maxHeight = null;
-    });
-
-    // Open if it is closed
-    if (!isOpen) {
-      item.classList.add("active");
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-});
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".accordion-item.active").forEach((item) => {
-    const content = item.querySelector(".accordion-content");
-    content.style.maxHeight = content.scrollHeight + "px";
   });
 });

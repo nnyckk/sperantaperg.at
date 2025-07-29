@@ -39,6 +39,5 @@
   text-decoration: underline;
 }
 .data .container{
-    margin-bottom: 10em !important;
-    margin-top: 10em !important;
+    padding-top: 10em !important;
 }
