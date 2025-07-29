@@ -1,0 +1,27 @@
+
+.impressum h2 {
+  margin-bottom: 0.2em;
+  font-size: var(--fs-h2);
+}
+.impressum h3 {
+  margin: 1em 0 0.5em 0;
+  font-size: var(--fs-h4);
+}
+.impressum h4 {
+  margin: 1em 0 0.2em 0;
+  font-size: var(--fs-h6);
+}
+.impressum p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-text);
+  opacity: .8;
+}
+
+.impressum a {
+  color: var(--first-accent-color);
+  font-weight: 700;
+}
+.impressum a:hover {
+  color: var(--first-accent-color-hover);
+  text-decoration: underline;
+}

@@ -1,0 +1,43 @@
+.data h1 {
+  font-size: var(--fs-h2);
+  margin-bottom: 0.2em;
+}
+.data h2 {
+  margin-bottom: 0.5em;
+  margin-top: .5em;
+  font-size: var(--fs-h4);
+}
+.data h3 {
+  margin: 1em 0 0.5em 0;
+  font-size: var(--fs-h5);
+}
+.data h4 {
+  margin: 1em 0 0.2em 0;
+  font-size: var(--fs-h4);
+}
+.data h5 {
+  margin: 0.5em 0 0.2em 0;
+  font-size: var(--fs-h5);
+}
+.data p {
+  margin-bottom: 0.8em;
+  font-size: var(--fs-body);
+  line-height: var(--lh-big-text);
+  opacity: 0.8;
+}
+.data ul li {
+  font-size: var(--fs-body);
+  line-height: var(--lh-big-text);
+  opacity: 0.8;
+}
+.data a {
+  color: var(--first-accent-color);
+  font-weight: 700;
+}
+.data a:hover {
+  color: var(--first-accent-color-hover);
+  text-decoration: underline;
+}
+.data .container:first-child {
+    margin-bottom: 5em;
+}

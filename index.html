@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KE98B3X7E5"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biserica Speranta Perg</title>
@@ -8,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/nav_footer.css" />
+    <link rel="stylesheet" href="assets/css/cookie.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://js.churchcenter.com/modal/v1"></script>
     <!-- Favicons -->
@@ -45,7 +51,11 @@
               <ul class="dropdown">
                 <li><a href="/sperantaperg.at/sunt-nou.html">Sunt nou</a></li>
                 <li><a href="/sperantaperg.at/ce-credem.html">Ce credem</a></li>
-                <li><a href="/sperantaperg.at/echipa-speranta.html">Echipa Speranța</a></li>
+                <li>
+                  <a href="/sperantaperg.at/echipa-speranta.html"
+                    >Echipa Speranța</a
+                  >
+                </li>
               </ul>
             </li>
             <hr class="dropdown-line" />
@@ -163,7 +173,7 @@
           </div>
           <div class="container-item">
             <div class="image-cell">
-              <img src="assets/img/preach_image.jpg" alt="" loading="lazy"/>
+              <img src="assets/img/preach_image.jpg" alt="" loading="lazy" />
             </div>
           </div>
         </div>
@@ -287,7 +297,11 @@
             </div>
             <a class="btn donation-btn" href="#Donation Page">Dăruiește</a>
             <div class="donation-background-art">
-              <img src="assets/icons/donation-icon.svg" alt="artwork" loading="lazy"/>
+              <img
+                src="assets/icons/donation-icon.svg"
+                alt="artwork"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -302,7 +316,7 @@
           <h4>Acces rapid</h4>
           <ul>
             <li><a href="/sperantaperg.at/index.html">Acasă</a></li>
-            <li><a href="">Noutăți</a></li>
+            <!-- <li><a href="">Noutăți</a></li> -->
             <li><a href="">Dăruiește</a></li>
           </ul>
         </div>
@@ -329,8 +343,11 @@
           <ul>
             <li><a href="#">Formulare</a></li>
             <li><a href="/impressum.html">Impressum</a></li>
-            <li><a href="">Politica de confidențialitate</a></li>
-            <li><a href="">Cookies</a></li>
+            <li>
+              <a href="/politica-confidential.html"
+                >Politica de confidențialitate</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -392,7 +409,34 @@
       </div>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+      <p>
+        <strong>RO:</strong> Folosim cookie-uri pentru a îmbunătăți experiența
+        ta pe site.
+        <a href="/sperantaperg.at/politica-confidential.html" target="_blank"
+          >Află mai multe</a
+        >
+      </p>
+      <p>
+        <strong>DE:</strong> Wir verwenden Cookies, um Ihre Erfahrung auf der
+        Website zu verbessern.
+        <a href="/sperantaperg.at/politica-confidential.html" target="_blank"
+          >Mehr erfahren</a
+        >
+      </p>
+      <div class="cookie-buttons">
+        <button class="btn" id="cookie-accept" onclick="handleCookieConsent(true)">
+          Accept
+        </button>
+        <button class="btn" id="cookie-decline" onclick="handleCookieConsent(false)">
+          Decline
+        </button>
+      </div>
+    </div>
+
     <script src="assets/js/script.js"></script>
     <script src="assets/js/effects.js"></script>
+    <script src="assets/js/cookie.js"></script>
   </body>
 </html>

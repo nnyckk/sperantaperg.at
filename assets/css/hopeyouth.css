@@ -105,12 +105,12 @@
 .leader-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(0, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   gap: 2rem;
   justify-content: center;
-  max-width: 100%;
+  max-width: 75%;
   margin: 0 auto;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* dark mode */
@@ -138,11 +138,14 @@
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
 }
-.team-card-dark h3 {
+.team-card-text {
+  padding: 0em 1em;
+}
+.team-card-text h3 {
   margin: 0.5rem 0 0.2rem;
   font-size: var(--fs-h4);
 }
-.team-card-dark p {
+.team-card-text p {
   color: var(--second-accent-color);
   font-size: var(--fs-body);
   font-weight: 500;
