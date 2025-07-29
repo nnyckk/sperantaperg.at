@@ -41,15 +41,7 @@
     background-color: var(--first-accent-color);
     color: var(--white-text-color);
   }
-  #cookie-accept:hover {
-    background-color: var(--first-accent-color-hover);
-  }
   #cookie-decline {
-    background-color: transparent;
-    border: 1px solid var(--background-color-dark);
-    color: var(--background-color-dark);
-  }
-  #cookie-decline:hover {
     background-color: #dc3545;
     border: 1px solid #dc3545;
     color: var(--white-text-color);
