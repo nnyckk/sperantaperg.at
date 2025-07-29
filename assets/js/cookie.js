@@ -1,30 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-  function handleCookieConsent(accepted) {
-    localStorage.setItem("cookieConsent", accepted ? "accepted" : "refused");
-    document.getElementById("cookie-banner").style.display = "none";
+function handleCookieConsent(accepted) {
+  localStorage.setItem("cookieConsent", accepted ? "accepted" : "refused");
+  document.getElementById("cookie-banner").style.display = "none";
 
-    if (accepted) {
-      console.log("Cookies acceptate / Cookies akzeptiert");
+  if (accepted) {
+    console.log("Cookies acceptate / Cookies akzeptiert");
 
-      // Google Analytics
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-KE98B3X7E5");
-    } else {
-      console.log("Cookies refuzate / Cookies abgelehnt");
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
     }
+    gtag("js", new Date());
+
+    gtag("config", "G-KE98B3X7E5");
+  } else {
+    console.log("Cookies refuzate / Cookies abgelehnt");
   }
+}
 
-  window.addEventListener("load", function () {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) {
-      setTimeout(() => {
-        document.getElementById("cookie-banner").style.display = "block";
-      }, 5000); // delay 5 seconds
-    }
-  });
+window.addEventListener("load", function () {
+  const consent = localStorage.getItem("cookieConsent");
+  if (!consent) {
+    setTimeout(() => {
+      document.getElementById("cookie-banner").style.display = "block";
+    }, 5000); // delay 5 seconds
+  }
 });
