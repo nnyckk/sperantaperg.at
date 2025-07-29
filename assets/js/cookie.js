@@ -23,6 +23,6 @@ window.addEventListener("load", function () {
   if (!consent) {
     setTimeout(() => {
       document.getElementById("cookie-banner").style.display = "block";
-    }, 5000); // delay 5 seconds
+    }, 3000); // delay 3 seconds
   }
 });

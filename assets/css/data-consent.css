@@ -38,6 +38,7 @@
   color: var(--first-accent-color-hover);
   text-decoration: underline;
 }
-.data .container:first-child {
-    margin-bottom: 5em;
+.data .container{
+    margin-bottom: 10em !important;
+    margin-top: 10em !important;
 }
