@@ -225,7 +225,10 @@
     max-width: 100%;
   }
   #pastor-img img {
-    width: 60%;
+    width: 50%;
+  }
+  .team-card-text h3 {
+    font-size: var(--fs-h4);
   }
 }
 
@@ -239,7 +242,9 @@
   .hero {
     padding: 3em 0 !important;
   }
-
+  .team-card-text h3 {
+    font-size: var(--fs-h3);
+  }
   .spiritual-grid {
     grid-template-columns: repeat(1, 1fr);
   }
