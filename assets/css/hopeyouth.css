@@ -110,11 +110,11 @@
 
 .leader-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 2rem;
   justify-content: center;
-  max-width: 75%;
+  max-width: 50%;
   margin: 0 auto;
   z-index: 3;
 }

@@ -5,10 +5,10 @@
   left: 20px;
   right: 0px;
   background-color: var(--background-color-light);
-  border: 1px solid var(--first-accent-color-hover);
+  border: 1px solid var(--third-accent-color-hover);
   border-radius: 0.5em;
   padding: 1rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(8, 20, 27, .8);
+  box-shadow: 0 4px 12px rgba(12, 24, 14, .8);
   z-index: 9999;
   max-width: 400px;
   margin-right: auto;
@@ -19,11 +19,11 @@
   opacity: 0.8;
 }
 #cookie-banner a {
-  color: var(--first-accent-color);
+  color: var(--third-accent-color);
   text-decoration: none;
 }
 #cookie-banner a:hover {
-  color: var(--first-accent-color-hover);
+  color: var(--third-accent-color-hover);
   text-decoration: underline;
 }
 #cookie-banner .cookie-buttons {
@@ -39,11 +39,11 @@
   cursor: pointer;
 }
 #cookie-accept {
-  background-color: var(--first-accent-color);
+  background-color: var(--third-accent-color);
   color: var(--white-text-color);
 }
 #cookie-accept:hover {
-  background-color: var(--first-accent-color-hover);
+  background-color: var(--third-accent-color-hover);
 }
 #cookie-decline {
   background-color: transparent;
