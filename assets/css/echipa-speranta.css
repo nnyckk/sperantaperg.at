@@ -36,33 +36,62 @@
     Pastor
    ======== */
 
-#pastor-img {
+#pastor-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  flex: .7;
 }
 #pastor-img img {
   width: 100%;
-  height: 25em;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 #pastor-img {
-  padding: 0.5em;
-  border-radius: 1em;
-  background-color: var(--background-color-dark);
+  width: 100%;
+}
+#pastor-text {
+  flex: 1.3;
 }
 .pastor .text-headline .subtitle {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
   line-height: var(--lh-heading-small);
 }
 .pastor .pastor-title .title {
   color: var(--first-accent-color);
   margin-top: 0.2em;
-  font-size: var(--fs-h6);
+  font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
   text-transform: uppercase;
 }
 .pastor .pastor-p p {
   margin: 1.2em 0 1.2em;
+}
+.pastor-contact-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2em;
+}
+.email-pastor {
+  display: block;
+  margin-top: 0.5em;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  opacity: 1;
+  color: var(--first-accent-color);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.email-pastor:hover {
+  color: var(--first-accent-color-hover);
+  text-decoration: underline;
+}
+.email-pastor svg {
+  fill: var(--first-accent-color);
+  transition: .2s;
+}
+.email-pastor:hover svg {
+  fill: var(--first-accent-color-hover);
 }
 
 /* ===========
@@ -84,7 +113,7 @@
   max-width: 80%;
   margin: 0 auto;
 }
-.spiritual-grid-small {
+/* .spiritual-grid-small {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -99,7 +128,7 @@
   justify-content: center;
   max-width: 100%;
   margin: 0 auto;
-}
+} */
 
 .team-card {
   color: var(--background-color-dark);
@@ -141,19 +170,23 @@
   font-weight: 500;
 }
 
-/* Email Styling */
-.email {
+/* Contact Styling */
+.contact-items {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+}
+.contact {
   display: block;
   margin-top: 0.5em;
-  font-size: var(--fs-body);
-  font-weight: 500;
-  opacity: .7;
-  color: var(--small-text-color-light);
-  text-decoration: none;
-  transition: 0.2s;
 }
-.email:hover {
-  text-decoration: underline;
+.contact svg {
+  opacity: .7;
+  fill: var(--small-text-color-light);
+  transition: .2s
+}
+.contact:hover svg {
+  fill: var(--first-accent-color-hover);
   opacity: 1;
 }
 
@@ -168,8 +201,14 @@
 .dark-mode-card p {
   color: var(--first-accent-color);
 }
-.dark-mode-email {
-  color: var(--small-text-color-dark);
+.dark-contact svg {
+  opacity: .7;
+  fill: var(--small-text-color-dark);
+  transition: .2s
+}
+.dark-contact:hover svg {
+  fill: var(--first-accent-color);
+  opacity: 1;
 }
 
 @media (max-width: 1025px) {
@@ -184,6 +223,9 @@
   .spiritual-grid-big {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
+  }
+  #pastor-img img {
+    width: 60%;
   }
 }
 
@@ -206,5 +248,12 @@
   }
   .spiritual-grid-big {
     grid-template-columns: repeat(1, 1fr);
+  }
+  #pastor-img img {
+    width: 100%;
+  }
+  .email-pastor svg {
+    width: 42px;
+    height: 42px;
   }
 }

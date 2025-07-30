@@ -126,9 +126,7 @@
 .nav-links .icon-design {
   display: none;
 }
-.socials {
-  display: none;
-}
+
 
 /* ========
     Footer
@@ -175,14 +173,20 @@
   color: var(--white-text-color);
   text-decoration: underline;
 }
+/* Footer socials icons */
 .social-icons {
   display: flex;
   flex-wrap: wrap;
+  gap: 1em;
 }
-.social-icons a {
-  margin-right: 1em;
-  font-size: 1em;
+.social-icons svg {
+  fill: var(--white-text-color);
+  transition: .2s;
 }
+.social-icons svg:hover {
+  fill: var(--first-accent-color);
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
