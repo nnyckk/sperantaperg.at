@@ -3,7 +3,7 @@ function handleCookieConsent(accepted) {
   document.getElementById("cookie-banner").style.display = "none";
 
   if (accepted) {
-    console.log("Cookies acceptate / Cookies akzeptiert");
+    console.log("Cookies accepted");
 
     // Google Analytics
     window.dataLayer = window.dataLayer || [];
@@ -14,7 +14,7 @@ function handleCookieConsent(accepted) {
 
     gtag("config", "G-KE98B3X7E5");
   } else {
-    console.log("Cookies refuzate / Cookies abgelehnt");
+    console.log("Cookies declined");
   }
 }
 
