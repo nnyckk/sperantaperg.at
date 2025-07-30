@@ -77,13 +77,13 @@ html {
     --donation-color-hover:          hsl(1, 80%, 45%);
 
     --first-accent-color:            hsl(204, 54%, 48%);
-    --second-accent-color:           hsl(23, 59%, 57%);
-    --third-accent-color:            hsl(130, 32%, 58%);
+    --second-accent-color:           hsl(23, 79%, 57%);
+    --third-accent-color:            hsl(130, 52%, 58%);
 
     /* Hover Colors */
     --first-accent-color-hover:      hsl(204, 54%, 28%);
-    --second-accent-color-hover:     hsl(23, 59%, 37%);
-    --third-accent-color-hover:      hsl(130, 32%, 48%);
+    --second-accent-color-hover:     hsl(23, 79%, 37%);
+    --third-accent-color-hover:      hsl(130, 52%, 48%);
     
     
     /* Base font sizes (clamp for responsiveness) */

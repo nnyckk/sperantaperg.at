@@ -4,6 +4,12 @@
   padding-bottom: 0.5em;
   background-color: var(--second-accent-color);
 }
+.marked-dark {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: var(--second-accent-color-hover);
+}
 
 /* ==============
     Hero Section
@@ -155,8 +161,8 @@
   margin-top: 0.5em;
   font-size: var(--fs-body);
   font-weight: 500;
-  opacity: 0.6;
-  color: #595654;
+  opacity: 0.7;
+  color: var(--small-text-color-dark);
   text-decoration: none;
 
   transition: 0.2s;
