@@ -13,7 +13,7 @@
 header {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(8, 20, 27, .8), rgba(8, 20, 27, .5)),
     url("../img//backgrounds/index_background.jpg") center/cover no-repeat;
   position: relative;
 }
@@ -40,6 +40,7 @@ header {
 .hero p {
   margin: 0.2em auto 1.5em auto;
   font-size: var(--fs-h4);
+  text-transform: uppercase;
 }
 
 /* =============
@@ -117,7 +118,7 @@ header {
   grid-row-end: 2;
   z-index: auto;
 
-  background: linear-gradient( rgba(0, 0, 0, 0.3)),
+  background: linear-gradient( rgba(8, 20, 27, .3)),
   url("../img/hopeyouth.jpeg") center/cover no-repeat;
   position: relative;
 
@@ -130,7 +131,7 @@ header {
   grid-row-end: 2;
   z-index: auto;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.3)),
+  background: linear-gradient( rgba(8, 20, 27, .3)),
   url("../img/kids.jpg") center/cover no-repeat;
   position: relative;
 
@@ -152,7 +153,7 @@ header {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(8, 20, 27, 1);
   opacity: 0;
 
   transition: opacity .3s;
@@ -239,10 +240,10 @@ header {
     z-index: 1;
 }
 .donation .donation-btn {
-    background-color: #e53935;
+    background-color: var(--donation-color);
 }
 .donation .donation-btn:hover {
-    background-color: #c62828;
+    background-color: var(--donation-color-hover);
 }
 .donation .donation-background-art img {
     position: absolute;
@@ -311,6 +312,14 @@ header {
 }
 
 @media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: var(--fs-h2);
+  }
+  .hero p {
+    font-size: var(--fs-h6);
+  }
+
   .departments .departments-hopeyouth {
     grid-column-start: 1;
     grid-column-end: 2;

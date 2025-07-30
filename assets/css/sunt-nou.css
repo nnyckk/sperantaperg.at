@@ -21,7 +21,7 @@
     Hero Section
    ============== */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(8, 20, 27, .8), rgba(8, 20, 27, .5)),
     url("../img//backgrounds/sunt_nou_background.jpg") center/cover no-repeat;
 
   display: flex;
@@ -40,6 +40,7 @@
 .hero p {
   margin: 0.2em auto 1.5em auto;
   font-size: var(--fs-h4);
+  text-transform: uppercase;
 }
 
 /* ====================
@@ -50,9 +51,10 @@
   line-height: var(--lh-heading);
   margin-bottom: 0.5em;
 }
-.first-time .first-time-subtitle {
-  font-size: var(--fs-h5);
+.first-time .first-time-subtitle h2 {
+  font-size: var(--fs-h3);
   line-height: var(--lh-heading-small);
+  font-weight: 500;
 }
 .first-time .first-time-p {
   max-width: 100%;
@@ -81,9 +83,6 @@
 /* =============
     Visit Times
    ============= */
-/* .service-times {
-  padding-top: 0em !important;
-} */
 .service-times .service-times-title {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -134,9 +133,9 @@
   .first-time .first-time-title {
     text-align: left;
   }
-  .first-time .first-time-subtitle {
+  .first-time .first-time-subtitle h2 {
     text-align: left;
-    font-size: var(--fs-body);
+    font-size: var(--fs-h4);
   }
   .question .container-item-wrapper:nth-child(odd) {
     flex-direction: column-reverse;
@@ -153,6 +152,17 @@
 }
 
 @media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: var(--fs-h2);
+  }
+  .hero p {
+    font-size: var(--fs-h6);
+  }
+  .hero {
+    padding: 3em 0 !important;
+  }
+
   .question .container-item-wrapper {
     gap: 0.5em;
   }

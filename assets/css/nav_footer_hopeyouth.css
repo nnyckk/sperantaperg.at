@@ -119,8 +119,8 @@
   border: 1px solid var(--white-text-color);
 }
 #donation-btn:hover {
-  background-color: #c62828;
-  border: 1px solid #c62828;
+  background-color: var(--donation-color-hover);
+  border: 1px solid var(--donation-color-hover);
   color: var(--white-text-color);
 }
 .nav-links .icon-design {
@@ -167,7 +167,7 @@
   margin-bottom: 0.8em;
 }
 .footer-section ul li a {
-  color: #b2aeaa;
+  color: var(--small-text-color-dark);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -193,12 +193,12 @@
 
   margin-top: 2em;
   font-size: 0.8rem;
-  border-top: 1px solid #b2aeaa;
+  border-top: 1px solid var(--small-text-color-dark);
   padding-top: 0.8em;
-  color: #b2aeaa;
+  color: var(--small-text-color-dark);
 }
 .footer-bottom a {
-  color: #b2aeaa;
+  color: var(--small-text-color-dark);
 }
 .footer-bottom a:hover {
   text-decoration: underline;
@@ -269,7 +269,7 @@
   .dropdown-line {
     display: block;
     width: 100%;
-    background-color: #b2aeaa;
+    background-color: var(--small-text-color-dark);
     opacity: 0.5;
     margin-top: 1em;
   }
@@ -283,7 +283,7 @@
     font-weight: bold;
     font-size: var(--fs-h5);
     padding: 0.5em 0 0.8em;
-    color: #b2aeaa;
+    color: var(--small-text-color-dark);
   }
   .dropdown-title::before {
     display: none;
@@ -307,17 +307,18 @@
   .dropdown li a:hover {
     color: var(--second-accent-color) !important;
   }
-  #donation-btn:hover {
-    background-color: #c62828;
-    border: none;
-  }
   #donation-btn {
     margin-top: 1em;
     display: inline-block;
     padding: 0.2em 0.5em;
-    background-color: #e53935;
+    background-color: var(--donation-color);
     border: none;
   }
+  #donation-btn:hover {
+    background-color: var(--donation-color-hover);
+    border: none;
+  }
+  
 }
 @media (max-width: 800px) {
   .logo img {
