@@ -94,8 +94,8 @@
 }
 
 .neighbour-grid-item {
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(11, 1fr);
 }
 .neighbour .image-cell img {
   border: 5px solid var(--white-text-color);
@@ -115,15 +115,15 @@
   z-index: 2;
 }
 .neighbour .neighbour-picture3 {
-  grid-column-start: 6;
-  grid-column-end: 10;
-  grid-row-start: 5;
+  grid-column-start: 7;
+  grid-column-end: 11;
+  grid-row-start: 4;
   grid-row-end: 10;
   z-index: 3;
 }
 .neighbour .neighbour-picture4 {
   grid-column-start: 2;
-  grid-column-end: 7;
+  grid-column-end: 8;
   grid-row-start: 7;
   grid-row-end: 11;
   z-index: 4;
