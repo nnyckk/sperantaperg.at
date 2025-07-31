@@ -46,17 +46,15 @@
 .welcome .welcome-p p {
   margin: 1.2em 0 1.2em;
 }
-
 .container-buttons-group p {
   font-size: var(--fs-h3);
   font-weight: 700;
   line-height: var(--lh-heading-small);
   margin: 0em 0 0.4em;
 }
-
 .buttons-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   gap: 1em;
 }
@@ -188,5 +186,9 @@
   }
   .way {
     max-width: 100%;
+  }
+  .buttons-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
