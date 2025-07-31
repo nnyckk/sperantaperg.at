@@ -5,12 +5,13 @@
   height: 100vh;
 }
 /* URL ACTIVE (JS) */
-#nav-menu a.active {
+#nav-menu a.active:not(:last-child) {
   color: var(--first-accent-color);
 }
 .dropdown-line {
   display: none;
 }
+
 
 /* ================
     Navigation Bar
@@ -225,7 +226,7 @@
   #navigationWrapper.scrolled {
     padding: 0.5em 2em;
   }
-  #nav-menu a.active {
+  #nav-menu a.active:not(:last-child) {
     color: var(--first-accent-color) !important;
   }
   .logo img {

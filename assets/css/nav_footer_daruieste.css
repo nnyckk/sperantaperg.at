@@ -5,10 +5,10 @@
   height: 100vh;
 }
 /* URL ACTIVE (JS) */
-#nav-menu .btn.active {
+/* #nav-menu .btn.active {
   color: var(--white-text-color);
   background-color: var(--donation-color-hover);
-}
+} */
 .dropdown-line {
   display: none;
 }
@@ -226,9 +226,9 @@
   #navigationWrapper.scrolled {
     padding: 0.5em 2em;
   }
-  #nav-menu a.active {
-    color: var(--first-accent-color) !important;
-  }
+  /* #nav-menu .btn.active {
+    color: var(--white-text-color) !important;
+  } */
   .logo img {
     width: 17em;
   }
