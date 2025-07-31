@@ -148,10 +148,16 @@
   margin: 1.5em;
 }
 .footer-section a {
-  color: var(--white-text-color);
+  color: var(--small-text-color-dark);
+  transition: 0.2s;
+}
+.footer-section p {
+  color: var(--small-text-color-dark);
+  transition: 0.2s;
 }
 .footer-section a:hover {
   text-decoration: underline;
+  color: var(--white-text-color);
 }
 .footer-section h4 {
   font-size: var(--fs-body);
@@ -168,7 +174,7 @@
 .footer-section ul li a {
   color: var(--small-text-color-dark);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: 0.2s;
 }
 .footer-section ul li a:hover {
   color: var(--white-text-color);
