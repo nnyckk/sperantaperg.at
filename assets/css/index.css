@@ -1,4 +1,3 @@
-
 .marked {
   display: inline-block;
   line-height: 0em;
@@ -13,7 +12,7 @@
 header {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(8, 20, 27, .8), rgba(8, 20, 27, .5)),
+  background: linear-gradient(rgba(8, 20, 27, 0.8), rgba(8, 20, 27, 0.5)),
     url("../img//backgrounds/index_background.jpg") center/cover no-repeat;
   position: relative;
 }
@@ -60,32 +59,32 @@ header {
   max-width: 100%;
 }
 .service-times-grid-item {
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 .service-times .image-cell img {
-    border: 5px solid var(--white-text-color);
+  border: 5px solid var(--white-text-color);
 }
-.service-times .service-times-picture1{
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 6;
-    z-index: 1;
+.service-times .service-times-picture1 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  z-index: 1;
 }
-.service-times .service-times-picture2{
-    grid-column-start: 5;
-    grid-column-end: 10;
-    grid-row-start: 3;
-    grid-row-end: 6;
-    z-index: 2;
+.service-times .service-times-picture2 {
+  grid-column-start: 5;
+  grid-column-end: 10;
+  grid-row-start: 3;
+  grid-row-end: 6;
+  z-index: 2;
 }
-.service-times .service-times-picture3{
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 8;
-    z-index: 3;
+.service-times .service-times-picture3 {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  z-index: 3;
 }
 
 /* =========
@@ -118,8 +117,8 @@ header {
   grid-row-end: 2;
   z-index: auto;
 
-  background: linear-gradient( rgba(8, 20, 27, .3)),
-  url("../img/hopeyouth.jpeg") center/cover no-repeat;
+  background: linear-gradient(rgba(8, 20, 27, 0.3)),
+    url("../img/hopeyouth.jpeg") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -131,8 +130,8 @@ header {
   grid-row-end: 2;
   z-index: auto;
 
-  background: linear-gradient( rgba(8, 20, 27, .3)),
-  url("../img/kids.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(8, 20, 27, 0.3)),
+    url("../img/kids.jpg") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -147,7 +146,7 @@ header {
   color: var(--white-text-color);
   font-size: var(--fs-h2);
 
-  transition: .3s;
+  transition: 0.3s;
 }
 .overlay {
   position: absolute;
@@ -156,8 +155,8 @@ header {
   background-color: rgba(8, 20, 27, 1);
   opacity: 0;
 
-  transition: opacity .3s;
-  border-radius: .5em;
+  transition: opacity 0.3s;
+  border-radius: 0.5em;
 }
 /* Hover effects */
 .departments .departments-kids:hover .departments-title,
@@ -171,19 +170,18 @@ header {
   opacity: 1;
 }
 
-
 /* ========
     Sermon
    ======== */
 .sermon .text-headline .subtitle {
-    font-size: var(--fs-h2);
-    line-height: var(--lh-heading-small);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading-small);
 }
 .sermon .sermon-title .title {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 .sermon .sermon-p p {
-    margin: 1.2em 0 1.2em;
+  margin: 1.2em 0 1.2em;
 }
 .sermon .buttons-group {
   display: flex;
@@ -209,62 +207,42 @@ header {
   overflow: hidden;
 }
 .donation .donation-container {
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 .donation .donation-title {
-    /* max-width: 25em; */
-    font-size: var(--fs-h3);
-    line-height: var(--lh-heading);
+  /* max-width: 25em; */
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
 }
 .donation .small-text-light {
-    max-width: 100%;
-    margin-bottom: 0.5em;
+  max-width: 100%;
+  margin-bottom: 0.5em;
 }
 .donation .donation-p p {
   max-width: 100%;
   margin: 1.2em 0 1.2em;
 }
 .donation .text-headline .subtitle {
-    font-size: var(--fs-h4);
-    line-height: var(--lh-heading-small);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading-small);
 }
 .donation .donation-container-button {
   align-items: center;
 }
 .donation .donation-container-button .text-content {
-    z-index: 1;
+  z-index: 1;
 }
 .donation .donation-container-button a {
-    text-align: center;
-    width: 50%;
-    z-index: 1;
+  text-align: center;
+  width: 50%;
+  z-index: 1;
 }
-.donation .donation-btn {
-    background-color: var(--donation-color);
-}
-.donation .donation-btn:hover {
-    background-color: var(--donation-color-hover);
-}
-.donation .donation-background-art img {
-    position: absolute;
-    top: -250%;
-    rotate: -15deg;
-    right: -10%;
-    width: 270%;
-    z-index: 0;
-    opacity: .1;
-    pointer-events: none;
-}
-
-
-
-
 
 @media (max-width: 1025px) {
   .service-times .service-times-title {
-   text-align: left;
+    text-align: left;
   }
-  
+
   /* Departments grid in two rows */
   .departments .departments-grid-item {
     grid-template-columns: 1fr;
@@ -276,7 +254,7 @@ header {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-    
+
     min-height: 20em;
   }
   .departments .departments-kids {
@@ -284,35 +262,22 @@ header {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    
+
     min-height: 20em;
   }
-
 
   .sermon .container-item-wrapper {
     flex-direction: column-reverse;
   }
   .donation .donation-title {
     text-align: left;
-   }
+  }
   .donation .donation-container-button {
     align-items: flex-start;
   }
-  
-  .donation .donation-background-art img {
-    position: absolute;
-    top: -700%;
-    rotate: -15deg;
-    right: -10%;
-    width: 170%;
-    z-index: 0;
-    opacity: .1;
-    pointer-events: none;
-}
 }
 
 @media (max-width: 600px) {
-
   .hero h1 {
     font-size: var(--fs-h2);
   }
@@ -325,7 +290,7 @@ header {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-    
+
     min-height: 15em;
   }
   .departments .departments-kids {
@@ -333,7 +298,7 @@ header {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    
+
     min-height: 15em;
   }
   .sermon .buttons-group {
@@ -343,20 +308,8 @@ header {
   .donation .donation-container-button a {
     width: 100%;
     text-align: center;
- }
+  }
   .donation .donation-container-button {
     align-items: center;
   }
-
-  .donation .donation-background-art img {
-    position: absolute;
-    top: -400%;
-    rotate: -15deg;
-    right: -10%;
-    width: 150%;
-    z-index: 0;
-    opacity: .1;
-    pointer-events: none;
-}
-
 }

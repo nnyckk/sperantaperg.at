@@ -73,8 +73,8 @@ html {
     --small-text-color-light:        hsl(30, 5%, 35%);
     --small-text-color-dark:         hsl(30, 5%, 65%);
 
-    --donation-color:                hsl(1, 80%, 55%);
-    --donation-color-hover:          hsl(1, 80%, 45%);
+    --donation-color:                hsl(5, 71%, 54%);
+    --donation-color-hover:          hsl(5, 71%, 44%);
 
     --first-accent-color:            hsl(204, 54%, 48%);
     --second-accent-color:           hsl(23, 79%, 57%);
