@@ -5,7 +5,7 @@
   height: 100vh;
 }
 /* URL ACTIVE (JS) */
-#nav-menu a.active:not(:last-of-type) {
+#nav-menu a.active:not(.no-active) {
   color: var(--first-accent-color);
 }
 .dropdown-line {
