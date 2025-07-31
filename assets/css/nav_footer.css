@@ -226,7 +226,7 @@
   #navigationWrapper.scrolled {
     padding: 0.5em 2em;
   }
-  #nav-menu a.active:not(:last-child) {
+  #nav-menu a.active:not(.no-active) {
     color: var(--first-accent-color) !important;
   }
   .logo img {
