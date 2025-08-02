@@ -24,17 +24,7 @@
 /* =======
     About
    ======= */
-.about .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
-}
-.about .about-title .title {
-  margin-bottom: 1em;
-}
-.about .about-p p {
-  margin: 1.2em 0 1.2em;
-  line-height: var(--lh-big-text);
-}
+
 
 /* ========
     Vision
@@ -42,16 +32,7 @@
 .vision .vision-title {
   margin-bottom: 2em;
 }
-.vision .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
-}
-.vision .vision-title .title {
-  margin-bottom: 1em;
-}
-.vision .about-p p {
-  margin: 1.2em 0 1.2em;
-}
+
 
 .vision .grid-item {
   grid-template-columns: repeat(3, 1fr);
@@ -120,16 +101,6 @@
    .credo .credo-title {
     margin-bottom: 2em;
    }
-  .credo .text-headline .subtitle {
-    font-size: var(--fs-h2);
-    line-height: var(--lh-heading-small);
-  }
-  .credo .credo-title .title {
-    margin-bottom: 1em;
-  }
-  .credo .about-p p {
-    margin: 1.2em 0 1.2em;
-  }
 
   .accordion {
     width: 100%;
@@ -146,6 +117,7 @@
     color: var(--first-accent-color);
     text-transform:  uppercase;
     font-size: var(--fs-h5);
+    font-weight: 700;
     background: transparent;
     text-align: left;
     border: none;

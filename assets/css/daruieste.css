@@ -15,23 +15,15 @@
 /* =============
     Why we give
    ============= */
-.welcome .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
+.welcome .subtitle-big {
   margin-bottom: 0.4em;
   display: block;
 }
-.welcome .welcome-title .title {
-  margin-bottom: 1em;
-}
-.welcome .welcome-p p {
-  margin: 1.2em 0 1.2em;
-}
 .container-buttons-group p {
+  line-height: var(--lh-heading-small);
   font-size: var(--fs-h3);
   font-weight: 700;
-  line-height: var(--lh-heading-small);
-  margin: 0em 0 0.4em;
+  margin-bottom: 0.5em;
 }
 .buttons-group {
   display: flex;
@@ -46,34 +38,13 @@
 .communion {
   background-color: var(--donation-color) !important;
 }
-.communion .text-headline .subtitle {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-heading-small);
-}
-.communion .communion-title .title {
-  margin-bottom: 1em;
-  font-size: var(--fs-small);
+.communion .title {
   color: var(--white-text-color);
-  font-weight: 400;
-}
-.communion .question-p p {
-  margin: 1.2em 0 1.2em;
 }
 
 /* ===========
     Neighbour
    =========== */
-.neighbour .text-headline .subtitle {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-heading-small);
-}
-.neighbour .neighbour-title .title {
-  margin-bottom: 1em;
-}
-.neighbour .neighbour-p p {
-  margin: 1.2em 0 1.2em;
-}
-
 .neighbour-grid-item {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(11, 1fr);
@@ -156,12 +127,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
   .hero {
     padding: 3em 0 !important;
   }
