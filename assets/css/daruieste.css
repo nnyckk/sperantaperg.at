@@ -45,6 +45,15 @@
 /* ===========
     Neighbour
    =========== */
+.neighbour .youtube-btn {
+  background-color: transparent;
+  border: 2px solid var(--first-accent-color);
+  color: var(--first-accent-color);
+}
+.neighbour .youtube-btn:hover {
+  border: 2px solid var(--first-accent-color-hover);
+  color: var(--white-text-color);
+}
 .neighbour-grid-item {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(11, 1fr);
@@ -84,7 +93,6 @@
 /* ===========
     Oportunity
    =========== */
-
 .oportunity .oportunity-title {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading);
