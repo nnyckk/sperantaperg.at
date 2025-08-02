@@ -17,26 +17,7 @@
 .hero {
   background: linear-gradient( rgba(20, 11, 5, .7), rgba(20, 11, 5, .5)),
     url("../img//backgrounds/hopeyouth_background.JPG") center/cover no-repeat;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end !important;
-
-  height: 50vh;
-  width: 100%;
-
-  text-align: center;
 }
-.hero h1 {
-  font-size: var(--fs-h1);
-  text-transform: uppercase;
-}
-.hero p {
-  margin: 0.2em auto 1.5em auto;
-  font-size: var(--fs-h4);
-  text-transform: uppercase;
-}
-
 /* =============
     Visit Times
    ============= */

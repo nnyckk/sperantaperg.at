@@ -83,7 +83,7 @@ html {
     /* Hover Colors */
     --first-accent-color-hover:      hsl(204, 54%, 28%);
     --second-accent-color-hover:     hsl(23, 79%, 37%);
-    --third-accent-color-hover:      hsl(130, 52%, 48%);
+    --third-accent-color-hover:      hsl(130, 52%, 38%);
     
     
     
@@ -275,6 +275,25 @@ a {
 .flex-start {
     display: flex;
     justify-content: flex-start;
+}
+.hero-subpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end !important;
+  
+    height: 50vh;
+    width: 100%;
+  
+    text-align: center;
+  }
+.hero-title {
+    font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+.hero-subtitle {
+    margin: 0.2em auto 1.5em auto;
+    font-size: var(--fs-h4);
+    text-transform: uppercase;
 }
 .text-headline {
     font-weight: 700;

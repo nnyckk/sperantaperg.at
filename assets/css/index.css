@@ -32,15 +32,6 @@ header {
   color: var(--white-text-color);
   text-align: center;
 }
-.hero h1 {
-  font-size: var(--fs-h1);
-  text-transform: uppercase;
-}
-.hero p {
-  margin: 0.2em auto 1.5em auto;
-  font-size: var(--fs-h4);
-  text-transform: uppercase;
-}
 
 /* =============
     Visit Times
