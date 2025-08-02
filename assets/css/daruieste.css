@@ -127,9 +127,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding: 3em 0 !important;
-  }
   .way {
     max-width: 100%;
   }

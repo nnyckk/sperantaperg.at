@@ -44,10 +44,7 @@ header {
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
-  margin-bottom: 0.2em;
-}
-.service-times .service-times-p {
-  max-width: 100%;
+  margin-bottom: 0.3em;
 }
 .service-times-grid-item {
   grid-template-columns: repeat(9, 1fr);
@@ -81,16 +78,6 @@ header {
 /* =========
     Welcome
    ========= */
-.welcome .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
-}
-.welcome .welcome-title .title {
-  margin-bottom: 1em;
-}
-.welcome .welcome-p p {
-  margin: 1.2em 0 1.2em;
-}
 
 /* =============
     Departments
@@ -164,16 +151,6 @@ header {
 /* ========
     Sermon
    ======== */
-.sermon .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
-}
-.sermon .sermon-title .title {
-  margin-bottom: 1em;
-}
-.sermon .sermon-p p {
-  margin: 1.2em 0 1.2em;
-}
 .sermon .buttons-group {
   display: flex;
   flex-direction: row;
@@ -186,34 +163,18 @@ header {
 .sermon .youtube-btn:hover {
   border: 2px solid var(--first-accent-color-hover);
 }
-.sermon .sermon-p .marked {
-  font-weight: 700;
-  font-size: var(--fs-h5);
-}
 
 /* ===========
     Donations
    =========== */
-.donation .big-container {
-  overflow: hidden;
-}
 .donation .donation-container {
-  padding-bottom: 2em;
+  margin-bottom: 1em;
 }
 .donation .donation-title {
-  /* max-width: 25em; */
   font-size: var(--fs-h3);
   line-height: var(--lh-heading);
 }
-.donation .small-text-light {
-  max-width: 100%;
-  margin-bottom: 0.5em;
-}
-.donation .donation-p p {
-  max-width: 100%;
-  margin: 1.2em 0 1.2em;
-}
-.donation .text-headline .subtitle {
+.donation .text-headline {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
 }
@@ -269,13 +230,6 @@ header {
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
-
   .departments .departments-hopeyouth {
     grid-column-start: 1;
     grid-column-end: 2;

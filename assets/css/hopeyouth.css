@@ -15,7 +15,7 @@
     Hero Section
    ============== */
 .hero {
-  background: linear-gradient( rgba(20, 11, 5, .7), rgba(20, 11, 5, .5)),
+  background: linear-gradient(rgba(20, 11, 5, 0.7), rgba(20, 11, 5, 0.5)),
     url("../img//backgrounds/hopeyouth_background.JPG") center/cover no-repeat;
 }
 /* =============
@@ -29,10 +29,7 @@
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
-  margin-bottom: 0.2em;
-}
-.service-times .service-times-p {
-  max-width: 100%;
+  margin-bottom: 0.3em;
 }
 .service-times-grid-item {
   grid-template-columns: repeat(9, 1fr);
@@ -66,24 +63,13 @@
 /* =========
     Welcome
    ========= */
-.welcome .text-headline .subtitle {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-heading-small);
-}
-.welcome .welcome-title .title {
-  margin-bottom: 1em;
-}
-.welcome .welcome-p p {
-  margin: 1.2em 0 1.2em;
-}
-
 
 /* ========
     Leader
    ======== */
 
 .leader-title .title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h3);
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1em;
@@ -153,27 +139,14 @@
 }
 /* Dark Mode Card Styling */
 .dark-contact svg {
-  opacity: .7;
+  opacity: 0.7;
   fill: var(--small-text-color-dark);
-  transition: .2s
+  transition: 0.2s;
 }
 .dark-contact:hover svg {
   fill: var(--second-accent-color);
   opacity: 1;
 }
-
-
-
-.leader-background-art img {
-  position: absolute;
-  bottom: -25%;
-  right: -20%;
-  width: 100%;
-  z-index: 0;
-  opacity: 1;
-  pointer-events: none;
-}
-
 
 /* =========
     Gallery
@@ -315,17 +288,6 @@
 }
 
 @media (max-width: 600px) {
-
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
-  .hero {
-    padding: 3em 0 !important;
-  }
-  
   .leader-grid {
     grid-template-columns: repeat(1, 1fr);
   }

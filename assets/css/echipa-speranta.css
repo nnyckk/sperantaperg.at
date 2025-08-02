@@ -33,19 +33,12 @@
 #pastor-text {
   flex: 1.3;
 }
-.pastor .text-headline .subtitle {
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading-small);
-}
 .pastor .pastor-title .title {
   color: var(--first-accent-color);
   margin-top: 0.2em;
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
   text-transform: uppercase;
-}
-.pastor .pastor-p p {
-  margin: 1.2em 0 1.2em;
 }
 .pastor-contact-items {
   display: flex;
@@ -214,15 +207,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
-  .hero {
-    padding: 3em 0 !important;
-  }
   .team-card-text h3 {
     font-size: var(--fs-h3);
   }

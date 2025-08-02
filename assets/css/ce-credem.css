@@ -175,16 +175,7 @@
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
-  .hero {
-    padding: 3em 0 !important;
-  }
-
+  
   .vision .grid-item {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);

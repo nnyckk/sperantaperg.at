@@ -7,20 +7,20 @@
 .marked-dark {
   display: inline-block;
   line-height: 0em;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
   background-color: var(--third-accent-color-hover);
 }
 
 /* ==============
-      Hero Section
-     ============== */
+    Hero Section
+   ============== */
 .hero {
-  background: linear-gradient( rgba(12, 24, 14, .7), rgba(12, 24, 14, .5)),
+  background: linear-gradient(rgba(12, 24, 14, 0.7), rgba(12, 24, 14, 0.5)),
     url("../img//backgrounds/kids_background.jpg") center/cover no-repeat;
 }
 /* =============
-      Visit Times
-     ============= */
+    Visit Times
+   ============= */
 .service-times .service-times-title {
   font-size: var(--fs-h2);
   line-height: var(--lh-heading);
@@ -29,10 +29,7 @@
 .service-times .service-times-subtitle {
   font-size: var(--fs-h4);
   line-height: var(--lh-heading-small);
-  margin-bottom: 0.2em;
-}
-.service-times .service-times-p {
-  max-width: 100%;
+  margin-bottom: 0.3em;
 }
 .service-times-grid-item {
   grid-template-columns: repeat(9, 1fr);
@@ -64,28 +61,18 @@
 }
 
 /* =========
-      Welcome
-     ========= */
-.welcome .text-headline .subtitle {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-heading-small);
-}
-.welcome .welcome-title .title {
-  margin-bottom: 1em;
-}
-.welcome .welcome-p p {
-  margin: 1.2em 0 1.2em;
-}
+    Welcome
+   ========= */
 
 /* ========
-      Leader
-     ======== */
+    Leader
+   ======== */
 .leader {
   overflow: hidden;
 }
 
 .leader-title .title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h3);
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1em;
@@ -156,9 +143,9 @@
 }
 /* Dark Mode Card Styling */
 .dark-contact svg {
-  opacity: .7;
+  opacity: 0.7;
   fill: var(--small-text-color-dark);
-  transition: .2s
+  transition: 0.2s;
 }
 .dark-contact:hover svg {
   fill: var(--third-accent-color);
@@ -315,15 +302,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: var(--fs-h2);
-  }
-  .hero p {
-    font-size: var(--fs-h6);
-  }
-  .hero {
-    padding: 3em 0 !important;
-  }
 
   .leader-grid {
     grid-template-columns: repeat(1, 1fr);

@@ -393,4 +393,7 @@ a {
     .hero-subtitle {
       font-size: var(--fs-h6);
     }
+    .hero {
+        padding: 3em 0 !important;
+      }
   }
