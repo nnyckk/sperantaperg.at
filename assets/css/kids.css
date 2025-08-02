@@ -55,30 +55,30 @@
 }
 .service-times-grid-item {
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 .service-times .image-cell img {
   border: 5px solid var(--white-text-color);
 }
 .service-times .service-times-picture1 {
   grid-column-start: 1;
-  grid-column-end: 6;
+  grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 6;
   z-index: 1;
 }
 .service-times .service-times-picture2 {
-  grid-column-start: 5;
+  grid-column-start: 6;
   grid-column-end: 10;
   grid-row-start: 3;
-  grid-row-end: 6;
+  grid-row-end: 8;
   z-index: 2;
 }
 .service-times .service-times-picture3 {
   grid-column-start: 2;
-  grid-column-end: 6;
-  grid-row-start: 5;
-  grid-row-end: 8;
+  grid-column-end: 7;
+  grid-row-start: 6;
+  grid-row-end: 9;
   z-index: 3;
 }
 
