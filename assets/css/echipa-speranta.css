@@ -10,7 +10,7 @@
    ============== */
 .hero {
   background: linear-gradient(rgba(8, 20, 27, .8), rgba(8, 20, 27, .5)),
-    url("../img//backgrounds/echipa_speranta_background.jpg") center/cover no-repeat;
+    url("../img//backgrounds/echipa_speranta_background.webp") center/cover no-repeat;
 }
 
 /* ========

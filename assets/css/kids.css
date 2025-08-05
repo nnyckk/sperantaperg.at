@@ -16,7 +16,7 @@
    ============== */
 .hero {
   background: linear-gradient(rgba(12, 24, 14, 0.7), rgba(12, 24, 14, 0.5)),
-    url("../img//backgrounds/kids_background.jpg") center/cover no-repeat;
+    url("../img//backgrounds/kids_background.webp") center/cover no-repeat;
 }
 /* =============
     Visit Times
