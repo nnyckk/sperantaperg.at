@@ -100,7 +100,7 @@
   z-index: auto;
 
   background: linear-gradient(rgba(8, 20, 27, 0.3)),
-    url("../img/hopeyouth.jpeg") center/cover no-repeat;
+    url("../img/index/hopeyouth_button.webp") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -113,7 +113,7 @@
   z-index: auto;
 
   background: linear-gradient(rgba(8, 20, 27, 0.3)),
-    url("../img/kids.jpg") center/cover no-repeat;
+    url("../img/index/kids_button.webp") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
