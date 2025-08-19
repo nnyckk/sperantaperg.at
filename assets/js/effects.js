@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const topImg = $this.offset().top;
       const bottomWindow = $(window).scrollTop() + $(window).height();
 
-      if (bottomWindow > topImg + 75 && !$this.hasClass("visible")) {
+      if (bottomWindow > topImg + 60 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 200); // DELAY;
+        }, index * 180); // DELAY;
       }
     });
   }
