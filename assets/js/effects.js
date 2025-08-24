@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bottomWindow > topImg + 130 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 130); // DELAY;
+        }, index * 100); // DELAY;
       }
     });
   }
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bottomWindow > topImg + 60 && !$this.hasClass("visible")) {
         setTimeout(() => {
           $this.addClass("visible");
-        }, index * 180); // DELAY;
+        }, index * 130); // DELAY;
       }
     });
   }
