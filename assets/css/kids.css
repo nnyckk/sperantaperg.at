@@ -263,8 +263,18 @@
   background-color: var(--third-accent-color-hover);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 1024px) {
+
+  .service-times .service-times-title {
+    text-align: left;
+  }
+
+  .leader-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+
   .carousel-slide {
     flex: 0 0 85%;
   }
@@ -302,6 +312,9 @@
 }
 
 @media (max-width: 600px) {
+  .leader-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .carousel-slide {
     flex: 0 0 90%;
     padding: 0 0.5rem;
