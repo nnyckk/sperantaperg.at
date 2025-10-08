@@ -165,7 +165,6 @@
 /* ==================
     Gallery Carousel
    ==================*/
-
 /* Carousel Container */
 .carousel-container {
   position: relative;
@@ -208,7 +207,7 @@
   margin-top: 1.5rem;
 }
 
-/* Dots Indicators */
+/* Dots Indicators - Center (GREEN THEME) */
 .carousel-dots {
   display: flex;
   gap: 0.5rem;
@@ -236,7 +235,7 @@
   background-color: var(--third-accent-color-hover);
 }
 
-/* Navigation Buttons*/
+/* Navigation Buttons - Right Bottom (GREEN THEME) */
 .carousel-nav-buttons {
   display: flex;
   gap: 0.5rem;
@@ -264,21 +263,14 @@
   background-color: var(--third-accent-color-hover);
 }
 
-@media (max-width: 1025px) {
-  .service-times .service-times-title {
-    text-align: left;
-  }
-
-  .leader-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 100%;
-  }
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
   .carousel-slide {
-    flex: 0 0 80%;
+    flex: 0 0 85%;
   }
 
   .carousel-slide img {
-    height: 600px;
+    height: 550px;
   }
 
   .carousel-controls {
@@ -298,16 +290,13 @@
 }
 
 @media (max-width: 600px) {
-  .leader-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .carousel-slide {
-    flex: 0 0 80%;
+    flex: 0 0 90%;
     padding: 0 0.5rem;
   }
 
   .carousel-slide img {
-    height: 500px;
+    height: 380px;
   }
 
   .carousel-btn {
