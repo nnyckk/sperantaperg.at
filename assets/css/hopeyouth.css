@@ -275,6 +275,8 @@
   }
 
   .carousel-nav-buttons {
+    display: flex;
+    justify-content: space-between;
     order: 2;
     margin-left: 0;
   }
@@ -310,5 +312,12 @@
 
   .carousel-dot.active {
     width: 20px;
+  }
+  .carousel-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 .5rem;
   }
 }
