@@ -6,121 +6,90 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButton = document.querySelector(".carousel-btn-next");
     const dots = document.querySelectorAll(".carousel-dot");
   
-    // We have 3 clones at start and 3 at end
-    const clonesAtStart = 3;
-    const clonesAtEnd = 3;
-    const totalSlides = slides.length - clonesAtStart - clonesAtEnd; // Real slides only
+    // Configuration
+    const CLONES_COUNT = 3;
+    const TOTAL_REAL_SLIDES = slides.length - (CLONES_COUNT * 2);
+    
     let currentIndex = 0;
     let isTransitioning = false;
   
-    // Get slide width percentage based on screen size
+    // Get slide width based on screen size
     function getSlideWidth() {
-      if (window.innerWidth <= 600) return 90; // Mobile: 90% = shows full image + 5% peek of next
-      if (window.innerWidth <= 1024) return 85; // Tablet: 85% = shows full image + 10% peek
-      return 45; // Desktop: 2 full slides (90%) + 10% of third
+      const width = window.innerWidth;
+      if (width <= 600) return 90;
+      if (width <= 1024) return 85;
+      return 45;
     }
   
-    // Set initial position (start at first real slide, which is after the clones)
-    function setInitialPosition() {
+    // Move to position (with or without animation)
+    function moveToPosition(index, animate = true) {
       const slideWidth = getSlideWidth();
-      // Start at position after the 3 clones
-      const position = clonesAtStart * slideWidth;
+      const position = (index + CLONES_COUNT) * slideWidth;
+      
+      track.style.transition = animate ? "transform 0.5s ease-in-out" : "none";
       track.style.transform = `translateX(-${position}%)`;
-      track.style.transition = "none";
-    }
-  
-    setInitialPosition();
-  
-    // Update carousel position
-    function updateCarousel(useTransition = true) {
-      const slideWidth = getSlideWidth();
-  
-      if (!useTransition) {
-        track.style.transition = "none";
-        // Force reflow to ensure the no-transition is applied
+      
+      // Force reflow if no animation
+      if (!animate) {
         void track.offsetHeight;
-      } else {
-        track.style.transition = "transform 0.5s ease-in-out";
       }
+    }
   
-      // Position calculation: (currentIndex + clonesAtStart) to account for clones at the beginning
-      const position = (currentIndex + clonesAtStart) * slideWidth;
-      track.style.transform = `translateX(-${position}%)`;
-  
-      // Update dots
+    // Update active dot
+    function updateDots() {
       dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
       });
     }
   
-    // Handle the infinite loop jump
-    track.addEventListener("transitionend", () => {
-      // If we're past the last real slide (showing clones at end)
-      if (currentIndex >= totalSlides) {
-        track.style.transition = "none";
+    // Handle infinite loop wrap-around
+    function handleLoopWrap() {
+      if (currentIndex >= TOTAL_REAL_SLIDES) {
         currentIndex = 0;
-        const slideWidth = getSlideWidth();
-        const position = (currentIndex + clonesAtStart) * slideWidth;
-        track.style.transform = `translateX(-${position}%)`;
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentIndex);
-        });
-        
-        // Force reflow
-        void track.offsetHeight;
+        moveToPosition(currentIndex, false);
+      } else if (currentIndex < 0) {
+        currentIndex = TOTAL_REAL_SLIDES - 1;
+        moveToPosition(currentIndex, false);
       }
-  
-      // If we're before the first real slide (showing clones at start)
-      if (currentIndex < 0) {
-        track.style.transition = "none";
-        currentIndex = totalSlides - 1;
-        const slideWidth = getSlideWidth();
-        const position = (currentIndex + clonesAtStart) * slideWidth;
-        track.style.transform = `translateX(-${position}%)`;
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentIndex);
-        });
-        
-        // Force reflow
-        void track.offsetHeight;
-      }
-  
+      updateDots();
       isTransitioning = false;
-    });
-  
-    // Go to specific slide (from dot click)
-    function goToSlide(index) {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      currentIndex = index;
-      updateCarousel(true);
     }
   
-    // Next slide
+    // Initialize position
+    moveToPosition(currentIndex, false);
+    updateDots();
+  
+    // Navigation functions
+    function goToSlide(index) {
+      if (isTransitioning || index === currentIndex) return;
+      isTransitioning = true;
+      currentIndex = index;
+      moveToPosition(currentIndex, true);
+      updateDots();
+    }
+  
     function nextSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
       currentIndex++;
-      updateCarousel(true);
+      moveToPosition(currentIndex, true);
+      updateDots();
     }
   
-    // Previous slide
     function prevSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
       currentIndex--;
-      updateCarousel(true);
+      moveToPosition(currentIndex, true);
+      updateDots();
     }
   
-    // Button event listeners
+    // Event listeners
+    track.addEventListener("transitionend", handleLoopWrap);
+    
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
   
-    // Dot event listeners
     dots.forEach((dot) => {
       dot.addEventListener("click", function () {
         const slideIndex = parseInt(this.getAttribute("data-slide"));
@@ -128,18 +97,36 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   
+    // Touch/Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+  
+    track.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+  
+    track.addEventListener("touchmove", (e) => {
+      touchEndX = e.touches[0].clientX;
+    });
+  
+    track.addEventListener("touchend", () => {
+      const swipeDistance = touchStartX - touchEndX;
+      
+      if (Math.abs(swipeDistance) > 50) {
+        if (swipeDistance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    });
   
     // Handle window resize
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        // Recalculate position on resize without transition
-        const slideWidth = getSlideWidth();
-        const position = (currentIndex + clonesAtStart) * slideWidth;
-        track.style.transition = "none";
-        track.style.transform = `translateX(-${position}%)`;
-        void track.offsetHeight;
-      }, 250);
+        moveToPosition(currentIndex, false);
+      }, 100);
     });
   });
