@@ -305,7 +305,9 @@
     max-width: 100%;
   }
 
-  /* Gallery adjustments for tablets */
+  .gallery-title-section h2 {
+    font-size: var(--fs-h1);
+  }
   .gallery-wrapper {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -330,10 +332,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  /* Gallery adjustments for mobile */
-  .gallery-title-section h2 {
-    font-size: var(--fs-h2);
-  }
+  
 
   .carousel-slide {
     flex: 0 0 90%;
