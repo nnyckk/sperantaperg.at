@@ -273,12 +273,21 @@
   .carousel-dots {
     order: 1;
   }
-
+  .carousel-btn {
+    min-width: 5rem;
+    min-height: 3rem;
+  }
+  .carousel-nav-buttons svg {
+    width: 42px;
+    height: 42px;
+  }
   .carousel-nav-buttons {
+    order: 2;
     display: flex;
     justify-content: space-between;
-    order: 2;
+    width: 100%;
     margin-left: 0;
+    padding: 0 0.5rem;
   }
 }
 
@@ -286,7 +295,7 @@
   .leader-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   .carousel-slide {
     flex: 0 0 90%;
     padding: 0 0.5rem;
@@ -312,12 +321,5 @@
 
   .carousel-dot.active {
     width: 20px;
-  }
-  .carousel-nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-left: 0;
-    padding: 0 .5rem;
   }
 }
