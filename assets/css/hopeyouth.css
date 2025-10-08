@@ -325,14 +325,16 @@
   .carousel-slide img {
     height: 650px;
   }
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 @media (max-width: 600px) {
   .leader-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-
-  
 
   .carousel-slide {
     flex: 0 0 90%;

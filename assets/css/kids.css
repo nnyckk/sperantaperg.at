@@ -322,7 +322,7 @@
   .gallery-title-section h2 {
     font-size: var(--fs-h1);
   }
-  
+
   .gallery-wrapper {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -339,6 +339,10 @@
 
   .carousel-slide img {
     height: 650px;
+  }
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
   }
 }
 
