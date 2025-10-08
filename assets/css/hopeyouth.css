@@ -316,7 +316,7 @@
   }
 
   .carousel-slide img {
-    height: 550px;
+    height: 600px;
   }
 }
 
@@ -331,7 +331,7 @@
   }
 
   .carousel-slide {
-    flex: 0 0 85%;
+    flex: 0 0 90%;
     padding: 0 0.3rem;
   }
 
