@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const width = window.innerWidth;
       if (width <= 600) return 90;
       if (width <= 1024) return 85;
-      return 50; // Desktop: exactly 2 slides visible (50% each)
+      return 45; // Desktop: 2 full slides (90%) + 10% of third
     }
   
     // Move to position (with or without animation)
