@@ -128,39 +128,62 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   
-    // Touch/swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let touchStartTime = 0;
+   // --- Swipe / Drag support for mobile ---
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+let startTime = 0;
+
+track.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  currentX = startX;
+  startTime = Date.now();
+  isDragging = true;
+
+  // dezactivează tranziția pentru a urmări degetul în timp real
+  track.style.transition = "none";
+});
+
+track.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].clientX;
+  const delta = x - startX;
+
+  // mișcăm puțin slide-ul pe orizontală ca să pară că îl tragi
+  const slideWidth = track.clientWidth * (getSlideWidth() / 100);
+  const baseTranslate = -(currentIndex + clonesAtStart) * getSlideWidth();
+  const offsetPercent = (delta / slideWidth) * getSlideWidth();
+
+  track.style.transform = `translateX(calc(-${baseTranslate}% + ${offsetPercent}%))`;
+
+  currentX = x;
+
+  // previne scrollul vertical accidental
+  e.preventDefault();
+}, { passive: false });
+
+track.addEventListener("touchend", (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  const diff = currentX - startX;
+  const elapsed = Date.now() - startTime;
+
+  // refacem tranziția pentru mișcarea finală
+  track.style.transition = "transform 0.5s ease-in-out";
+
+  // condiții pentru swipe valid
+  if (Math.abs(diff) > 50 && elapsed < 500) {
+    if (diff < 0) {
+      nextSlide(); // swipe left
+    } else {
+      prevSlide(); // swipe right
+    }
+  } else {
+    // revine la poziția actuală dacă swipe-ul nu e destul de lung
+    updateCarousel(true);
+  }
+});
   
-    track.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartTime = Date.now();
-    });
-  
-    track.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const difference = touchStartX - touchEndX;
-      const touchDuration = Date.now() - touchStartTime;
-  
-      // Only trigger if swipe was quick (less than 300ms) and long enough
-      if (touchDuration < 300) {
-        // Swipe left (next slide)
-        if (difference > 50) {
-          nextSlide();
-        }
-        // Swipe right (previous slide)
-        else if (difference < -50) {
-          prevSlide();
-        }
-      }
-    });
-  
-    // Keyboard navigation
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") prevSlide();
-      if (e.key === "ArrowRight") nextSlide();
-    });
   
     // Handle window resize
     let resizeTimer;
