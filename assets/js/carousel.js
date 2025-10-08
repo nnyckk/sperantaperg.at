@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get slide width based on screen size
     function getSlideWidth() {
       const width = window.innerWidth;
-      if (width <= 600) return 90;
-      if (width <= 1024) return 85;
-      return 45; // Desktop: 2 full slides (90%) + 10% of third
+      if (width <= 600) return 85;
+      if (width <= 1024) return 80;
+      return 48; // Desktop: 2 full slides + small hint of 3rd
     }
   
     // Move to position (with or without animation)
