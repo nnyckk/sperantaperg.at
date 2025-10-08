@@ -357,11 +357,6 @@
     height: 300px;
   }
 
-  .carousel-dot {
-    width: 6px;
-    height: 6px;
-  }
-
   .carousel-dot.active {
     width: 20px;
   }
