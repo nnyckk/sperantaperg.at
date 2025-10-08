@@ -311,6 +311,11 @@
     gap: 2rem;
   }
 
+  .carousel-btn {
+    min-width: 5rem;
+    padding: 0.8rem 0.3rem;
+  }
+
   .carousel-slide {
     flex: 0 0 90%;
   }
