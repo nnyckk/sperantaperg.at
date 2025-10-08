@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const width = window.innerWidth;
       if (width <= 600) return 90;
       if (width <= 1024) return 85;
-      return 45;
+      return 50; // Desktop: exactly 2 slides visible (50% each)
     }
   
     // Move to position (with or without animation)
@@ -47,12 +47,22 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentIndex >= TOTAL_REAL_SLIDES) {
         currentIndex = 0;
         moveToPosition(currentIndex, false);
+        updateDots();
       } else if (currentIndex < 0) {
         currentIndex = TOTAL_REAL_SLIDES - 1;
         moveToPosition(currentIndex, false);
+        updateDots();
       }
-      updateDots();
       isTransitioning = false;
+    }
+  
+    // Safety timeout to reset isTransitioning in case transitionend doesn't fire
+    let transitionTimeout;
+    function safeTransition() {
+      clearTimeout(transitionTimeout);
+      transitionTimeout = setTimeout(() => {
+        isTransitioning = false;
+      }, 600); // Slightly longer than transition duration (500ms)
     }
   
     // Initialize position
@@ -61,11 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Navigation functions
     function goToSlide(index) {
-      if (isTransitioning || index === currentIndex) return;
+      if (isTransitioning || index === currentIndex) {
+        return; // Don't do anything if already on this slide
+      }
       isTransitioning = true;
       currentIndex = index;
       moveToPosition(currentIndex, true);
       updateDots();
+      safeTransition(); // Safety fallback
     }
   
     function nextSlide() {
@@ -74,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex++;
       moveToPosition(currentIndex, true);
       updateDots();
+      safeTransition(); // Safety fallback
     }
   
     function prevSlide() {
@@ -82,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex--;
       moveToPosition(currentIndex, true);
       updateDots();
+      safeTransition(); // Safety fallback
     }
   
     // Event listeners
