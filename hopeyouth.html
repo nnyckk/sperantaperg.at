@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#170a03" />
     <link rel="stylesheet" href="assets/css/hopeyouth.css" />
     <link rel="stylesheet" href="assets/css/layout_hopeyouth.css" />
+    <link rel="stylesheet" href="assets/css/carousel.css" />
     <link rel="stylesheet" href="assets/css/nav_footer_hopeyouth.css" />
     <link rel="stylesheet" href="assets/css/cookie_hopeyouth.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -66,7 +67,14 @@
                 <li><a href="/sperantaperg.at/kids.html">Kids</a></li>
               </ul>
             </li>
-            <li><a class="btn" id="donation-btn" href="/sperantaperg.at/daruieste.html">Dăruiește</a></li>
+            <li>
+              <a
+                class="btn"
+                id="donation-btn"
+                href="/sperantaperg.at/daruieste.html"
+                >Dăruiește</a
+              >
+            </li>
           </ul>
         </nav>
         <div id="nav-icon-hamburger">
@@ -81,7 +89,9 @@
     <div class="hero hero-subpage big-container dark">
       <div class="container">
         <h1 class="hero-title fadeInDelay">HopeYouth</h1>
-        <p class="hero-subtitle fadeInDelay">Un loc unde tinerii se zidesc și slujesc împreună</p>
+        <p class="hero-subtitle fadeInDelay">
+          Un loc unde tinerii se zidesc și slujesc împreună
+        </p>
       </div>
     </div>
 
@@ -99,7 +109,6 @@
       <div class="container">
         <div class="container-item-wrapper">
           <div class="grid-item service-times-grid-item">
-            
             <div class="fadeInDelay image-cell service-times-picture2">
               <img
                 src="assets/img/hopeyouth/pray.webp"
@@ -196,7 +205,9 @@
               <h3>Florin Radu</h3>
               <p>Diacon / Coordonator HopeYouth</p>
               <div class="contact-items">
-                <a href="mailto:raduflorin860@gmail.com" class="contact dark-contact"
+                <a
+                  href="mailto:raduflorin860@gmail.com"
+                  class="contact dark-contact"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="32px"
@@ -236,7 +247,9 @@
               <h3>Gheorghe Radu</h3>
               <p>Coordonator HopeYouth</p>
               <div class="contact-items">
-                <a href="mailto:raduisaia133@gmail.com" class="contact dark-contact"
+                <a
+                  href="mailto:raduisaia133@gmail.com"
+                  class="contact dark-contact"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="32px"
@@ -279,7 +292,6 @@
               >
             </div>
           </div> -->
-          
         </div>
       </div>
     </section>
@@ -287,68 +299,186 @@
     <!-- Foto Gallery -->
     <section class="gallery big-container dark">
       <div class="container">
-        <div class="grid-item grid-gallery">
-          <div class="gallery-card gallery-card1">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card1.webp"
-              alt="Imagine 1"
-              loading="lazy"
-            />
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-track">
+              <!-- Clones at start (last 3 images) -->
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card5.webp"
+                  alt="Imagine 5"
+                  loading="eager"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card6.webp"
+                  alt="Imagine 6"
+                  loading="eager"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card7.webp"
+                  alt="Imagine 7"
+                  loading="eager"
+                />
+              </div>
+
+              <!-- Original slides -->
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card1.webp"
+                  alt="Imagine 1"
+                  loading="eager"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card2.webp"
+                  alt="Imagine 2"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card3.webp"
+                  alt="Imagine 3"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card4.webp"
+                  alt="Imagine 4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card5.webp"
+                  alt="Imagine 5"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card6.webp"
+                  alt="Imagine 6"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card7.webp"
+                  alt="Imagine 7"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Clones at end (first 3 images) -->
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card1.webp"
+                  alt="Imagine 1"
+                  loading="eager"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card2.webp"
+                  alt="Imagine 2"
+                  loading="eager"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="assets/img/hopeyouth/gallery-card3.webp"
+                  alt="Imagine 3"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
-          <div class="gallery-card gallery-card2">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card2.webp"
-              alt="Imagine 2"
-              loading="lazy"
-            />
+        </div>
+
+        <!-- Controls (Dots + Navigation Buttons) -->
+        <div class="carousel-controls">
+          <div class="carousel-dots">
+            <button
+              class="carousel-dot active"
+              data-slide="0"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="1"
+              aria-label="Go to slide 2"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="2"
+              aria-label="Go to slide 3"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="3"
+              aria-label="Go to slide 4"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="4"
+              aria-label="Go to slide 5"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="5"
+              aria-label="Go to slide 6"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="6"
+              aria-label="Go to slide 7"
+            ></button>
           </div>
-          <div class="gallery-card gallery-card3">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card3.webp"
-              alt="Imagine 3"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-card gallery-card4">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/hopeyouth.webp"
-              alt="Imagine 4"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-card gallery-card5">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card5.webp"
-              alt="Imagine 5"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-card gallery-card6">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card6.webp"
-              alt="Imagine 6"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-card gallery-card7">
-            <img
-              class="fadeIn"
-              src="assets/img/hopeyouth/gallery-card7.webp"
-              alt="Imagine 6"
-              loading="lazy"
-            />
+          <div class="carousel-nav-buttons">
+            <button
+              class="carousel-btn carousel-btn-prev"
+              aria-label="Previous slide"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f5f2f0"
+              >
+                <path
+                  d="M560-232.35 312.35-480 560-727.65 623.65-664l-184 184 184 184L560-232.35Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="carousel-btn carousel-btn-next"
+              aria-label="Next slide"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f5f2f0"
+              >
+                <path
+                  d="m496.35-480-184-184L376-727.65 623.65-480 376-232.35 312.35-296l184-184Z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
- 
     <!-- Footer -->
     <footer class="big-container-footer dark">
       <div class="footer-container">
@@ -408,14 +538,22 @@
                 >Implică-te</a
               >
             </li>
-            <li><a href="https://donate.stripe.com/aFa14nf1Z54YgCq8cE93y00">Donează Online</a></li>
+            <li>
+              <a href="https://donate.stripe.com/aFa14nf1Z54YgCq8cE93y00"
+                >Donează Online</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-section">
           <h4>Informații</h4>
           <ul>
-            <li><a href="https://www.ggaustria.com/biserica/speranta-perg/cereri">Formulare Yosef</a></li>
+            <li>
+              <a href="https://www.ggaustria.com/biserica/speranta-perg/cereri"
+                >Formulare Yosef</a
+              >
+            </li>
             <li><a href="/sperantaperg.at/impressum.html">Impressum</a></li>
             <li>
               <a href="/sperantaperg.at/data-consent.html"
@@ -428,7 +566,8 @@
         <!-- Contact -->
         <div class="footer-section">
           <h4>Contact</h4>
-          <p>Adresa:
+          <p>
+            Adresa:
             <a
               href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
@@ -607,6 +746,7 @@
 
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/effects.js"></script>
+    <script src="assets/js/carousel.js"></script>
     <script src="assets/js/cookie.js"></script>
   </body>
 </html>

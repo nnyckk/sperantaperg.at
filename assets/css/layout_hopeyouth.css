@@ -67,7 +67,7 @@ html {
   scroll-behavior: smooth;
 
   --background-color-dark: hsl(21, 77%, 5%);
-  --background-color-light: hsl(23, 21%, 95%);
+  --background-color-light: hsl(24, 20%, 95%);
   --white-text-color: var(--background-color-light);
   --dark-text-color: var(--background-color-dark);
   --small-text-color-light: hsl(30, 5%, 35%);
@@ -328,6 +328,14 @@ a {
 .image-cell img {
   width: 100%;
   border-radius: 0.5em;
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }
 .image-cell {
   border-radius: 0.5em;
