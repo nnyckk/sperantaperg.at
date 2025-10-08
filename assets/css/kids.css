@@ -162,78 +162,106 @@
   pointer-events: none;
 }
 
-/* =========
-      Gallery
-     =========*/
+/* ==================
+    Gallery Carousel
+   ==================*/
 
-.grid-gallery {
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1.5em;
-}
-.gallery-card1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  z-index: 1;
-}
-.gallery-card2 {
-  grid-column-start: 4;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  z-index: 1;
-}
-.gallery-card3 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  z-index: 1;
-}
-.gallery-card4 {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  z-index: 1;
-}
-.gallery-card5 {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  z-index: 1;
-}
-.gallery-card6 {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 3;
-  z-index: 1;
-}
-.gallery-card7 {
-  grid-column-start: 3;
-  grid-column-end: 6;
-  grid-row-start: 3;
-  grid-row-end: 3;
-  z-index: 1;
+/* Carousel Container */
+.carousel-container {
+  position: relative;
 }
 
-.gallery-card {
+.carousel-wrapper {
   overflow: hidden;
-  border-radius: 0.5em;
-  transition: transform 0.3s ease;
-}
-.gallery-card:hover {
-  transform: scale(1.03);
-}
-.gallery-card img {
   width: 100%;
-  height: 20em;
+}
+
+/* Carousel Track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track.no-transition {
+  transition: none;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+  flex: 0 0 45%;
+  padding: 0 0.75rem;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 650px;
   object-fit: cover;
+  border-radius: 0.5em;
   display: block;
+}
+
+/* Navigation Controls Container */
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Dots Indicators */
+.carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: var(--third-accent-color);
+  width: 24px;
+  border-radius: 5px;
+}
+
+.carousel-dot:hover {
+  background-color: var(--third-accent-color-hover);
+}
+
+/* Navigation Buttons*/
+.carousel-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.carousel-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: var(--white-text-color);
+  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+  backdrop-filter: blur(5px);
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background-color: var(--third-accent-color);
+}
+
+.carousel-btn:active {
+  background-color: var(--third-accent-color-hover);
 }
 
 @media (max-width: 1025px) {
@@ -245,119 +273,58 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
   }
-  .grid-gallery {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 1.5em;
+  .carousel-slide {
+    flex: 0 0 80%;
   }
-  .gallery-card1 {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    z-index: 1;
+
+  .carousel-slide img {
+    height: 600px;
   }
-  .gallery-card2 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    z-index: 1;
+
+  .carousel-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
-  .gallery-card3 {
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    z-index: 1;
+
+  .carousel-dots {
+    order: 1;
   }
-  .gallery-card4 {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 3;
-    z-index: 1;
-  }
-  .gallery-card5 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    z-index: 1;
-  }
-  .gallery-card6 {
-    grid-column-start: 3;
-    grid-column-end: 6;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    z-index: 1;
-  }
-  .gallery-card7 {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 5;
-    z-index: 1;
+
+  .carousel-nav-buttons {
+    order: 2;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 600px) {
-
   .leader-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  .grid-gallery {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    grid-gap: 1.5em;
+  .carousel-slide {
+    flex: 0 0 80%;
+    padding: 0 0.5rem;
   }
-  .gallery-card1 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    z-index: 1;
+
+  .carousel-slide img {
+    height: 500px;
   }
-  .gallery-card2 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    z-index: 1;
+
+  .carousel-btn {
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
   }
-  .gallery-card3 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 3;
-    grid-row-end: 3;
-    z-index: 1;
+
+  .carousel-dots {
+    gap: 0.4rem;
   }
-  .gallery-card4 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    z-index: 1;
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
   }
-  .gallery-card5 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 5;
-    grid-row-end: 5;
-    z-index: 1;
-  }
-  .gallery-card6 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 6;
-    grid-row-end: 6;
-    z-index: 1;
-  }
-  .gallery-card7 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 7;
-    grid-row-end: 7;
-    z-index: 1;
+
+  .carousel-dot.active {
+    width: 20px;
   }
 }
