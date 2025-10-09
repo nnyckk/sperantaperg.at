@@ -89,8 +89,8 @@
   background-color: var(--background-color-dark);
   border: 2px solid var(--background-color-dark);
 
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   text-align: center;
@@ -103,8 +103,6 @@
   width: 100%;
   object-fit: cover;
   aspect-ratio: 23 / 20;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
   transition: 0.3s ease-in-out;
 }
 .team-card-dark:hover img {

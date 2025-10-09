@@ -76,7 +76,7 @@
     Spiritual
    =========== */
 .team-title .title {
-  font-size: var(--fs-h4);
+  font-size: var(--fs-h3);
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1em;
@@ -97,8 +97,8 @@
   background-color: var(--background-color-light);
   border: 2px solid var(--background-color-light);
 
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   text-align: center;
@@ -111,8 +111,6 @@
   width: 100%;
   object-fit: cover;
   aspect-ratio: 11 / 10;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
   transition: 0.3s ease-in-out;
 }
 .team-card:hover img {
