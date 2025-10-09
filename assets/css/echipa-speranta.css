@@ -9,8 +9,9 @@
     Hero Section
    ============== */
 .hero {
-  background: linear-gradient(rgba(8, 20, 27, .8), rgba(8, 20, 27, .5)),
-    url("../img//backgrounds/echipa_speranta_background.webp") center/cover no-repeat;
+  background: linear-gradient(rgba(8, 20, 27, 0.8), rgba(8, 20, 27, 0.5)),
+    url("../img//backgrounds/echipa_speranta_background.webp") center/cover
+      no-repeat;
 }
 
 /* ========
@@ -20,13 +21,14 @@
 #pastor-container {
   display: flex;
   align-items: flex-end;
-  flex: .7;
+  flex: 0.7;
 }
 #pastor-img img {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
+
 #pastor-img {
   width: 100%;
 }
@@ -42,30 +44,32 @@
 }
 .pastor-contact-items {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1.2em;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 .email-pastor {
-  display: block;
-  margin-top: 0.5em;
-  font-size: var(--fs-body);
-  font-weight: 500;
-  opacity: 1;
-  color: var(--first-accent-color);
-  text-decoration: none;
-  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .email-pastor:hover {
-  color: var(--first-accent-color-hover);
-  text-decoration: underline;
+  background-color: var(--first-accent-color);
+  border-color: var(--first-accent-color);
 }
 .email-pastor svg {
-  fill: var(--first-accent-color);
-  transition: .2s;
+  opacity: 0.7;
+  fill: var(--small-text-color-light);
+  transition: fill 0.3s ease;
 }
 .email-pastor:hover svg {
-  fill: var(--first-accent-color-hover);
+  fill: var(--white-text-color);
+  opacity: 1;
 }
 
 /* ===========
@@ -84,56 +88,47 @@
   grid-template-rows: repeat(0, 1fr);
   gap: 2rem;
   justify-content: center;
-  max-width: 80%;
+  max-width: 88%;
   margin: 0 auto;
 }
-/* .spiritual-grid-small {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  justify-content: center;
-  max-width: 60%;
-  margin: 0 auto;
-}
-.spiritual-grid-big {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0 auto;
-} */
 
 .team-card {
   color: var(--background-color-dark);
   background-color: var(--background-color-light);
+  border: 2px solid var(--background-color-light);
 
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
-
   text-align: center;
   padding-bottom: 1em;
   transition: 0.2s;
+  overflow: hidden;
 }
-.team-card:hover {
-  transform: translateY(-5px);
-}
+
 .team-card img {
   width: 100%;
   object-fit: cover;
-  border: 2px solid var(--background-color-light);
   aspect-ratio: 11 / 10;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
+  transition: 0.3s ease-in-out;
 }
+.team-card:hover img {
+  transform: scale(1.03);
+}
+
 .team-card-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0em 0.5em;
+  padding: 0em 1em;
+  background-color: var(--background-color-light);
+  position: relative;
+  z-index: 99;
 }
+
 .team-card-text h3 {
   margin: 0.5rem 0 0.2rem;
   font-size: var(--fs-h5);
@@ -147,41 +142,70 @@
 /* Contact Styling */
 .contact-items {
   display: flex;
-  flex-direction: row;
-  gap: 1.5em;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 .contact {
-  display: block;
-  margin-top: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.contact:hover {
+  background-color: var(--first-accent-color);
+  border-color: var(--first-accent-color);
+}
+
 .contact svg {
-  opacity: .7;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
   fill: var(--small-text-color-light);
-  transition: .2s
+  transition: fill 0.3s ease;
 }
 .contact:hover svg {
-  fill: var(--first-accent-color-hover);
+  fill: var(--white-text-color);
   opacity: 1;
 }
 
 /* Dark Mode Card Styling */
+.dark-mode-card .team-card-text {
+  background-color: var(--background-color-dark);
+}
+
 .dark-mode-card {
   color: var(--background-color-light);
   background-color: var(--background-color-dark);
-}
-.dark-mode-card img {
   border: 2px solid var(--background-color-dark);
 }
+
 .dark-mode-card p {
   color: var(--first-accent-color);
 }
+
+.dark-contact {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-contact:hover {
+  background-color: var(--first-accent-color);
+  border-color: var(--first-accent-color);
+}
+
 .dark-contact svg {
-  opacity: .7;
+  opacity: 0.7;
   fill: var(--small-text-color-dark);
-  transition: .2s
+  transition: fill 0.3s ease;
 }
 .dark-contact:hover svg {
-  fill: var(--first-accent-color);
+  fill: var(--white-text-color);
   opacity: 1;
 }
 
