@@ -100,7 +100,7 @@
 }
 
 .team-card-dark:hover {
-  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .team-card-dark img {
@@ -133,24 +133,36 @@
 /* Contact Styling */
 .contact-items {
   display: flex;
-  flex-direction: row;
-  gap: 1.5em;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .contact {
-  display: block;
-  margin-top: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact:hover {
+  background-color: var(--third-accent-color);
+  border-color: var(--third-accent-color);
 }
 
 /* Dark Mode Card Styling */
 .dark-contact svg {
   opacity: 0.7;
   fill: var(--small-text-color-dark);
-  transition: 0.2s;
+  transition: fill 0.3s ease;
 }
 
 .dark-contact:hover svg {
-  fill: var(--third-accent-color);
+  fill: var(--white-text-color);
   opacity: 1;
 }
 
@@ -269,18 +281,15 @@
 }
 
 .carousel-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: var(--white-text-color);
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s;
-  backdrop-filter: blur(5px);
-  line-height: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.6rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .carousel-btn:hover {
@@ -300,79 +309,74 @@
     Media Queries
    ==================*/
 
-@media (max-width: 1024px) {
-  .service-times .service-times-title {
-    text-align: left;
+   @media (max-width: 1024px) {
+    .service-times .service-times-title {
+      text-align: left;
+    }
+  
+    .leader-wrapper {
+      max-width: 100%;
+    }
+  
+    .team-card-dark {
+      flex: 0 1 calc(50% - 1rem);
+    }
+  
+    .gallery-title-section h2 {
+      font-size: var(--fs-h2);
+    }
+    .gallery-wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .carousel-btn {
+      min-width: 4rem;
+      padding: 0.6rem 0.3rem;
+    }
+  
+    .carousel-slide {
+      flex: 0 0 90%;
+    }
+  
+    .carousel-slide img {
+      height: 650px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+    }
   }
-
-  .leader-wrapper {
-    max-width: 100%;
+  
+  @media (max-width: 600px) {
+    .team-card-dark {
+      flex: 0 1 100%;
+    }
+  
+    .carousel-slide {
+      flex: 0 0 90%;
+      padding: 0 0.3rem;
+    }
+  
+    .carousel-slide img {
+      height: 380px;
+    }
+  
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+    }
+  
+    .carousel-dot.active {
+      width: 20px;
+    }
+  
+    .carousel-nav-buttons {
+      gap: 0.5rem;
+    }
+  
+    .carousel-dots {
+      gap: 0.4rem;
+    }
   }
-
-  .team-card-dark {
-    flex: 0 1 calc(50% - 1rem);
-  }
-
-  .gallery-title-section h2 {
-    font-size: var(--fs-h2);
-  }
-
-  .gallery-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .carousel-btn {
-    min-width: 5rem;
-    padding: 0.7rem 0.3rem;
-  }
-
-  .carousel-slide {
-    flex: 0 0 90%;
-  }
-
-  .carousel-slide img {
-    height: 650px;
-  }
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-@media (max-width: 600px) {
-  .team-card-dark {
-    flex: 0 1 100%;
-  }
-
-  .carousel-slide {
-    flex: 0 0 90%;
-    padding: 0 0.3rem;
-  }
-
-  .carousel-slide img {
-    height: 380px;
-  }
-
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .carousel-dot.active {
-    width: 20px;
-  }
-
-  .carousel-btn {
-    min-width: 4rem;
-    padding: 0.4rem 0.3rem;
-  }
-
-  .carousel-nav-buttons {
-    gap: 0.5rem;
-  }
-
-  .carousel-dots {
-    gap: 0.4rem;
-  }
-}
+  
