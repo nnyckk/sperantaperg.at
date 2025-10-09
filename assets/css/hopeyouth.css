@@ -118,7 +118,7 @@
   padding: 0em 0.5em;
   background-color: var(--background-color-dark);
   position: relative;
-  z-index: 99;
+  z-index: 10;
 }
 
 .team-card-text h3 {
