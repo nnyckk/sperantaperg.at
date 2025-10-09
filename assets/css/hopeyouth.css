@@ -153,15 +153,10 @@
   display: grid;
   grid-template-columns: 30% 1fr;
   align-items: center;
-  gap: 3rem;
-  max-width: 1400px;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 88%;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Title Section (30%) */
-.gallery-title-section {
-  padding-right: 2rem;
 }
 
 .gallery-title-section h2 {
