@@ -1,0 +1,617 @@
+/* ==================
+   articol.css  — v2
+   Stiluri pentru pagina de articol dedicat — Speranța Perg
+   Depinde de: layout.css, nav_footer.css, stiri.css
+   ================== */
+
+body {
+  overflow-x: hidden;
+}
+
+/* ── Hero articol ── */
+.articol-hero {
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 3.5em;
+  background: linear-gradient(
+      160deg,
+      rgba(8, 20, 27, 0.92) 0%,
+      rgba(8, 20, 27, 0.58) 100%
+    ),
+    url("../img/backgrounds/index_background.webp") center / cover no-repeat;
+  position: relative;
+}
+.articol-hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+}
+
+/* Back link */
+.articol-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  margin-bottom: 0.75em;
+  transition: color 0.2s, gap 0.2s;
+}
+.articol-back:hover {
+  color: #fff;
+  gap: 0.6em;
+}
+
+/* Meta row (badge + categorie) */
+.articol-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  margin-bottom: 0.25em;
+}
+.articol-meta-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tag/badge overrides în contextul articol-hero
+   (stiri.css are stilurile de bază, aici ajustăm doar ce e diferit) */
+.articol-hero-meta .stiri-tag {
+  border-radius: 999px;
+  pointer-events: none;
+}
+.articol-hero-meta .stiri-badge-nou {
+  position: static;
+  top: auto;
+  left: auto;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  padding: 0.28em 0.75em;
+  letter-spacing: 0.06em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.articol-hero-title {
+  font-size: var(--fs-h1);
+  line-height: 1.0;
+  color: var(--white-text-color);
+  max-width: 820px;
+  margin: 0;
+}
+
+/* Author */
+.articol-hero-author {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  margin: 0.5em 0 0;
+}
+.articol-hero-author svg {
+  flex-shrink: 0;
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Body layout ── */
+.articol-body {
+  padding-top: 3.5em;
+  padding-bottom: 5em;
+  overflow-x: hidden;
+}
+.articol-layout {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ── Galerie — stack cover design ── */
+.articol-galerie {
+  width: 100%;
+  margin-top: 2.5em;
+  position: relative;
+}
+
+/* Stack wrapper — creează efectul de cărți stacked */
+.galerie-stack {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Cardurile din spate (pseudo-stack) */
+.galerie-stack::before,
+.galerie-stack::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  background: #d0d8e0;
+  border-radius: 0.75em;
+  z-index: 0;
+}
+.galerie-stack::before {
+  bottom: -10px;
+  height: 100%;
+  width: calc(100% - 16px);
+  background: #c4cdd6;
+  border-radius: 0.75em;
+}
+.galerie-stack::after {
+  bottom: -20px;
+  height: 100%;
+  width: calc(100% - 32px);
+  background: #b8c2cc;
+  border-radius: 0.75em;
+}
+
+/* Poza cover — deasupra stack-ului */
+.galerie-cover {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 420px;
+  border-radius: 0.75em;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.galerie-stack:hover .galerie-cover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+}
+
+.galerie-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: auto !important;
+}
+
+/* Overlay gradient + info pe cover */
+.galerie-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 20, 27, 0.7) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1.5em;
+  pointer-events: none;
+}
+.galerie-count-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.galerie-count-badge svg {
+  fill: #fff;
+  flex-shrink: 0;
+}
+.galerie-open-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: auto !important;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.galerie-open-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Thumbnail strip sub stack */
+.galerie-thumbs {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 2em;
+  overflow-x: auto;
+  padding-bottom: 0.25em;
+  scrollbar-width: none;
+}
+.galerie-thumbs::-webkit-scrollbar { display: none; }
+
+.galerie-thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 52px;
+  border-radius: 0.4em;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: auto !important;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s, opacity 0.2s;
+  opacity: 0.65;
+}
+.galerie-thumb:hover,
+.galerie-thumb.active {
+  border-color: var(--first-accent-color);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.galerie-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* 1 singură poză — fără stack */
+.galerie-single {
+  width: 100%;
+  height: 420px;
+  border-radius: 0.75em;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.galerie-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: auto !important;
+}
+
+
+
+/* ── Article text ── */
+.articol-text {
+  font-size: var(--fs-body);
+  line-height: 1.75;
+  color: var(--dark-text-color);
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.articol-text p,
+.articol-text .paragraph {
+  margin-bottom: 1.35em;
+  color: hsl(202, 10%, 22%);
+}
+.articol-text h2 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-small);
+  margin: 2em 0 0.6em;
+  color: var(--dark-text-color);
+}
+.articol-text h3 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading-small);
+  margin: 1.75em 0 0.5em;
+  color: var(--dark-text-color);
+}
+.articol-text ul,
+.articol-text ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.35em;
+}
+.articol-text li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+/* Blockquote — mai elegant */
+.articol-text blockquote {
+  border-left: 4px solid var(--first-accent-color);
+  margin: 2em 0;
+  padding: 1em 1.5em;
+  background: rgba(45, 140, 188, 0.05);
+  border-radius: 0 0.5em 0.5em 0;
+  font-style: italic;
+  color: var(--small-text-color-light);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.articol-text blockquote p {
+  margin-bottom: 0;
+}
+
+.articol-text a {
+  color: var(--first-accent-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.articol-text a:hover {
+  color: var(--first-accent-color-hover);
+}
+.articol-text img {
+  max-width: 100%;
+  border-radius: 0.5em;
+  margin: 1.75em 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Footer meta ── */
+.articol-footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-top: 3.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+.articol-author-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--small-text-color-light);
+}
+.articol-author-tag svg {
+  fill: var(--small-text-color-light);
+  flex-shrink: 0;
+}
+.articol-footer-meta .articol-meta-date {
+  color: var(--small-text-color-light);
+}
+
+/* ── Related section ── */
+.articol-related {
+  padding-top: 3em;
+  padding-bottom: 5em;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+.articol-related-title {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-small);
+  margin-bottom: 1.75em;
+  color: var(--dark-text-color);
+}
+
+/* ── Galerie — cursor pointer pe imagini ── */
+.galerie-img {
+  cursor: zoom-in;
+  pointer-events: auto !important;
+}
+
+/* ── Overlay "+N" pentru galerie-3 cu multe poze ── */
+.galerie-thumb-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25em;
+  height: 100%;
+}
+.galerie-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+.galerie-more-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 20, 27, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: zoom-in;
+  pointer-events: auto !important;
+  transition: background 0.2s;
+}
+.galerie-more-overlay:hover {
+  background: rgba(8, 20, 27, 0.75);
+}
+
+/* ── Lightbox ── */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(8, 20, 27, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.lb-img-wrap {
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#lbImg {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 0.5em;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+}
+
+/* Close button */
+.lb-close {
+  position: fixed;
+  top: 1.25em;
+  right: 1.5em;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10000;
+}
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Prev / Next */
+.lb-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10000;
+}
+.lb-nav:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-50%) scale(1.08);
+}
+.lb-prev { left: 1.5em; }
+.lb-next { right: 1.5em; }
+
+/* Counter */
+.lb-counter {
+  position: fixed;
+  bottom: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .lb-prev { left: 0.75em; }
+  .lb-next { right: 0.75em; }
+  .lb-nav  { width: 2.5em; height: 2.5em; font-size: 1rem; }
+}
+.articol-loading {
+  text-align: center;
+  padding: 5em 0;
+  color: var(--small-text-color-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .articol-hero {
+    min-height: 52vh;
+    padding-bottom: 2.5em;
+  }
+  .articol-hero-title {
+    font-size: var(--fs-h2);
+  }
+  .articol-body {
+    padding-top: 2.5em;
+    padding-bottom: 3.5em;
+  }
+  .galerie-cover {
+    height: 320px;
+  }
+  .galerie-single {
+    height: 320px;
+  }
+  .articol-related .stiri-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .articol-hero {
+    min-height: 45vh;
+    padding-bottom: 2em;
+  }
+  .articol-hero-title {
+    font-size: var(--fs-h3);
+  }
+  .articol-body {
+    padding-top: 2em;
+    padding-bottom: 3em;
+  }
+  .galerie-cover {
+    height: 240px;
+  }
+  .galerie-single {
+    height: 240px;
+  }
+  .articol-text h2 {
+    font-size: var(--fs-h4);
+  }
+  .articol-text h3 {
+    font-size: var(--fs-h5);
+  }
+  .articol-text blockquote {
+    padding: 0.75em 1em;
+    font-size: 0.95rem;
+  }
+  .articol-footer-meta {
+    gap: 0.75em;
+  }
+  .articol-related .stiri-grid {
+    grid-template-columns: 1fr;
+  }
+}
+}

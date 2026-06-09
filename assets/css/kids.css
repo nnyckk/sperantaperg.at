@@ -14,9 +14,14 @@
 /* ==============
     Hero Section
    ============== */
-.hero {
-  background: linear-gradient(rgba(12, 24, 14, 0.7), rgba(12, 24, 14, 0.5)),
-    url("../img//backgrounds/kids_background.webp") center/cover no-repeat;
+.kids-hero {
+  background: linear-gradient(
+      160deg,
+      rgba(12, 24, 14, 0.92) 0%, rgba(12, 24, 14, 0.55) 100%
+    ),
+    url("../img//backgrounds/kids_background.webp") center / cover no-repeat;
+  align-items: flex-start !important;
+  padding-bottom: 2.5em;
 }
 
 /* =============

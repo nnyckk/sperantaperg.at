@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     card.classList.toggle("active");
   };
+
+  function equalizeCardHeights() {
+    const cards = [...document.querySelectorAll(".vision .vision-card")];
+    cards.forEach((c) => (c.style.height = ""));
+    const max = Math.max(...cards.map((c) => c.getBoundingClientRect().height));
+    cards.forEach((c) => (c.style.height = max + "px"));
+  }
+  window.addEventListener("load", equalizeCardHeights);
+  window.addEventListener("resize", equalizeCardHeights);
 });
 
 //ACCORDION EFFECT // ce-credem.html; ce-credem.css;

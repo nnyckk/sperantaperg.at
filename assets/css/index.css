@@ -100,7 +100,7 @@
   z-index: auto;
 
   background: linear-gradient(rgba(8, 20, 27, 0.3)),
-    url("../img/index/hopeyouth_button.webp") center/cover no-repeat;
+    url("../img/index/hopeyouth_button_700.webp") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -113,7 +113,7 @@
   z-index: auto;
 
   background: linear-gradient(rgba(8, 20, 27, 0.3)),
-    url("../img/index/kids_button.webp") center/cover no-repeat;
+    url("../img/index/kids_button_700.webp") center/cover no-repeat;
   position: relative;
 
   min-height: 20em;
@@ -222,9 +222,6 @@
     min-height: 20em;
   }
 
-  .sermon .container-item-wrapper {
-    flex-direction: column-reverse;
-  }
   .donation .donation-title {
     text-align: left;
   }
@@ -241,6 +238,10 @@
     grid-row-end: 2;
 
     min-height: 15em;
+    
+    background: linear-gradient(rgba(8, 20, 27, 0.3)),
+    url("../img/index/hopeyouth_button_400.webp") center/cover no-repeat;
+  position: relative;
   }
   .departments .departments-kids {
     grid-column-start: 1;
@@ -249,6 +250,10 @@
     grid-row-end: 3;
 
     min-height: 15em;
+    
+     background: linear-gradient(rgba(8, 20, 27, 0.3)),
+    url("../img/index/kids_button_400.webp") center/cover no-repeat;
+  position: relative;
   }
   .sermon .buttons-group {
     flex-direction: column;
@@ -260,5 +265,135 @@
   }
   .donation .donation-container-button {
     align-items: center;
+  }
+}
+
+/* ── Featured știre pe index ── */
+.index-featured-stire {
+  padding-top: 4em;
+  padding-bottom: 5em;
+}
+.index-stire-card-col {
+  flex: 0 0 48% !important;
+  max-width: 48%;
+}
+.index-stire-text-col {
+  flex: 0 0 48% !important;
+  max-width: 48%;
+}
+.index-stire-label-text {
+  color: var(--small-text-color-light) !important;
+}
+.index-stire-text-title {
+  margin-bottom: 0.3em;
+}
+.index-stire-card {
+  background: #fff;
+  border-radius: 0.75em;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.index-stire-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.13);
+  transform: translateY(-3px);
+}
+.index-stire-img {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: var(--background-color-dark);
+}
+.index-stire-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.index-stire-content {
+  padding: 1em 1.5em 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  border-top: 3px solid var(--first-accent-color);
+}
+.index-stire-tag {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.28em 0.75em;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  align-self: flex-start;
+}
+.index-stire-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading-small);
+  font-weight: 700;
+  color: var(--dark-text-color);
+  margin: 0;
+}
+.index-stire-date {
+  font-size: var(--fs-small);
+  color: var(--small-text-color-light);
+  margin: 0;
+}
+.index-stire-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: var(--fs-small);
+  color: var(--small-text-color-light);
+  margin: 0;
+}
+.index-stire-meta svg {
+  vertical-align: middle;
+  fill: var(--small-text-color-light);
+  flex-shrink: 0;
+}
+.index-stire-rezumat {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--small-text-color-light);
+  margin: 0.1em 0 0.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.index-stire-content .btn {
+  align-self: flex-start;
+  margin-top: 0.5em;
+}
+.btn-filled {
+  background-color: var(--first-accent-color) !important;
+  border: 2px solid var(--first-accent-color) !important;
+  color: #fff !important;
+}
+.btn-filled:hover {
+  background-color: var(--first-accent-color-hover) !important;
+  border-color: var(--first-accent-color-hover) !important;
+}
+.index-stire-btn-all {
+  background: transparent !important;
+  border: 2px solid var(--first-accent-color) !important;
+  color: var(--first-accent-color) !important;
+}
+.index-stire-btn-all:hover {
+  background: var(--first-accent-color-hover) !important;
+  border-color: var(--first-accent-color-hover) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 1025px) {
+  .index-stire-card-col,
+  .index-stire-text-col {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
   }
 }

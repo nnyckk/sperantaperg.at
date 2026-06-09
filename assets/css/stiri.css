@@ -1,0 +1,470 @@
+/* ==================
+   stiri.css  — v2
+   Stiluri pentru pagina de Noutăți — Speranța Perg
+   Depinde de: layout.css, nav_footer.css
+   ================== */
+
+/* Active nav link */
+.active-nav {
+  color: var(--first-accent-color) !important;
+  font-weight: 700;
+}
+
+/* ── Hero ── */
+.stiri-hero {
+  background: linear-gradient(
+      160deg,
+      rgba(8, 20, 27, 0.92) 0%,
+      rgba(8, 20, 27, 0.55) 100%
+    ),
+    url("../img/backgrounds/index_background.webp") center / cover no-repeat;
+  align-items: flex-start !important;
+  padding-bottom: 3em;
+}
+
+/* ── Filter Bar ── */
+.stiri-filter-bar {
+  padding: 1.25em 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 98;
+  transition: padding 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(247, 248, 252, 0.92);
+}
+.stiri-filter-bar.compact {
+  padding: 0.65em 0;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.filter-buttons {
+  display: flex;
+  gap: 0.4em;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* pill-style filter buttons */
+.filter-btn {
+  background: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  padding: 0.35em 1.1em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--small-text-color-light);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, font-size 0.25s ease, min-height 0.25s ease;
+}
+.filter-btn:hover {
+  border-color: var(--first-accent-color);
+  color: var(--first-accent-color);
+  transform: translateY(-1px);
+}
+.filter-btn.active {
+  background: var(--first-accent-color);
+  border-color: var(--first-accent-color);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(45, 140, 188, 0.3);
+}
+.filter-btn[data-filter="evenimente"].active {
+  background: var(--third-accent-color);
+  border-color: var(--third-accent-color);
+  color: var(--background-color-dark);
+  box-shadow: 0 3px 10px rgba(85, 184, 103, 0.3);
+}
+.filter-btn[data-filter="misiuni"].active {
+  background: var(--fourth-accent-color);
+  border-color: var(--fourth-accent-color);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(142, 93, 196, 0.3);
+}
+.filter-btn[data-filter="departamente"].active {
+  background: var(--second-accent-color);
+  border-color: var(--second-accent-color);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(225, 138, 49, 0.3);
+}
+
+/* Search input */
+.stiri-search {
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 0.45em 1.1em 0.45em 2.4em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 -960 960 960' fill='%23888'%3E%3Cpath d='M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/%3E%3C/svg%3E")
+    no-repeat 0.85em center;
+  color: var(--dark-text-color);
+  width: 220px;
+  transition: border-color 0.2s, box-shadow 0.2s, width 0.3s;
+}
+.stiri-search:focus {
+  outline: none;
+  border-color: var(--first-accent-color);
+  box-shadow: 0 0 0 3px rgba(45, 140, 188, 0.12);
+  width: 260px;
+}
+.stiri-search::placeholder {
+  color: #aaa;
+}
+
+/* ── Section spacing ── */
+.stiri-grid-section {
+  padding-top: 3.5em;
+  padding-bottom: 5em;
+}
+
+/* ── Featured Article ── */
+.stiri-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 3.5em;
+  background: #fff;
+  border-radius: 0.75em;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.09);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.stiri-featured:hover {
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+.stiri-featured-image {
+  position: relative;
+  min-height: 340px;
+  background: var(--background-color-dark);
+  overflow: hidden;
+}
+.stiri-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* gradient overlay pe imagine featured */
+.stiri-featured-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 60%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+.stiri-featured-content {
+  padding: 2.5em 2.5em 2.5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6em;
+  border-left: 4px solid var(--first-accent-color);
+}
+.stiri-featured-content .subtitle {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-small);
+  color: var(--dark-text-color);
+}
+.stiri-featured-content .btn {
+  align-self: flex-start;
+  margin-top: 0.5em;
+}
+.stiri-featured-content .paragraph {
+  color: var(--small-text-color-light);
+  margin: 0.4em 0 0.2em;
+}
+
+/* ── Badge "Nou" ── */
+.stiri-badge-nou {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.35em 0.9em;
+  border-radius: 999px;
+  letter-spacing: 0.07em;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Tag categorie ── */
+.stiri-tag {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.28em 0.75em;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+/* ── Culori badge/tag ── */
+.badge-new {
+  background: var(--donation-color);
+  color: #fff;
+}
+.badge-anunturi {
+  background: var(--first-accent-color);
+  color: #fff;
+}
+.badge-evenimente {
+  background: var(--third-accent-color);
+  color: var(--background-color-dark);
+}
+.badge-misiuni {
+  background: var(--fourth-accent-color);
+  color: #fff;
+}
+.badge-departamente {
+  background: var(--second-accent-color);
+  color: #fff;
+}
+
+.stiri-card-content .stiri-tag,
+.stiri-featured-content .stiri-tag {
+  align-self: flex-start;
+}
+
+.small-text-light svg {
+  vertical-align: middle;
+  margin-right: 0.2em;
+}
+
+/* ── Cards Grid ── */
+.stiri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+}
+
+/* ── Card ── */
+.stiri-card {
+  background: #fff;
+  border-radius: 0.65em;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.stiri-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.11);
+}
+
+.stiri-card-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: inherit;
+}
+
+.stiri-card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: var(--background-color-dark);
+  overflow: hidden;
+}
+.stiri-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* thin color accent bar at bottom of image */
+.stiri-card-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--first-accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.stiri-card:hover .stiri-card-image::after {
+  transform: scaleX(1);
+}
+
+.stiri-card-content {
+  padding: 1.35em 1.35em 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  flex: 1;
+}
+.stiri-card-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading-small);
+  font-weight: 700;
+  color: var(--dark-text-color);
+  margin: 0.1em 0 0;
+}
+.stiri-card-excerpt {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--small-text-color-light);
+  margin: 0.3em 0 auto;
+
+  /* clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.stiri-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1.1em;
+  align-self: flex-start;
+  padding: 0.5em 1.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: var(--first-accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border: 1.5px solid var(--first-accent-color);
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.22s, color 0.22s, border-color 0.22s, transform 0.18s,
+    box-shadow 0.22s;
+}
+.stiri-link:hover {
+  background: var(--first-accent-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(45, 140, 188, 0.28);
+}
+.stiri-arrow-icon {
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+.stiri-card:hover .stiri-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* ── No results ── */
+.no-results {
+  text-align: center;
+  padding: 4em 0;
+}
+
+/* ── Load more ── */
+.stiri-load-more {
+  text-align: center;
+  margin-top: 3em;
+}
+.stiri-load-more .btn {
+  background: transparent;
+  border: 2px solid var(--first-accent-color);
+  color: var(--first-accent-color);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.stiri-load-more .btn:hover {
+  background: var(--first-accent-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1025px) {
+  .stiri-featured {
+    grid-template-columns: 1fr;
+  }
+  .stiri-featured-image {
+    min-height: 260px;
+  }
+  .stiri-featured-content {
+    padding: 1.75em;
+    border-left: none;
+    border-top: 4px solid var(--first-accent-color);
+  }
+  .stiri-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75em;
+  }
+  .stiri-search {
+    width: 100%;
+  }
+  .stiri-search:focus {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .stiri-grid {
+    grid-template-columns: 1fr;
+  }
+  .stiri-featured-image {
+    min-height: 200px;
+  }
+  .stiri-featured-content {
+    padding: 1.35em;
+  }
+
+  /* Filter bar mobile — scroll orizontal */
+  .filter-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25em;
+  }
+  .filter-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5em;
+    padding: 0.25em 0 0.75em;
+    scrollbar-width: none;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filter-buttons::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+    min-height: 36px;
+  }
+  .stiri-filter-bar.compact .filter-btn {
+    font-size: 0.6rem;
+    min-height: 29px;
+  }
+}

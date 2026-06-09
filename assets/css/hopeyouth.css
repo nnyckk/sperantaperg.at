@@ -14,9 +14,14 @@
 /* ==============
     Hero Section
    ============== */
-.hero {
-  background: linear-gradient(rgba(20, 11, 5, 0.7), rgba(20, 11, 5, 0.5)),
-    url("../img//backgrounds/hopeyouth_background.webp") center/cover no-repeat;
+.hopeyouth-hero {
+  background: linear-gradient(
+      160deg,
+      rgba(20, 11, 5, 0.92) 0%, rgba(20, 11, 5, 0.55) 100%
+    ),
+    url("../img//backgrounds/hopeyouth_background.webp") center / cover no-repeat;
+  align-items: flex-start !important;
+  padding-bottom: 2.5em;
 }
 /* =============
     Visit Times
@@ -164,6 +169,99 @@
 .dark-contact:hover svg {
   fill: var(--white-text-color);
   opacity: 1;
+}
+
+/* ===============
+    Ce Facem
+   =============== */
+
+.ce-facem-image {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 0.5em;
+}
+
+.ce-facem-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ce-facem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  margin-top: 3em;
+}
+
+.ce-facem-card {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75em;
+  padding: 1.25em 1em;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.ce-facem-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.ce-facem-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ce-facem-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-cf-orange { background: hsla(23, 79%, 57%, 0.18); }
+.icon-cf-orange svg { fill: var(--second-accent-color); }
+
+.icon-cf-blue { background: hsla(204, 54%, 48%, 0.18); }
+.icon-cf-blue svg { fill: var(--first-accent-color); }
+
+.icon-cf-purple { background: hsla(270, 50%, 65%, 0.18); }
+.icon-cf-purple svg { fill: var(--fourth-accent-color); }
+
+.icon-cf-green { background: hsla(130, 52%, 58%, 0.18); }
+.icon-cf-green svg { fill: var(--third-accent-color); }
+
+.ce-facem-card-text h3 {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.3em;
+  color: var(--white-text-color);
+}
+
+.ce-facem-card-text p {
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  color: var(--small-text-color-dark);
+}
+
+@media (max-width: 1024px) {
+  .ce-facem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ce-facem-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==================
@@ -314,6 +412,19 @@
     text-align: left;
   }
 
+  .welcome .container-item-wrapper {
+    flex-direction: column;
+  }
+
+  .ce-facem-image {
+    aspect-ratio: 16/9;
+    width: 100%;
+  }
+
+  .ce-facem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .leader-wrapper {
     max-width: 100%;
   }
@@ -349,6 +460,29 @@
 }
 
 @media (max-width: 600px) {
+  .ce-facem-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6em;
+  }
+
+  .ce-facem-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em 0.75em;
+    gap: 0.6em;
+  }
+
+  .ce-facem-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ce-facem-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
   .team-card-dark {
     flex: 0 1 100%;
   }

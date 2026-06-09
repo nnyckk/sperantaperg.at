@@ -8,10 +8,14 @@
 /* ==============
     Hero Section
    ============== */
-.hero {
-  background: linear-gradient(rgba(8, 20, 27, 0.8), rgba(8, 20, 27, 0.5)),
-    url("../img//backgrounds/echipa_speranta_background.webp") center/cover
-      no-repeat;
+.echipa-hero {
+  background: linear-gradient(
+      160deg,
+      rgba(8, 20, 27, 0.92) 0%, rgba(8, 20, 27, 0.55) 100%
+    ),
+    url("../img//backgrounds/echipa_speranta_background.webp") center / cover no-repeat;
+  align-items: flex-start !important;
+  padding-bottom: 2.5em;
 }
 
 /* ========

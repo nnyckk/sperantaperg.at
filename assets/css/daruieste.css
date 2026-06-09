@@ -8,9 +8,14 @@
 /* ==============
     Hero Section
    ============== */
-.hero {
-  background: linear-gradient(rgba(8, 20, 27, 0.8), rgba(8, 20, 27, 0.5)),
-    url("../img//backgrounds/daruieste_background.webp") center/cover no-repeat;
+.daruieste-hero {
+  background: linear-gradient(
+      160deg,
+      rgba(8, 20, 27, 0.92) 0%, rgba(8, 20, 27, 0.55) 100%
+    ),
+    url("../img//backgrounds/daruieste_background.webp") center / cover no-repeat;
+  align-items: flex-start !important;
+  padding-bottom: 2.5em;
 }
 /* =============
     Why we give
@@ -98,46 +103,77 @@
   line-height: var(--lh-heading);
   margin-bottom: 1em;
 }
-.way-item {
-  align-items: center !important;
-  justify-content: center !important;
+.oportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-top: 2em;
 }
-.way {
+
+.oportunity-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 80%;
+  text-align: center;
+  gap: 1em;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75em;
+  padding: 1.75em 1.25em;
+  transition: background 0.25s, border-color 0.25s;
 }
-.way svg {
+
+.oportunity-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.oportunity-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: hsla(5, 71%, 54%, 0.18);
+}
+
+.oportunity-icon svg {
+  width: 56px;
+  height: 56px;
   fill: var(--donation-color);
-  margin: 1.2em;
 }
-.way-text h3 {
-  font-size: var(--fs-h4);
-  text-align: center;
+
+.oportunity-card-text h3 {
+  font-size: var(--fs-h6);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.3em;
+  color: var(--white-text-color);
 }
-.way-text p {
-  font-size: var(--fs-body);
-  margin: 1.2em 0 1.2em;
-  text-align: center;
+
+.oportunity-card-text p {
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  color: var(--small-text-color-dark);
 }
 
 @media (max-width: 1025px) {
   .oportunity .oportunity-title {
     text-align: left;
   }
-  .way {
-    max-width: 50%;
+  .oportunity-grid {
+    grid-template-columns: 1fr;
   }
-  .way-text h3 {
-    font-size: var(--fs-h3);
+  .oportunity-card {
+    flex-direction: row;
+    text-align: left;
   }
 }
 
 @media (max-width: 600px) {
-  .way {
-    max-width: 100%;
-  }
   .buttons-group {
     flex-direction: column;
     align-items: flex-start;

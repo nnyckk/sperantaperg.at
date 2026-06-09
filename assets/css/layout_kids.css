@@ -277,7 +277,6 @@ a {
 .hero-subtitle {
   margin: 0.2em auto 1.5em auto;
   font-size: var(--fs-h4);
-  text-transform: uppercase;
 }
 .hero-subpage {
   display: flex;
@@ -377,6 +376,8 @@ img {
   /* SHOW THE HAMBURGER MENU */
   #nav-icon-hamburger {
     display: block;
+    position: relative;
+    z-index: 102;
   }
   #nav-icon-hamburger span {
     display: block;
@@ -385,6 +386,10 @@ img {
   /* COLUMN-view of the containers */
   .container-item-wrapper {
     flex-direction: column;
+  }
+
+  .hero-subpage {
+    text-align: left !important;
   }
 }
 @media (max-width: 600px) {

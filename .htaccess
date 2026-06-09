@@ -1,0 +1,45 @@
+# -------------------------------
+# .htaccess pentru site HTML custom
+# Rewrite URL fără .html + cache fonturi, imagini, CSS, JS
+# Compatibil Hostinger
+# -------------------------------
+
+# Activează mod_rewrite dacă există
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Pagina implicită
+DirectoryIndex index.html
+
+# Rewrite simplu pentru pagini fără extensie
+# Exemplu: /despre → /despre.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
+</IfModule>
+
+# -------------------------------
+# Cache pentru fonturi, imagini, CSS și JS
+# -------------------------------
+<IfModule mod_headers.c>
+  # Fonturi
+  <FilesMatch "\.(woff2|woff|ttf|otf|WOFF2|WOFF|TTF|OTF)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Imagini
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|JPG|JPEG|PNG|GIF|SVG|WEBP)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CSS
+  <FilesMatch "\.(css|CSS)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # JavaScript
+  <FilesMatch "\.(js|JS)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

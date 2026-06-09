@@ -80,10 +80,13 @@ html {
   --second-accent-color: hsl(23, 79%, 57%);
   --third-accent-color: hsl(130, 52%, 58%);
 
+  --fourth-accent-color: hsl(270, 50%, 65%);
+
   /* Hover Colors */
   --first-accent-color-hover: hsl(204, 54%, 28%);
   --second-accent-color-hover: hsl(23, 79%, 37%);
   --third-accent-color-hover: hsl(130, 52%, 38%);
+  --fourth-accent-color-hover: hsl(270, 50%, 45%);
 
   /* Base font sizes (clamp for responsiveness) */
   --fs-h1: clamp(2.5rem, 6vw, 4rem); /* 40–64px */
@@ -288,7 +291,6 @@ a {
 .hero-subtitle {
   margin: 0.2em auto 1.5em auto;
   font-size: var(--fs-h4);
-  text-transform: uppercase;
 }
 .subtitle-big {
   font-size: var(--fs-h2);
@@ -378,6 +380,8 @@ img {
   /* SHOW THE HAMBURGER MENU */
   #nav-icon-hamburger {
     display: block;
+    position: relative;
+    z-index: 102;
   }
   #nav-icon-hamburger span {
     display: block;
@@ -386,6 +390,10 @@ img {
   /* COLUMN-view of the containers */
   .container-item-wrapper {
     flex-direction: column;
+  }
+
+  .hero-subpage {
+    text-align: left !important;
   }
 }
 @media (max-width: 600px) {
