@@ -8,84 +8,116 @@
     ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dăruiește - Biserica Speranta Perg</title>
+    <title>Dăruiește - Biserica Speranța Perg</title>
+    <meta name="description" content="Susține lucrarea Bisericii Speranța Perg printr-o donație. Dărnicia ta sprijină slujirea, misiunea și proiectele de ajutorare ale comunității." />
+    <link rel="canonical" href="https://sperantaperg.at/daruieste" />
     <meta name="theme-color" content="#08141b" />
-    <link rel="stylesheet" href="assets/css/daruieste.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/nav_footer.css" />
-    <link rel="stylesheet" href="assets/css/cookie.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://js.churchcenter.com/modal/v1"></script>
+    <link rel="stylesheet" href="assets/css/daruieste.css?v=4" />
+    <link rel="stylesheet" href="assets/css/layout.css?v=4" />
+    <link rel="stylesheet" href="assets/css/nav_footer.css?v=4" />
+    <link rel="stylesheet" href="assets/css/cookie.css?v=4" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://js.churchcenter.com/modal/v1" defer></script>
     <!-- Favicons -->
     <link
       rel="icon"
       type="image/png"
-      href="assets/icons/favicon-96x96.png"
+      href="/favicon-96x96.png"
       sizes="96x96"
     />
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
+      href="/apple-touch-icon.png"
     />
-    <link rel="manifest" href="assets/icons/site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <header id="header">
-      <!-- Navigation -->
-      <div class="navigation-wrapper" id="navigationWrapper">
-        <a class="logo" href="/sperantaperg.at/index.html"
+      <div id="nav-backdrop"></div>
+
+      <!-- Desktop Nav -->
+      <div class="navigation-wrapper has-mobile-nav" id="navigationWrapper">
+        <a class="logo" href="/"
           ><img
             src="assets/icons/sperantaperglogo.png"
-            alt="Biserica Speranta Perg Logo"
+            alt="Biserica Speranța Perg Logo"
         /></a>
-        <nav class="nav-links" id="nav-menu">
+        <nav>
           <ul class="nav-links-list">
-            <li><a href="/sperantaperg.at/index.html">Acasă</a></li>
-            <!-- <li><a href="#">Noutăți</a></li> -->
-            <hr class="dropdown-line" />
+            <li><a href="/">Acasă</a></li>
+            <li><a href="/stiri">Noutăți</a></li>
             <li class="has-dropdown">
               <span class="dropdown-title">Cunoaște-ne</span>
               <ul class="dropdown">
-                <li><a href="/sperantaperg.at/sunt-nou.html">Sunt nou</a></li>
-                <li><a href="/sperantaperg.at/ce-credem.html">Ce credem</a></li>
-                <li>
-                  <a href="/sperantaperg.at/echipa-speranta.html"
-                    >Echipa Speranța</a
-                  >
-                </li>
+                <li><a href="/sunt-nou">Sunt nou</a></li>
+                <li><a href="/ce-credem">Ce credem</a></li>
+                <li><a href="/echipa-speranta">Echipa Speranța</a></li>
               </ul>
             </li>
-            <hr class="dropdown-line" />
             <li class="has-dropdown">
               <span class="dropdown-title">Departamente</span>
               <ul class="dropdown">
-                <li><a href="/sperantaperg.at/hopeyouth.html">HopeYouth</a></li>
-                <li><a href="/sperantaperg.at/kids.html">Kids</a></li>
+                <li><a href="/hopeyouth">HopeYouth</a></li>
+                <li><a href="/kids">Kids</a></li>
               </ul>
             </li>
             <li>
-              <a
-                class="btn no-active"
-                id="donation-btn"
-                href="/sperantaperg.at/daruieste.html"
-                >Dăruiește</a
-              >
+              <a class="btn no-active" id="donation-btn" href="/daruieste">Dăruiește</a>
             </li>
           </ul>
         </nav>
+      </div>
+
+      <!-- Mobile Bar (logo only) -->
+      <div class="nav-mobile-bar" id="nav-mobile-bar">
+        <a class="logo" href="/"
+          ><img
+            src="assets/icons/sperantaperglogo.png"
+            alt="Biserica Speranța Perg Logo"
+        /></a>
+      </div>
+
+      <!-- Hamburger (separate, always above drawer) -->
+      <div class="nav-hamburger-slot" id="nav-hamburger-slot">
         <div id="nav-icon-hamburger">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
+
+      <!-- Mobile Drawer -->
+      <nav class="nav-mobile-drawer" id="nav-menu">
+        <ul>
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/stiri">Noutăți</a></li>
+          <li class="mobile-divider-item"><hr class="mobile-divider" /></li>
+          <li class="mobile-category-item">
+            <span class="mobile-category">Cunoaște-ne</span>
+          </li>
+          <li class="mobile-sub-link"><a href="/sunt-nou">Sunt nou</a></li>
+          <li class="mobile-sub-link"><a href="/ce-credem">Ce credem</a></li>
+          <li class="mobile-sub-link">
+            <a href="/echipa-speranta">Echipa Speranța</a>
+          </li>
+          <li class="mobile-divider-item"><hr class="mobile-divider" /></li>
+          <li class="mobile-category-item">
+            <span class="mobile-category">Departamente</span>
+          </li>
+          <li class="mobile-sub-link"><a href="/hopeyouth">HopeYouth</a></li>
+          <li class="mobile-sub-link"><a href="/kids">Kids</a></li>
+          <li class="mobile-donation-item">
+            <a href="/daruieste">Dăruiește</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero -->
-    <div class="hero hero-subpage big-container dark">
+    <div class="hero-subpage dark daruieste-hero">
       <div class="container">
         <h1 class="hero-title fadeInDelay">Dăruiește</h1>
         <p class="hero-subtitle fadeInDelay">"...căci, pe cine dă cu bucurie îl iubește Dumnezeu."</p>
@@ -112,7 +144,7 @@
               <p class="paragraph">
                 La Biserica Speranța Perg, dorința noastră este să slujim
                 comunitatea noastră și societatea, împărtășind mesajul care
-                schimbă vieți – speranța și adevărul în Isus.
+                schimbă vieți, speranța și adevărul în Isus.
               </p>
               <p class="paragraph">
                 Privim dărnicia ca o formă de închinare, oferind cu bucurie și
@@ -162,7 +194,7 @@
           <div class="container-item">
             <div class="image-cell">
               <img
-                src="assets/img/backgrounds/daruieste_background.webp"
+                src="assets/img/daruieste/colecte_speciale.webp"
                 alt="place"
                 loading="lazy"
               />
@@ -185,20 +217,19 @@
             </div>
             <div>
               <p class="paragraph">
-                ✦ În cadrul unei inițiative de slujire, am vizitat mai multe
-                familii aflate în dificultate din zona Bocșa, România. Am oferit
-                alimente și alte lucruri esențiale, dar cel mai important – am
-                dus cu noi dragostea și încurajarea pe care doar Isus o poate
-                oferi. A fost o experiență profundă, care ne-a apropiat mai mult
-                de inima celor în nevoie.
+                ✦ Braloștița, Jud. Dolj <br />
+                Am ajuns în sate unde lipsurile sunt parte din viața de zi cu zi.
+                Am distribuit pachete cu mâncare și articole de bază.
+                Credem că implicarea practică este o formă directă de a arăta grija lui Dumnezeu.
+
               </p>
               <p class="paragraph">
-                ✦ În Oltenia, am ajuns în sate unde oamenii trăiesc cu foarte
-                puțin. Am împărțit pachete cu mâncare, articole de igienă și
-                alte bunuri de primă necesitate. Ne-am bucurat să vedem cum un
-                gest simplu poate aduce un zâmbet sincer și un strop de
-                speranță. Credem că astfel putem arăta, în mod practic, iubirea
-                lui Dumnezeu.
+                ✦ Bocșa, Jud. Caraș-Severin <br />
+                Am ajuns în mai multe gospodării unde lipsurile sunt constante și vizibile. Am oferit alimente și produse de bază, gândite pentru nevoile reale ale fiecărei familii. Acțiunea a fost parte dintr-un demers mai amplu de implicare în comunitate.
+              </p>
+              <p class="paragraph">
+                ✦ Bencecul de Jos <br />
+                Acolo am sprijinit 25 de familii aflate în nevoie. Au primit alimente de bază și produse utile. Intervenția a fost organizată astfel încât ajutorul să ajungă direct la cei vizați. Ne concentrăm pe acțiuni clare, bine direcționate. Obiectivul nostru este să rămânem implicați și să răspundem concret situațiilor întâlnite.
               </p>
             </div>
             <hr class="plus-line" />
@@ -268,74 +299,44 @@
         </div>
       </div>
       <div class="container">
-        <div class="container-item-wrapper">
-          <div class="container-item fadeIn way-item">
-            <div class="way">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="100px"
-                viewBox="0 -960 960 960"
-                width="100px"
-                fill="#"
-              >
-                <path
-                  d="M638.31-464.08 481.23-615.62q-27.34-26.06-45.98-58.04-18.63-31.97-18.63-69.65 0-47.87 32.14-82.28Q480.91-860 528.23-860q33.62 0 61.23 18.46 27.62 18.46 48.85 44.85 21.23-26.39 48.65-44.85Q714.38-860 748.38-860q47.32 0 79.47 34.41T860-743.31q0 37.58-18.99 69.47-18.99 31.9-46.01 58.22L638.31-464.08Zm0-62.23 122.43-119.9q20.76-20.1 37.32-43.92 16.55-23.81 16.55-53.18 0-29.15-18.83-50.23-18.84-21.07-47.4-21.07-23.62 0-42.65 13.88-19.04 13.88-33.96 32.96l-33.46 41.92-33.85-41.92q-14.54-19.08-33.57-32.96-19.04-13.88-42.66-13.88-28.55 0-47.39 21.07Q462-772.46 462-743.31q0 29.37 16.36 53.18 16.37 23.82 37.64 44.05l122.31 119.77ZM250-202.31 561.23-110l246.08-76.85q.77-21.92-13.31-34.27-14.08-12.34-32.92-12.34H560.11q-17.88 0-35.88-2.31-18-2.31-35.69-8.46L396-272.46l15.54-46.38 90.54 32q13.3 5.15 28.84 6.76 15.54 1.62 34.62 1.24h41q0-22.16-12.46-36.89t-30.93-21.96l-220.3-83q-1.54-.39-2.31-.58-.77-.19-1.92-.19H250v219.15ZM68.08-100v-366.84h269.08q5.4 0 10.39 1.07 4.99 1.08 9.91 2.54l220.69 82.39q31.08 11.3 53.35 37.69 22.27 26.38 22.27 64.31h107.31q43.75 0 71.33 30.84Q860-217.15 860-175v22.15L565.46-62.62 250-154.31V-100H68.08Zm45.38-45.39h90.16v-276.07h-90.16v276.07Zm524.85-580.46Z"
-                />
+        <div class="oportunity-grid">
+
+          <div class="oportunity-card fadeIn">
+            <div class="oportunity-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="M638.31-464.08 481.23-615.62q-27.34-26.06-45.98-58.04-18.63-31.97-18.63-69.65 0-47.87 32.14-82.28Q480.91-860 528.23-860q33.62 0 61.23 18.46 27.62 18.46 48.85 44.85 21.23-26.39 48.65-44.85Q714.38-860 748.38-860q47.32 0 79.47 34.41T860-743.31q0 37.58-18.99 69.47-18.99 31.9-46.01 58.22L638.31-464.08Zm0-62.23 122.43-119.9q20.76-20.1 37.32-43.92 16.55-23.81 16.55-53.18 0-29.15-18.83-50.23-18.84-21.07-47.4-21.07-23.62 0-42.65 13.88-19.04 13.88-33.96 32.96l-33.46 41.92-33.85-41.92q-14.54-19.08-33.57-32.96-19.04-13.88-42.66-13.88-28.55 0-47.39 21.07Q462-772.46 462-743.31q0 29.37 16.36 53.18 16.37 23.82 37.64 44.05l122.31 119.77ZM250-202.31 561.23-110l246.08-76.85q.77-21.92-13.31-34.27-14.08-12.34-32.92-12.34H560.11q-17.88 0-35.88-2.31-18-2.31-35.69-8.46L396-272.46l15.54-46.38 90.54 32q13.3 5.15 28.84 6.76 15.54 1.62 34.62 1.24h41q0-22.16-12.46-36.89t-30.93-21.96l-220.3-83q-1.54-.39-2.31-.58-.77-.19-1.92-.19H250v219.15ZM68.08-100v-366.84h269.08q5.4 0 10.39 1.07 4.99 1.08 9.91 2.54l220.69 82.39q31.08 11.3 53.35 37.69 22.27 26.38 22.27 64.31h107.31q43.75 0 71.33 30.84Q860-217.15 860-175v22.15L565.46-62.62 250-154.31V-100H68.08Zm45.38-45.39h90.16v-276.07h-90.16v276.07Zm524.85-580.46Z"/>
               </svg>
-              <div class="way-text">
-                <h3>Voluntariat</h3>
-                <p>
-                  Fii parte din lucrare implicându-te practic în echipe,
-                  evenimente sau sprijin logistic.
-                </p>
-              </div>
+            </div>
+            <div class="oportunity-card-text">
+              <h3>Voluntariat</h3>
+              <p>Fii parte din lucrare implicându-te practic în echipe, evenimente sau sprijin logistic.</p>
             </div>
           </div>
-          <div class="container-item fadeIn way-item">
-            <div class="way">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="100px"
-                viewBox="0 -960 960 960"
-                width="100px"
-                fill="#"
-              >
-                <path
-                  d="M145.39-225.39V-539.23-518.08v-216.53V-225.39Zm563.3 87.7L579.46-266.92q-12.23-12.23-17.15-25.89-4.92-13.65-4.92-27.5 0-29.69 21.07-52.77 21.08-23.07 54.39-23.07 26.07 0 40.92 12.03 14.84 12.04 34.92 32.12 18.85-18.85 34-31.5 15.16-12.65 41.85-12.65 34.3 0 54.88 23.38Q860-349.38 860-319.69q0 13.84-5.42 27.69-5.43 13.85-16.66 25.08L708.69-137.69Zm-563.3-479.46h669.22v-105.16q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v105.16ZM450.15-180H157.69q-23.53 0-40.61-17.08T100-237.69v-484.62q0-23.53 17.08-40.61T157.69-780h644.62q23.53 0 40.61 17.08T860-722.31v229.16q-32.69-21.93-70.92-34-38.23-12.08-80.39-12.08-31.84 0-62.46 6.92-30.61 6.92-58.15 19.92H145.39v274.7q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84h282.14q1.55 11.99 4.21 23.42 2.65 11.43 6.11 21.97Z"
-                />
+
+          <div class="oportunity-card fadeIn">
+            <div class="oportunity-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="M145.39-225.39V-539.23-518.08v-216.53V-225.39Zm563.3 87.7L579.46-266.92q-12.23-12.23-17.15-25.89-4.92-13.65-4.92-27.5 0-29.69 21.07-52.77 21.08-23.07 54.39-23.07 26.07 0 40.92 12.03 14.84 12.04 34.92 32.12 18.85-18.85 34-31.5 15.16-12.65 41.85-12.65 34.3 0 54.88 23.38Q860-349.38 860-319.69q0 13.84-5.42 27.69-5.43 13.85-16.66 25.08L708.69-137.69Zm-563.3-479.46h669.22v-105.16q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v105.16ZM450.15-180H157.69q-23.53 0-40.61-17.08T100-237.69v-484.62q0-23.53 17.08-40.61T157.69-780h644.62q23.53 0 40.61 17.08T860-722.31v229.16q-32.69-21.93-70.92-34-38.23-12.08-80.39-12.08-31.84 0-62.46 6.92-30.61 6.92-58.15 19.92H145.39v274.7q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84h282.14q1.55 11.99 4.21 23.42 2.65 11.43 6.11 21.97Z"/>
               </svg>
-              <div class="way-text">
-                <h3>Donație</h3>
-                <p>
-                  Sprijină financiar lucrarea noastră. Orice sumă contribuie la
-                  extinderea Împărăției lui Dumnezeu și ajutorarea celor în
-                  nevoie.
-                </p>
-              </div>
+            </div>
+            <div class="oportunity-card-text">
+              <h3>Donație</h3>
+              <p>Sprijină financiar lucrarea noastră. Orice sumă contribuie la extinderea Împărăției lui Dumnezeu și ajutorarea celor în nevoie.</p>
             </div>
           </div>
-          <div class="container-item fadeIn way-item">
-            <div class="way">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="100px"
-                viewBox="0 -960 960 960"
-                width="100px"
-                fill="#"
-              >
-                <path
-                  d="M624.08-330v-104.31L577-521.62q-21.85 1.23-36.42 17.23-14.58 16-14.58 37.47v218.15L616.23-100h-53.08l-82.53-136v-230.92q0-34.23 20.57-60.96 20.58-26.74 53.35-35.04l-68.31-127.77q-18.46-34.93-15.92-73.66 2.54-38.73 29.61-65.8l54.62-54.62 266.84 313.62L860.61-100h-46l-38.38-453.92-223.92-264.39-19.77 20.16q-15.16 15.15-18.16 36.19t6.77 39.58l148.31 276.53V-330h-45.38Zm-332.92 0v-115.85l148.3-276.53q10.16-18.54 6.96-39.58-3.19-21.04-18.34-36.19l-19.39-20.16-224.3 264.39L146-100h-46l39.62-471.15 266.46-313.62 54.61 54.62q27.08 27.07 29.62 65.8 2.54 38.73-15.93 73.66l-68.69 127.77q32.77 8.3 53.54 35.04Q480-501.15 480-466.92V-236l-82.54 136h-53.07l90.23-148.77v-218.15q0-21.47-14.58-37.47t-36.42-17.23l-47.08 87.31V-330h-45.38Z"
-                />
+
+          <div class="oportunity-card fadeIn">
+            <div class="oportunity-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="M624.08-330v-104.31L577-521.62q-21.85 1.23-36.42 17.23-14.58 16-14.58 37.47v218.15L616.23-100h-53.08l-82.53-136v-230.92q0-34.23 20.57-60.96 20.58-26.74 53.35-35.04l-68.31-127.77q-18.46-34.93-15.92-73.66 2.54-38.73 29.61-65.8l54.62-54.62 266.84 313.62L860.61-100h-46l-38.38-453.92-223.92-264.39-19.77 20.16q-15.16 15.15-18.16 36.19t6.77 39.58l148.31 276.53V-330h-45.38Zm-332.92 0v-115.85l148.3-276.53q10.16-18.54 6.96-39.58-3.19-21.04-18.34-36.19l-19.39-20.16-224.3 264.39L146-100h-46l39.62-471.15 266.46-313.62 54.61 54.62q27.08 27.07 29.62 65.8 2.54 38.73-15.93 73.66l-68.69 127.77q32.77 8.3 53.54 35.04Q480-501.15 480-466.92V-236l-82.54 136h-53.07l90.23-148.77v-218.15q0-21.47-14.58-37.47t-36.42-17.23l-47.08 87.31V-330h-45.38Z"/>
               </svg>
-              <div class="way-text">
-                <h3>Rugăciune</h3>
-                <p>
-                  Susține-ne spiritual. Ne încredem în puterea rugăciunii și
-                  știm că nimic nu se clădește fără ea.
-                </p>
-              </div>
+            </div>
+            <div class="oportunity-card-text">
+              <h3>Rugăciune</h3>
+              <p>Susține-ne spiritual. Ne încredem în puterea rugăciunii și știm că nimic nu se clădește fără ea.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -347,19 +348,19 @@
         <div class="footer-section">
           <h4>Acces rapid</h4>
           <ul>
-            <li><a href="/sperantaperg.at/index.html">Acasă</a></li>
-            <!-- <li><a href="">Noutăți</a></li> -->
-            <li><a href="/sperantaperg.at/daruieste.html">Dăruiește</a></li>
+            <li><a href="/">Acasă</a></li>
+            <li><a href="/stiri">Noutăți</a></li>
+            <li><a href="/daruieste">Dăruiește</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
           <h4>Cunoaște-ne</h4>
           <ul>
-            <li><a href="/sperantaperg.at/sunt-nou.html">Sunt nou</a></li>
-            <li><a href="/sperantaperg.at/ce-credem.html">Ce credem</a></li>
+            <li><a href="/sunt-nou">Sunt nou</a></li>
+            <li><a href="/ce-credem">Ce credem</a></li>
             <li>
-              <a href="/sperantaperg.at/echipa-speranta.html"
+              <a href="/echipa-speranta"
                 >Echipa Speranța</a
               >
             </li>
@@ -369,8 +370,8 @@
         <div class="footer-section">
           <h4>Departamente</h4>
           <ul>
-            <li><a href="/sperantaperg.at/hopeyouth.html">HopeYouth</a></li>
-            <li><a href="/sperantaperg.at/kids.html">Kids</a></li>
+            <li><a href="/hopeyouth">HopeYouth</a></li>
+            <li><a href="/kids">Kids</a></li>
           </ul>
         </div>
 
@@ -407,9 +408,9 @@
           <h4>Informații</h4>
           <ul>
             <li><a href="https://www.ggaustria.com/biserica/speranta-perg/cereri">Formulare Yosef</a></li>
-            <li><a href="/sperantaperg.at/impressum.html">Impressum</a></li>
+            <li><a href="/impressum">Impressum</a></li>
             <li>
-              <a href="/sperantaperg.at/data-consent.html"
+              <a href="/data-consent"
                 >Politica de confidențialitate</a
               >
             </li>
@@ -419,21 +420,20 @@
         <!-- Contact -->
         <div class="footer-section">
           <h4>Contact</h4>
-          <p>
-            Adresa:
-            <a
-              href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener"
-            >
-              Greiner Straße 2, 4320 Perg
-            </a>
-          </p>
-          <p>Tel: <a href="tel:+436769447929">+43 676 9447929</a></p>
-          <p>
-            Email:
-            <a href="mailto:sperantaperg@gmail.com">sperantaperg@gmail.com</a>
-          </p>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <a href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Greiner Straße 2, 4320 Perg</a>
+            </li>
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <a href="tel:+436769447929">+43 676 9447929</a>
+            </li>
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:sperantaperg@gmail.com">sperantaperg@gmail.com</a>
+            </li>
+          </ul>
         </div>
 
         <!-- Social Media -->
@@ -558,7 +558,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Biserica Speranța. Toate drepturile rezervate.</p>
+        <p>© 2025-2026 Biserica Speranța. Toate drepturile rezervate.</p>
         <a href="nick website">Made by Neagoe Nick</a>
       </div>
     </footer>
@@ -568,14 +568,14 @@
       <p>
         <strong>RO:</strong> Folosim cookie-uri pentru a îmbunătăți experiența
         ta pe site.
-        <a href="/sperantaperg.at/data-consent.html#ro" target="_blank"
+        <a href="/data-consent#ro" target="_blank"
           >Află mai multe</a
         >
       </p>
       <p>
         <strong>DE:</strong> Wir verwenden Cookies, um Ihre Erfahrung auf der
         Website zu verbessern.
-        <a href="/sperantaperg.at/data-consent.html#de" target="_blank"
+        <a href="/data-consent#de" target="_blank"
           >Mehr erfahren</a
         >
       </p>
@@ -597,8 +597,8 @@
       </div>
     </div>
 
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/effects.js"></script>
-    <script src="assets/js/cookie.js"></script>
+    <script src="assets/js/navigation.js?v=4" defer></script>
+    <script src="assets/js/effects.js?v=4" defer></script>
+    <script src="assets/js/cookie.js?v=4" defer></script>
   </body>
 </html>

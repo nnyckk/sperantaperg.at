@@ -1,598 +1,515 @@
 <!DOCTYPE html>
 <html lang="ro">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-KE98B3X7E5"
-    ></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acasă - Biserica Speranta Perg</title>
-    <meta name="theme-color" content="#08141b" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/nav_footer.css" />
-    <link rel="stylesheet" href="assets/css/cookie.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://js.churchcenter.com/modal/v1"></script>
-    <!-- Favicons -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/icons/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="Speranța Perg" />
-    <link rel="manifest" href="assets/icons/site.webmanifest" />
-  </head>
-  <body>
-    <header id="header">
-      <!-- Navigation -->
-      <div class="navigation-wrapper" id="navigationWrapper">
-        <a class="logo" href="/sperantaperg.at/index.html"
-          ><img
-            src="assets/icons/sperantaperglogo.png"
-            alt="Biserica Speranta Perg Logo"
-        /></a>
-        <nav class="nav-links" id="nav-menu">
-          <ul class="nav-links-list">
-            <li><a href="/sperantaperg.at/index.html">Acasă</a></li>
-            <!-- <li><a href="#">Noutăți</a></li> -->
-            <hr class="dropdown-line" />
-            <li class="has-dropdown">
-              <span class="dropdown-title">Cunoaște-ne</span>
-              <ul class="dropdown">
-                <li><a href="/sperantaperg.at/sunt-nou.html">Sunt nou</a></li>
-                <li><a href="/sperantaperg.at/ce-credem.html">Ce credem</a></li>
-                <li>
-                  <a href="/sperantaperg.at/echipa-speranta.html"
-                    >Echipa Speranța</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <hr class="dropdown-line" />
-            <li class="has-dropdown">
-              <span class="dropdown-title">Departamente</span>
-              <ul class="dropdown">
-                <li><a href="/sperantaperg.at/hopeyouth.html">HopeYouth</a></li>
-                <li><a href="/sperantaperg.at/kids.html">Kids</a></li>
-              </ul>
-            </li>
-            <li>
-              <a
-                class="btn"
-                id="donation-btn"
-                href="/sperantaperg.at/daruieste.html"
-                >Dăruiește</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <div id="nav-icon-hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
 
-    <!-- Hero -->
-    <div class="hero big-container">
-      <div class="container">
-        <h1 class="hero-title fadeInDelay">Ești binevenit la Isus</h1>
-        <p class="hero-subtitle fadeInDelay">
-          Descoperă-L pe Dumnezeu într-o comunitate vie
-        </p>
-        <a
-          href="/sperantaperg.at/sunt-nou.html"
-          class="hero-btn btn fadeInDelay"
-          >Sunt nou</a
-        >
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE98B3X7E5"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acasă - Biserica Speranța Perg</title>
+  <meta name="description" content="Biserica Penticostală Speranța Perg, Austria, o comunitate vie pentru Isus. Servicii duminicale la 9:00 și 18:00. Ești binevenit!" />
+  <link rel="canonical" href="https://sperantaperg.at/" />
+  <meta name="theme-color" content="#08141b" />
+  <link rel="stylesheet" href="assets/css/index.css?v=4" />
+  <link rel="stylesheet" href="assets/css/layout.css?v=4" />
+  <link rel="stylesheet" href="assets/css/nav_footer.css?v=4" />
+  <link rel="stylesheet" href="assets/css/cookie.css?v=4" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://js.churchcenter.com/modal/v1" defer></script>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Speranța Perg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- Structured data (schema.org Church) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Biserica Penticostală Speranța Perg",
+    "url": "https://sperantaperg.at/",
+    "logo": "https://sperantaperg.at/assets/icons/sperantaperglogo.png",
+    "image": "https://sperantaperg.at/assets/icons/sperantaperglogo.png",
+    "telephone": "+436769447929",
+    "email": "sperantaperg@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Greiner Straße 2",
+      "postalCode": "4320",
+      "addressLocality": "Perg",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.2491209,
+      "longitude": 14.6391817
+    },
+    "sameAs": [
+      "https://www.facebook.com/sperantaperg/",
+      "https://www.instagram.com/sperantaperg/",
+      "https://www.youtube.com/@sperantaperg"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "11:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "18:00",
+        "closes": "20:00"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header id="header">
+    <div id="nav-backdrop"></div>
+
+    <!-- Desktop Nav -->
+    <div class="navigation-wrapper has-mobile-nav" id="navigationWrapper">
+      <a class="logo" href="/"><img src="assets/icons/sperantaperglogo.png" alt="Biserica Speranța Perg Logo" /></a>
+      <nav>
+        <ul class="nav-links-list">
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/stiri">Noutăți</a></li>
+          <li class="has-dropdown">
+            <span class="dropdown-title">Cunoaște-ne</span>
+            <ul class="dropdown">
+              <li><a href="/sunt-nou">Sunt nou</a></li>
+              <li><a href="/ce-credem">Ce credem</a></li>
+              <li><a href="/echipa-speranta">Echipa Speranța</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <span class="dropdown-title">Departamente</span>
+            <ul class="dropdown">
+              <li><a href="/hopeyouth">HopeYouth</a></li>
+              <li><a href="/kids">Kids</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="btn" id="donation-btn" href="/daruieste">Dăruiește</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Bar (logo only) -->
+    <div class="nav-mobile-bar" id="nav-mobile-bar">
+      <a class="logo" href="/"><img src="assets/icons/sperantaperglogo.png" alt="Biserica Speranța Perg Logo" /></a>
+    </div>
+
+    <!-- Hamburger (separate, always above drawer) -->
+    <div class="nav-hamburger-slot" id="nav-hamburger-slot">
+      <div id="nav-icon-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
-    <!-- Visit Times -->
-    <section class="service-times big-container light">
-      <div class="container flex-center">
-        <div class="container-item-wrapper service">
-          <div class="container-item">
-            <div class="service-times-title">
-              <h2>Ești liber <span class="marked">weekendul</span> acesta?</h2>
-            </div>
+    <!-- Mobile Drawer -->
+    <nav class="nav-mobile-drawer" id="nav-menu">
+      <ul>
+        <li><a href="/">Acasă</a></li>
+        <li><a href="/stiri">Noutăți</a></li>
+        <li class="mobile-divider-item">
+          <hr class="mobile-divider" />
+        </li>
+        <li class="mobile-category-item">
+          <span class="mobile-category">Cunoaște-ne</span>
+        </li>
+        <li class="mobile-sub-link"><a href="/sunt-nou">Sunt nou</a></li>
+        <li class="mobile-sub-link"><a href="/ce-credem">Ce credem</a></li>
+        <li class="mobile-sub-link">
+          <a href="/echipa-speranta">Echipa Speranța</a>
+        </li>
+        <li class="mobile-divider-item">
+          <hr class="mobile-divider" />
+        </li>
+        <li class="mobile-category-item">
+          <span class="mobile-category">Departamente</span>
+        </li>
+        <li class="mobile-sub-link"><a href="/hopeyouth">HopeYouth</a></li>
+        <li class="mobile-sub-link"><a href="/kids">Kids</a></li>
+        <li class="mobile-donation-item">
+          <a href="/daruieste">Dăruiește</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero big-container">
+    <div class="container">
+      <h1 class="hero-title fadeInDelay">Ești binevenit la Isus</h1>
+      <p class="hero-subtitle fadeInDelay">
+        Descoperă-L pe Dumnezeu într-o comunitate vie
+      </p>
+      <a href="/sunt-nou" class="hero-btn btn fadeInDelay">Sunt nou</a>
+    </div>
+  </div>
+
+  <!-- Visit Times -->
+  <section class="service-times big-container light">
+    <div class="container flex-center">
+      <div class="container-item-wrapper service">
+        <div class="container-item">
+          <div class="service-times-title">
+            <h2>Ești liber <span class="marked">weekendul</span> acesta?</h2>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="container-item-wrapper">
-          <div class="grid-item service-times-grid-item">
-            <div class="fadeInDelay image-cell service-times-picture1">
-              <img
-                src="assets/img/index/ioncuceru_predica.webp"
-                alt="Ion Cuceru predică"
-                loading="lazy"
-              />
-            </div>
-            <div class="fadeInDelay image-cell service-times-picture2">
-              <img
-                src="assets/img/index/group_sing.webp"
-                alt="închinare prin muzică"
-                loading="lazy"
-              />
-            </div>
-            <div class="fadeInDelay image-cell service-times-picture3">
-              <img
-                src="assets/img/index/bible.webp"
-                alt="biblia"
-                loading="lazy"
-              />
-            </div>
+    </div>
+    <div class="container">
+      <div class="container-item-wrapper">
+        <div class="grid-item service-times-grid-item">
+          <div class="fadeInDelay image-cell service-times-picture1">
+            <img src="assets/img/index/ioncuceru_predica_400.webp" alt="Ion Cuceru predică" loading="lazy" />
           </div>
-          <div class="container-item">
-            <div class="service-times-subtitle">
-              <h2>
-                Te așteptăm în fiecare duminică de la orele 9:00 sau 18:00
-              </h2>
-            </div>
-            <div>
-              <p>
-                Vino să experimentezi închinarea, părtășia și Cuvântul lui
-                Dumnezeu alături de noi.
-              </p>
-            </div>
-            <hr class="plus-line" />
-            <a
-              class="btn"
-              href="https://speranta-perg-420440.churchcenter.com/people/forms/1011198"
-              >Planifică o vizită</a
-            >
+          <div class="fadeInDelay image-cell service-times-picture2">
+            <img src="assets/img/index/group_sing_400.webp" alt="închinare prin muzică" loading="lazy" />
+          </div>
+          <div class="fadeInDelay image-cell service-times-picture3">
+            <img src="assets/img/index/bible_350.webp" alt="biblia" loading="lazy" />
+          </div>
+        </div>
+        <div class="container-item">
+          <div class="service-times-subtitle">
+            <h2>
+              Te așteptăm în fiecare duminică de la orele 9:00 sau 18:00
+            </h2>
+          </div>
+          <div>
+            <p>
+              Vino să experimentezi închinarea, părtășia și Cuvântul lui
+              Dumnezeu alături de noi.
+            </p>
+          </div>
+          <hr class="plus-line" />
+          <a class="btn" href="https://speranta-perg-420440.churchcenter.com/people/forms/1011198">Planifică o
+            vizită</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <section class="welcome big-container dark">
+    <div class="container">
+      <div class="container-item-wrapper flex-start">
+        <div class="container-item">
+          <div class="welcome-title">
+            <h2 class="small-text">Bine ai venit</h2>
+            <span class="subtitle">Suntem o biserică pentru Isus.</span>
+          </div>
+          <div>
+            <p class="paragraph">
+              Biserica Penticostală Speranța Perg a luat ființă în 8 noiembrie
+              2020, din dorința unui grup de credincioși de a avea o
+              comunitate vie în care Dumnezeu să fie slujit cu credincioșie,
+              iar Evanghelia lui Isus Christos să fie vestită cu putere.
+            </p>
+            <p class="paragraph">
+              Lucrarea a început cu aproximativ 23 de persoane, familii din
+              Perg și împrejurimi și s-a dezvoltat prin rugăciune, viziune
+              clară și implicare practică, în parteneriat cu Biserica Speranța
+              Linz. Astăzi, biserica numără peste 100 de membri și este o
+              comunitate caldă, unită în dragostea lui Christos.
+            </p>
+          </div>
+          <a class="btn" href="/ce-credem">Află mai multe</a>
+        </div>
+        <div class="container-item">
+          <div class="image-cell">
+            <img src="assets/img/index/church_pray_700.webp" alt="Membrii din biserică se roagă" loading="lazy" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Welcome -->
-    <section class="welcome big-container dark">
-      <div class="container">
-        <div class="container-item-wrapper flex-start">
-          <div class="container-item">
-            <div class="welcome-title">
-              <h2 class="small-text">Bine ai venit</h2>
-              <span class="subtitle">Suntem o biserică pentru Isus.</span>
-            </div>
-            <div>
-              <p class="paragraph">
-                Biserica Penticostală Speranța Perg a luat ființă în 8 noiembrie
-                2020, din dorința unui grup de credincioși de a avea o
-                comunitate vie în care Dumnezeu să fie slujit cu credincioșie,
-                iar Evanghelia lui Isus Christos să fie vestită cu putere.
-              </p>
-              <p class="paragraph">
-                Lucrarea a început cu aproximativ 23 de persoane – familii din
-                Perg și împrejurimi și s-a dezvoltat prin rugăciune, viziune
-                clară și implicare practică, în parteneriat cu Biserica Speranța
-                Linz. Astăzi, biserica numără peste 100 de membri și este o
-                comunitate caldă, unită în dragostea lui Christos.
-              </p>
-            </div>
-            <a class="btn" href="/sperantaperg.at/ce-credem.html">Află mai multe</a>
-          </div>
-          <div class="container-item">
-            <div class="image-cell">
-              <img
-                src="assets/img/index/church_pray.webp"
-                alt="Membrii din biserică se roagă"
-                loading="lazy"
-              />
-            </div>
-          </div>
+
+  <!-- Featured News -->
+  <section class="index-featured-stire big-container light">
+    <div class="container">
+      <div class="container-item-wrapper flex-start">
+
+        <!-- Stânga: card 50% -->
+        <div class="container-item index-stire-card-col" id="indexFeaturedStire">
+          <!-- generat dinamic din stiri.json -->
         </div>
+
+        <!-- Dreapta: text + buton 50% -->
+        <div class="container-item index-stire-text-col">
+          <div class="index-stire-text-title">
+            <h2 class="small-text index-stire-label-text">Noutăți & Evenimente</h2>
+            <span class="subtitle">Ce este nou la Speranța?</span>
+          </div>
+          <div>
+            <p class="paragraph">Fii la curent cu cele mai noi anunțuri, evenimente și vești din viața Bisericii
+              Speranța Perg. De la conferințe și tabere, până la seri de rugăciune și implicare în comunitate.</p>
+            <p class="paragraph">Nu rata niciun moment important. Urmărește noutățile noastre și fii parte din tot ce
+              Dumnezeu lucrează în mijlocul nostru.</p>
+          </div>
+          <hr class="plus-line" />
+          <a href="/stiri" class="btn index-stire-btn-all">Află mai multe</a>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Departmens -->
-    <section class="departments big-container light">
-      <div class="container">
-        <div class="grid-item departments-grid-item">
-          <a href="/sperantaperg.at/hopeyouth.html">
-            <div class="fadeIn image-cell departments-hopeyouth">
-              <div class="overlay"></div>
-              <div class="departments-title">
-                <h2>HopeYouth</h2>
-              </div>
-            </div>
-          </a>
-
-          <a href="/sperantaperg.at/kids.html">
-            <div class="fadeIn image-cell departments-kids">
-              <div class="overlay"></div>
-              <div class="departments-title">
-                <h2>Kids</h2>
-              </div>
-            </div>
-          </a>
+  <!-- Sermons -->
+  <section class="sermon big-container dark">
+    <div class="container">
+      <div class="container-item-wrapper flex-start">
+        <div class="container-item">
+          <div class="sermon-title">
+            <h2 class="small-text">Vizionează & Ascultă</h2>
+            <span class="subtitle">Iată cele mai noi mesaje de la Speranța.</span>
+          </div>
+          <div>
+            <p class="paragraph">
+              Mesaje relevante din Cuvântul lui Dumnezeu, menite să te
+              zidească spiritual. Vezi predicile anterioare sau urmărește-ne
+              în direct, în fiecare duminică, de la ora 9:00 și 18:00!
+            </p>
+            <p class="paragraph">
+              Biblia, Fundamentul Familiei Creștine este o serie de mesaje biblice
+              care evidențiază rolul Cuvântului lui Dumnezeu în zidirea unei familii sănătoase,
+              unite și ancorate în credință. Mesajele oferă îndrumare practică
+              pentru viața de familie, având Biblia ca temelie sigură. <br />
+            </p>
+            <!-- <p class="paragraph"><strong>1 Corinteni 12:1</strong></p> -->
+          </div>
+          <hr class="plus-line" />
+          <div class="flex-start buttons-group">
+            <a class="btn" rel="noopener noreferrer" target="_blank"
+              href="https://www.youtube.com/playlist?list=PLkXh0Qtk7O6yQuiGrTVEzuQM170pyKRCj">Noua serie de mesaje</a>
+            <a class="btn youtube-btn" rel="noopener noreferrer" target="_blank"
+              href="https://www.youtube.com/@sperantaperg">Live Stream</a>
+          </div>
         </div>
+        <div class="container-item">
+          <div class="image-cell">
+            <img src="assets/img/index/sermon_cover_700.webp" alt="Darurile Care Zidesc Cover" loading="lazy" />
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Sermons -->
-    <section class="sermon big-container dark">
-      <div class="container">
-        <div class="container-item-wrapper flex-start">
-          <div class="container-item">
-            <div class="image-cell">
-              <img
-                src="assets/img/index/sermon_cover.webp"
-                alt="Darurile Care Zidesc Cover"
-                loading="lazy"
-              />
+  <!-- Departmens -->
+  <section class="departments big-container light">
+    <div class="container">
+      <div class="grid-item departments-grid-item">
+        <a href="/hopeyouth">
+          <div class="fadeIn image-cell departments-hopeyouth">
+            <div class="overlay"></div>
+            <div class="departments-title">
+              <h2>HopeYouth</h2>
             </div>
           </div>
-          <div class="container-item">
-            <div class="sermon-title">
-              <h2 class="small-text">Vizionează & Ascultă</h2>
-              <span class="subtitle"
-                >Iată cele mai noi mesaje de la Speranța.</span
-              >
-            </div>
-            <div>
-              <p class="paragraph">
-                Mesaje relevante din Cuvântul lui Dumnezeu, menite să te
-                zidească spiritual. Vezi predicile anterioare sau urmărește-ne
-                în direct, în fiecare duminică, de la ora 9:00 și 18:00!
-              </p>
-              <p class="paragraph">
-                O serie de mesaje din 1 Corinteni 12 despre darurile
-                Duhului Sfânt — daruri diferite, același Duh. Învață cum
-                diversitatea darurilor aduce unitate, creștere și zidire în
-                trupul lui Christos. <br />
-              </p>
-              <p class="paragraph"><strong>1 Corinteni 12:1</strong></p>
-            </div>
-            <hr class="plus-line" />
-            <div class="flex-start buttons-group">
-              <a
-                class="btn"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://youtube.com/playlist?list=PLkXh0Qtk7O6w0Z2sOnF8sJ-lf3_6mdAyq&si=_OB161kp-ceWypQz"
-                >Noua serie de mesaje</a
-              >
-              <a
-                class="btn youtube-btn"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.youtube.com/@sperantaperg"
-                >Live Stream</a
-              >
+        </a>
+
+        <a href="/kids">
+          <div class="fadeIn image-cell departments-kids">
+            <div class="overlay"></div>
+            <div class="departments-title">
+              <h2>Kids</h2>
             </div>
           </div>
-        </div>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Donation -->
-    <section class="donation big-container light overflow-hidden">
-      <div class="container donation-container">
-        <div class="container-item-wrapper">
-          <div class="container-item">
-            <div class="subtitle">
-              <h2>
-                Dumnezeu ne-a <span class="marked">dăruit totul.</span> <br />
-                Noi <span class="marked">dăruim</span> ca răspuns.
-              </h2>
-            </div>
-          </div>
-        </div>
+  <!-- Footer -->
+  <footer class="big-container-footer dark">
+    <div class="footer-container">
+      <!-- Links -->
+      <div class="footer-section">
+        <h4>Acces rapid</h4>
+        <ul>
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/stiri">Noutăți</a></li>
+          <li><a href="/daruieste">Dăruiește</a></li>
+        </ul>
       </div>
-      <div class="container">
-        <div class="container-item-wrapper">
-          <div class="container-item">
-            <div>
-              <h2 class="text-headline">
-                Răspunsul unei inimi recunoscătoare.
-              </h2>
-            </div>
-            <div>
-              <p class="paragraph">
-                Dumnezeu ne-a dăruit pe Isus, Fiul Său, ca un act suprem de
-                dragoste și generozitate. Noi dăruim ca răspuns la ceea ce am
-                primit de la un Dumnezeu bun.
-              </p>
-              <p class="paragraph">
-                Prin generozitatea ta, ducem mai departe adevărul Cuvântului lui
-                Dumnezeu, susținem misiuni și aducem speranță acolo unde este
-                cea mai mare nevoie.
-              </p>
-            </div>
-          </div>
-          <div class="container-item donation-container-button">
-            <div>
-              <p class="small-text-light">Află cum poți ajuta...</p>
-            </div>
-            <a class="btn donation-btn" href="/sperantaperg.at/daruieste.html"
-              >Dăruiește</a
-            >
-          </div>
-        </div>
+
+      <div class="footer-section">
+        <h4>Cunoaște-ne</h4>
+        <ul>
+          <li><a href="/sunt-nou">Sunt nou</a></li>
+          <li><a href="/ce-credem">Ce credem</a></li>
+          <li>
+            <a href="/echipa-speranta">Echipa Speranța</a>
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="big-container-footer dark">
-      <div class="footer-container">
-        <!-- Links -->
-        <div class="footer-section">
-          <h4>Acces rapid</h4>
-          <ul>
-            <li><a href="/sperantaperg.at/index.html">Acasă</a></li>
-            <!-- <li><a href="">Noutăți</a></li> -->
-            <li><a href="/sperantaperg.at/daruieste.html">Dăruiește</a></li>
-          </ul>
-        </div>
+      <div class="footer-section">
+        <h4>Departamente</h4>
+        <ul>
+          <li><a href="/hopeyouth">HopeYouth</a></li>
+          <li><a href="/kids">Kids</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-section">
-          <h4>Cunoaște-ne</h4>
-          <ul>
-            <li><a href="/sperantaperg.at/sunt-nou.html">Sunt nou</a></li>
-            <li><a href="/sperantaperg.at/ce-credem.html">Ce credem</a></li>
-            <li>
-              <a href="/sperantaperg.at/echipa-speranta.html"
-                >Echipa Speranța</a
-              >
-            </li>
-          </ul>
-        </div>
+      <div class="footer-section">
+        <h4>Cum te poți alătura</h4>
+        <ul>
+          <li>
+            <a href="https://speranta-perg-420440.churchcenter.com/people/forms/1011198"
+              data-open-in-church-center-modal="true">Planifică o vizită</a>
+          </li>
+          <li>
+            <a href="https://speranta-perg-420440.churchcenter.com/people/forms/1011196"
+              data-open-in-church-center-modal="true">Conectează-te cu noi</a>
+          </li>
 
-        <div class="footer-section">
-          <h4>Departamente</h4>
-          <ul>
-            <li><a href="/sperantaperg.at/hopeyouth.html">HopeYouth</a></li>
-            <li><a href="/sperantaperg.at/kids.html">Kids</a></li>
-          </ul>
-        </div>
+          <li>
+            <a href="https://speranta-perg-420440.churchcenter.com/people/forms/1016092"
+              data-open-in-church-center-modal="true">Implică-te</a>
+          </li>
+          <li>
+            <a href="https://donate.stripe.com/28EaEX2zb1IKdJw4ro2oE03">Donează Online</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="footer-section">
-          <h4>Cum te poți alătura</h4>
-          <ul>
-            <li>
-              <a
-                href="https://speranta-perg-420440.churchcenter.com/people/forms/1011198"
-                data-open-in-church-center-modal="true"
-                >Planifică o vizită</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://speranta-perg-420440.churchcenter.com/people/forms/1011196"
-                data-open-in-church-center-modal="true"
-                >Conectează-te cu noi</a
-              >
-            </li>
+      <div class="footer-section">
+        <h4>Informații</h4>
+        <ul>
+          <li>
+            <a href="https://www.ggaustria.com/biserica/speranta-perg/cereri">Formulare Yosef</a>
+          </li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li>
+            <a href="/data-consent">Politica de confidențialitate</a>
+          </li>
+        </ul>
+      </div>
 
-            <li>
-              <a
-                href="https://speranta-perg-420440.churchcenter.com/people/forms/1016092"
-                data-open-in-church-center-modal="true"
-                >Implică-te</a
-              >
-            </li>
-            <li>
-              <a href="https://donate.stripe.com/28EaEX2zb1IKdJw4ro2oE03"
-                >Donează Online</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Informații</h4>
-          <ul>
-            <li>
-              <a href="https://www.ggaustria.com/biserica/speranta-perg/cereri"
-                >Formulare Yosef</a
-              >
-            </li>
-            <li><a href="/sperantaperg.at/impressum.html">Impressum</a></li>
-            <li>
-              <a href="/sperantaperg.at/data-consent.html"
-                >Politica de confidențialitate</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <p>
-            Adresa:
-            <a
-              href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener"
-            >
-              Greiner Straße 2, 4320 Perg
-            </a>
-          </p>
-          <p>Tel: <a href="tel:+436769447929">+43 676 9447929</a></p>
-          <p>
-            Email:
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <a href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Greiner Straße 2, 4320 Perg</a>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <a href="tel:+436769447929">+43 676 9447929</a>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <a href="mailto:sperantaperg@gmail.com">sperantaperg@gmail.com</a>
-          </p>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <!-- Social Media -->
-        <div class="footer-section">
-          <h4>Urmărește-ne</h4>
-          <div class="social-icons">
-            <div>
-              <a
-                target="_blank"
-                href="https://www.facebook.com/sperantaperg/"
-                rel="noopener noreferrer"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0,0,256,256"
-                  width="48px"
-                  height="48px"
-                  fill-rule="nonzero"
-                >
-                  <g
-                    fill=""
-                    fill-rule="nonzero"
-                    stroke="none"
-                    stroke-width="1"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-miterlimit="10"
-                    stroke-dasharray=""
-                    stroke-dashoffset="0"
-                    font-family="none"
-                    font-weight="none"
-                    font-size="none"
-                    text-anchor="none"
-                    style="mix-blend-mode: normal"
-                  >
-                    <g transform="scale(10.66667,10.66667)">
-                      <path
-                        d="M19,3h-14c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h7.621v-6.961h-2.343v-2.725h2.343v-2.005c0,-2.324 1.421,-3.591 3.495,-3.591c0.699,-0.002 1.397,0.034 2.092,0.105v2.43h-1.428c-1.13,0 -1.35,0.534 -1.35,1.322v1.735h2.7l-0.351,2.725h-2.365v6.965h3.586c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2z"
-                      ></path>
-                    </g>
-                  </g></svg
-              ></a>
-            </div>
-
-            <div>
-              <a
-                target="_blank"
-                href="https://www.youtube.com/@sperantaperg"
-                rel="noopener noreferrer"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0,0,256,256"
-                  width="48px"
-                  height="48px"
-                  fill-rule="nonzero"
-                >
-                  <g
-                    fill=""
-                    fill-rule="nonzero"
-                    stroke="none"
-                    stroke-width="1"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-miterlimit="10"
-                    stroke-dasharray=""
-                    stroke-dashoffset="0"
-                    font-family="none"
-                    font-weight="none"
-                    font-size="none"
-                    text-anchor="none"
-                    style="mix-blend-mode: normal"
-                  >
-                    <g transform="scale(10.66667,10.66667)">
-                      <path
-                        d="M21.582,6.186c-0.23,-0.86 -0.908,-1.538 -1.768,-1.768c-1.56,-0.418 -7.814,-0.418 -7.814,-0.418c0,0 -6.254,0 -7.814,0.418c-0.86,0.23 -1.538,0.908 -1.768,1.768c-0.418,1.56 -0.418,5.814 -0.418,5.814c0,0 0,4.254 0.418,5.814c0.23,0.86 0.908,1.538 1.768,1.768c1.56,0.418 7.814,0.418 7.814,0.418c0,0 6.254,0 7.814,-0.418c0.861,-0.23 1.538,-0.908 1.768,-1.768c0.418,-1.56 0.418,-5.814 0.418,-5.814c0,0 0,-4.254 -0.418,-5.814zM10,15.464v-6.928l6,3.464z"
-                      ></path>
-                    </g>
+      <!-- Social Media -->
+      <div class="footer-section">
+        <h4>Urmărește-ne</h4>
+        <div class="social-icons">
+          <div>
+            <a target="_blank" href="https://www.facebook.com/sperantaperg/" rel="noopener noreferrer"><svg
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                width="48px" height="48px" fill-rule="nonzero">
+                <g fill="" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M19,3h-14c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h7.621v-6.961h-2.343v-2.725h2.343v-2.005c0,-2.324 1.421,-3.591 3.495,-3.591c0.699,-0.002 1.397,0.034 2.092,0.105v2.43h-1.428c-1.13,0 -1.35,0.534 -1.35,1.322v1.735h2.7l-0.351,2.725h-2.365v6.965h3.586c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2z">
+                    </path>
                   </g>
-                </svg>
-              </a>
-            </div>
-            <div>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/sperantaperg/"
-                rel="noopener noreferrer"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0,0,256,256"
-                  width="48px"
-                  height="48px"
-                  fill-rule="nonzero"
-                >
-                  <g
-                    fill=""
-                    fill-rule="nonzero"
-                    stroke="none"
-                    stroke-width="1"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-miterlimit="10"
-                    stroke-dasharray=""
-                    stroke-dashoffset="0"
-                    font-family="none"
-                    font-weight="none"
-                    font-size="none"
-                    text-anchor="none"
-                    style="mix-blend-mode: normal"
-                  >
-                    <g transform="scale(10.66667,10.66667)">
-                      <path
-                        d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"
-                      ></path>
-                    </g>
-                  </g></svg
-              ></a>
-            </div>
+                </g>
+              </svg></a>
+          </div>
+
+          <div>
+            <a target="_blank" href="https://www.youtube.com/@sperantaperg" rel="noopener noreferrer"><svg
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                width="48px" height="48px" fill-rule="nonzero">
+                <g fill="" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M21.582,6.186c-0.23,-0.86 -0.908,-1.538 -1.768,-1.768c-1.56,-0.418 -7.814,-0.418 -7.814,-0.418c0,0 -6.254,0 -7.814,0.418c-0.86,0.23 -1.538,0.908 -1.768,1.768c-0.418,1.56 -0.418,5.814 -0.418,5.814c0,0 0,4.254 0.418,5.814c0.23,0.86 0.908,1.538 1.768,1.768c1.56,0.418 7.814,0.418 7.814,0.418c0,0 6.254,0 7.814,-0.418c0.861,-0.23 1.538,-0.908 1.768,-1.768c0.418,-1.56 0.418,-5.814 0.418,-5.814c0,0 0,-4.254 -0.418,-5.814zM10,15.464v-6.928l6,3.464z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://www.instagram.com/sperantaperg/" rel="noopener noreferrer"><svg
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                width="48px" height="48px" fill-rule="nonzero">
+                <g fill="" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                    </path>
+                  </g>
+                </g>
+              </svg></a>
           </div>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>© 2025 Biserica Speranța. Toate drepturile rezervate.</p>
-        <a href="nick website">Made by Neagoe Nick</a>
-      </div>
-    </footer>
-
-    <!-- Cookie Banner -->
-    <div id="cookie-banner">
-      <p>
-        <strong>RO:</strong> Folosim cookie-uri pentru a îmbunătăți experiența
-        ta pe site.
-        <a href="/sperantaperg.at/data-consent.html#ro" target="_blank"
-          >Află mai multe</a
-        >
-      </p>
-      <p>
-        <strong>DE:</strong> Wir verwenden Cookies, um Ihre Erfahrung auf der
-        Website zu verbessern.
-        <a href="/sperantaperg.at/data-consent.html#de" target="_blank"
-          >Mehr erfahren</a
-        >
-      </p>
-      <div class="cookie-buttons">
-        <button
-          class="btn"
-          id="cookie-accept"
-          onclick="handleCookieConsent(true)"
-        >
-          Accept
-        </button>
-        <button
-          class="btn"
-          id="cookie-decline"
-          onclick="handleCookieConsent(false)"
-        >
-          Decline
-        </button>
-      </div>
     </div>
 
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/effects.js"></script>
-    <script src="assets/js/cookie.js"></script>
-  </body>
+    <div class="footer-bottom">
+      <p>© 2025-2026 Biserica Speranța. Toate drepturile rezervate.</p>
+      <a href="nick website">Made by Neagoe Nick</a>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>
+      <strong>RO:</strong> Folosim cookie-uri pentru a îmbunătăți experiența
+      ta pe site.
+      <a href="/data-consent#ro" target="_blank">Află mai multe</a>
+    </p>
+    <p>
+      <strong>DE:</strong> Wir verwenden Cookies, um Ihre Erfahrung auf der
+      Website zu verbessern.
+      <a href="/data-consent#de" target="_blank">Mehr erfahren</a>
+    </p>
+    <div class="cookie-buttons">
+      <button class="btn" id="cookie-accept" onclick="handleCookieConsent(true)">
+        Accept
+      </button>
+      <button class="btn" id="cookie-decline" onclick="handleCookieConsent(false)">
+        Decline
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/index-stiri.js?v=4" defer></script>
+  <script src="assets/js/navigation.js?v=4" defer></script>
+  <script src="assets/js/effects.js?v=4" defer></script>
+  <script src="assets/js/cookie.js?v=4" defer></script>
+</body>
+
 </html>

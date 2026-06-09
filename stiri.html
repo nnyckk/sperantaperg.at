@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+     <!-- Google tag (gtag.js) -->
+     <script
+     async
+     src="https://www.googletagmanager.com/gtag/js?id=G-KE98B3X7E5"
+   ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noutăți - Biserica Speranța Perg</title>
+    <meta name="description" content="Ultimele noutăți, evenimente și anunțuri de la Biserica Speranța Perg. Rămâi la curent cu ce se întâmplă în comunitatea noastră din Perg, Austria." />
+    <link rel="canonical" href="https://sperantaperg.at/stiri" />
+    <meta name="theme-color" content="#08141b" />
+    <link rel="stylesheet" href="assets/css/layout.css?v=4" />
+    <link rel="stylesheet" href="assets/css/nav_footer.css?v=4" />
+    <link rel="stylesheet" href="assets/css/cookie.css?v=4" />
+    <link rel="stylesheet" href="assets/css/stiri.css?v=4" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://js.churchcenter.com/modal/v1" defer></script>
+     <!-- Favicons -->
+     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <link rel="shortcut icon" href="/favicon.ico" />
+     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+     <meta name="apple-mobile-web-app-title" content="Speranța Perg" />
+     <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+
+    <header id="header">
+      <div id="nav-backdrop"></div>
+
+      <!-- Desktop Nav -->
+      <div class="navigation-wrapper has-mobile-nav" id="navigationWrapper">
+        <a class="logo" href="/"
+          ><img
+            src="assets/icons/sperantaperglogo.png"
+            alt="Biserica Speranța Perg Logo"
+        /></a>
+        <nav>
+          <ul class="nav-links-list">
+            <li><a href="/">Acasă</a></li>
+            <li><a href="/stiri">Noutăți</a></li>
+            <li class="has-dropdown">
+              <span class="dropdown-title">Cunoaște-ne</span>
+              <ul class="dropdown">
+                <li><a href="/sunt-nou">Sunt nou</a></li>
+                <li><a href="/ce-credem">Ce credem</a></li>
+                <li><a href="/echipa-speranta">Echipa Speranța</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <span class="dropdown-title">Departamente</span>
+              <ul class="dropdown">
+                <li><a href="/hopeyouth">HopeYouth</a></li>
+                <li><a href="/kids">Kids</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="btn" id="donation-btn" href="/daruieste">Dăruiește</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Mobile Bar (logo only) -->
+      <div class="nav-mobile-bar" id="nav-mobile-bar">
+        <a class="logo" href="/"
+          ><img
+            src="assets/icons/sperantaperglogo.png"
+            alt="Biserica Speranța Perg Logo"
+        /></a>
+      </div>
+
+      <!-- Hamburger (separate, always above drawer) -->
+      <div class="nav-hamburger-slot" id="nav-hamburger-slot">
+        <div id="nav-icon-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <nav class="nav-mobile-drawer" id="nav-menu">
+        <ul>
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/stiri">Noutăți</a></li>
+          <li class="mobile-divider-item"><hr class="mobile-divider" /></li>
+          <li class="mobile-category-item">
+            <span class="mobile-category">Cunoaște-ne</span>
+          </li>
+          <li class="mobile-sub-link"><a href="/sunt-nou">Sunt nou</a></li>
+          <li class="mobile-sub-link"><a href="/ce-credem">Ce credem</a></li>
+          <li class="mobile-sub-link">
+            <a href="/echipa-speranta">Echipa Speranța</a>
+          </li>
+          <li class="mobile-divider-item"><hr class="mobile-divider" /></li>
+          <li class="mobile-category-item">
+            <span class="mobile-category">Departamente</span>
+          </li>
+          <li class="mobile-sub-link"><a href="/hopeyouth">HopeYouth</a></li>
+          <li class="mobile-sub-link"><a href="/kids">Kids</a></li>
+          <li class="mobile-donation-item">
+            <a href="/daruieste">Dăruiește</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero-subpage dark stiri-hero">
+      <div class="container">
+        <h1 class="hero-title fadeInDelay">Noutăți</h1>
+        <p class="hero-subtitle fadeInDelay">Ce se întâmplă în comunitatea noastră</p>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <section class="stiri-filter-bar light">
+      <div class="container">
+        <div class="filter-wrapper">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="toate">Toate</button>
+            <button class="filter-btn" data-filter="anunturi">Anunțuri</button>
+            <button class="filter-btn" data-filter="evenimente">Evenimente</button>
+            <button class="filter-btn" data-filter="misiuni">Misiuni</button>
+            <button class="filter-btn" data-filter="departamente">Departamente</button>
+          </div>
+          <input type="text" class="stiri-search" placeholder="Caută un articol..." id="searchInput" />
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="stiri-grid-section big-container light">
+      <div class="container">
+
+        <!-- Featured article — generat dinamic -->
+        <div id="stiriFeatured"></div>
+
+        <!-- Cards grid — generat dinamic -->
+        <div class="stiri-grid" id="stiriGrid"></div>
+
+        <div class="no-results" id="noResults" style="display:none;">
+          <p class="paragraph">Nu am găsit niciun articol pentru criteriile selectate.</p>
+        </div>
+
+        <div class="stiri-load-more">
+          <button class="btn youtube-btn" id="loadMoreBtn">Încarcă mai multe</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="big-container-footer dark">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Acces rapid</h4>
+          <ul>
+            <li><a href="/">Acasă</a></li>
+            <li><a href="/stiri">Noutăți</a></li>
+            <li><a href="/daruieste">Dăruiește</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Cunoaște-ne</h4>
+          <ul>
+            <li><a href="/sunt-nou">Sunt nou</a></li>
+            <li><a href="/ce-credem">Ce credem</a></li>
+            <li><a href="/echipa-speranta">Echipa Speranța</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Departamente</h4>
+          <ul>
+            <li><a href="/hopeyouth">HopeYouth</a></li>
+            <li><a href="/kids">Kids</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Cum te poți alătura</h4>
+          <ul>
+            <li><a href="https://speranta-perg-420440.churchcenter.com/people/forms/1011198">Planifică o vizită</a></li>
+            <li><a href="https://speranta-perg-420440.churchcenter.com/people/forms/1011196">Conectează-te cu noi</a></li>
+            <li><a href="https://speranta-perg-420440.churchcenter.com/people/forms/1016092">Implică-te</a></li>
+            <li><a href="https://donate.stripe.com/28EaEX2zb1IKdJw4ro2oE03">Donează Online</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Informații</h4>
+          <ul>
+            <li><a href="https://www.ggaustria.com/biserica/speranta-perg/cereri">Formulare Yosef</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/data-consent">Politica de confidențialitate</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <a href="https://www.google.com/maps/place/Greiner+Str.+2,+4320+Perg/@48.2491209,14.6391817,17z/data=!3m1!4b1!4m6!3m5!1s0x4773b21e19716ae1:0x6db6d5fdc4988fae!8m2!3d48.2491174!4d14.6417566!16s%2Fg%2F11c1z3_g_q?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Greiner Straße 2, 4320 Perg</a>
+            </li>
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <a href="tel:+436769447929">+43 676 9447929</a>
+            </li>
+            <li class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:sperantaperg@gmail.com">sperantaperg@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Urmărește-ne</h4>
+          <div class="social-icons">
+            <div><a target="_blank" href="https://www.facebook.com/sperantaperg/" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><g fill="" fill-rule="nonzero"><g transform="scale(10.66667,10.66667)"><path d="M19,3h-14c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h7.621v-6.961h-2.343v-2.725h2.343v-2.005c0,-2.324 1.421,-3.591 3.495,-3.591c0.699,-0.002 1.397,0.034 2.092,0.105v2.43h-1.428c-1.13,0 -1.35,0.534 -1.35,1.322v1.735h2.7l-0.351,2.725h-2.365v6.965h3.586c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2z"></path></g></g></svg></a></div>
+            <div><a target="_blank" href="https://www.youtube.com/@sperantaperg" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><g fill="" fill-rule="nonzero"><g transform="scale(10.66667,10.66667)"><path d="M21.582,6.186c-0.23,-0.86 -0.908,-1.538 -1.768,-1.768c-1.56,-0.418 -7.814,-0.418 -7.814,-0.418c0,0 -6.254,0 -7.814,0.418c-0.86,0.23 -1.538,0.908 -1.768,1.768c-0.418,1.56 -0.418,5.814 -0.418,5.814c0,0 0,4.254 0.418,5.814c0.23,0.86 0.908,1.538 1.768,1.768c1.56,0.418 7.814,0.418 7.814,0.418c0,0 6.254,0 7.814,-0.418c0.861,-0.23 1.538,-0.908 1.768,-1.768c0.418,-1.56 0.418,-5.814 0.418,-5.814c0,0 0,-4.254 -0.418,-5.814zM10,15.464v-6.928l6,3.464z"></path></g></g></svg></a></div>
+            <div><a target="_blank" href="https://www.instagram.com/sperantaperg/" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><g fill="" fill-rule="nonzero"><g transform="scale(10.66667,10.66667)"><path d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"></path></g></g></svg></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025-2026 Biserica Speranța. Toate drepturile rezervate.</p>
+        <a href="#">Made by Neagoe Nick</a>
+      </div>
+    </footer>
+
+
+     <!-- Cookie Banner -->
+     <div id="cookie-banner">
+      <p>
+        <strong>RO:</strong> Folosim cookie-uri pentru a îmbunătăți experiența
+        ta pe site.
+        <a href="/data-consent#ro" target="_blank">Află mai multe</a>
+      </p>
+      <p>
+        <strong>DE:</strong> Wir verwenden Cookies, um Ihre Erfahrung auf der
+        Website zu verbessern.
+        <a href="/data-consent#de" target="_blank">Mehr erfahren</a>
+      </p>
+      <div class="cookie-buttons">
+        <button
+          class="btn"
+          id="cookie-accept"
+          onclick="handleCookieConsent(true)"
+        >
+          Accept
+        </button>
+        <button
+          class="btn"
+          id="cookie-decline"
+          onclick="handleCookieConsent(false)"
+        >
+          Decline
+        </button>
+      </div>
+    </div>
+
+    <script src="assets/js/cookie.js?v=4" defer></script>
+    <script src="assets/js/stiri.js?v=4" defer></script>
+    <script src="assets/js/navigation.js?v=4" defer></script>
+    <script src="assets/js/effects.js?v=4" defer></script>
+  </body>
+</html>
