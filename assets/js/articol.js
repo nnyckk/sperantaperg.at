@@ -136,12 +136,18 @@
           document.body.insertAdjacentHTML('beforeend', `
             <div id="lightbox" aria-modal="true" role="dialog">
               <button class="lb-close" id="lbClose" aria-label="Închide">&#x2715;</button>
-              <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">&#8592;</button>
               <div class="lb-img-wrap">
                 <img id="lbImg" src="" alt="" />
               </div>
-              <button class="lb-nav lb-next" id="lbNext" aria-label="Următor">&#8594;</button>
-              <div class="lb-counter" id="lbCounter"></div>
+              <div class="lb-controls">
+                <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+                <div class="lb-counter" id="lbCounter"></div>
+                <button class="lb-nav lb-next" id="lbNext" aria-label="Următor">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
             </div>
           `);
         }
@@ -210,6 +216,7 @@
         // Thumbnail click — schimbă cover + marchează activ
         document.querySelectorAll('.galerie-thumb').forEach(thumb => {
           thumb.addEventListener('click', () => {
+            if (thumbStrip._dragging) return;
             const idx = parseInt(thumb.dataset.index);
             const coverImg = document.getElementById('galerieCoverImg');
             if (coverImg) coverImg.src = poze[idx];
@@ -217,6 +224,53 @@
             thumb.classList.add('active');
           });
         });
+
+        // ── Thumbnail strip: scroll pe desktop, drag pe mobile ──
+        const thumbStrip = document.getElementById('galerieThumbs');
+        if (thumbStrip) {
+          // Înfășoară strip-ul într-un wrap pentru fade gradient
+          const wrap = document.createElement('div');
+          wrap.className = 'galerie-thumbs-wrap';
+          thumbStrip.parentNode.insertBefore(wrap, thumbStrip);
+          wrap.appendChild(thumbStrip);
+
+          function updateFade() {
+            const atStart = thumbStrip.scrollLeft > 4;
+            const atEnd = thumbStrip.scrollLeft + thumbStrip.clientWidth >= thumbStrip.scrollWidth - 4;
+            wrap.classList.toggle('at-start', atStart);
+            wrap.classList.toggle('at-end', atEnd);
+          }
+          updateFade();
+          thumbStrip.addEventListener('scroll', updateFade, { passive: true });
+
+          // Desktop: wheel orizontal
+          thumbStrip.addEventListener('wheel', e => {
+            if (e.deltaY === 0) return;
+            e.preventDefault();
+            thumbStrip.scrollLeft += e.deltaY;
+          }, { passive: false });
+
+          // Mobile: drag touch
+          let touchStartX = 0;
+          let scrollStartLeft = 0;
+          thumbStrip._dragging = false;
+
+          thumbStrip.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+            scrollStartLeft = thumbStrip.scrollLeft;
+            thumbStrip._dragging = false;
+          }, { passive: true });
+
+          thumbStrip.addEventListener('touchmove', e => {
+            const dx = touchStartX - e.touches[0].clientX;
+            if (Math.abs(dx) > 5) thumbStrip._dragging = true;
+            thumbStrip.scrollLeft = scrollStartLeft + dx;
+          }, { passive: true });
+
+          thumbStrip.addEventListener('touchend', () => {
+            setTimeout(() => { thumbStrip._dragging = false; }, 0);
+          });
+        }
       }
 
       // ── Render related card ───────────────────────────────────

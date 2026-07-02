@@ -298,23 +298,6 @@
   display: block;
 }
 
-/* thin color accent bar at bottom of image */
-.stiri-card-image::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--first-accent-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.stiri-card:hover .stiri-card-image::after {
-  transform: scaleX(1);
-}
-
 .stiri-card-content {
   padding: 1.35em 1.35em 1.25em;
   display: flex;
