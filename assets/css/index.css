@@ -155,17 +155,353 @@
 /* ========
     Sermon
    ======== */
-.sermon .buttons-group {
+.sermon .plus-line {
+  padding-top: 0;
+}
+
+/* --- Live countdown (tot cardul e link catre YouTube) --- */
+.sermon a.live-countdown {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1em 1.25em;
+  width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 1em 1.25em;
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+@media (hover: hover) {
+  .sermon a.live-countdown:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--first-accent-color);
+  }
+}
+.sermon a.live-countdown:active {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--first-accent-color);
+}
+.sermon .live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.3em;
+  border-radius: 0.4em;
+  background-color: var(--first-accent-color);
+  color: #fff;
+  font-size: var(--fs-h6);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s ease;
+}
+/* Cand suntem live: rosu + bulina palpaind */
+.sermon .live-badge.is-live {
+  background-color: hsl(0, 72%, 51%);
+}
+.sermon .live-dot {
+  display: none;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background-color: #fff;
+}
+/* Bulina apare doar cand suntem live (buton rosu) */
+.sermon .live-badge.is-live .live-dot {
+  display: inline-block;
+  animation: live-pulse 1.4s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+.sermon .countdown-inner {
+  flex: 1 1 auto;
+}
+.sermon .countdown-clock {
+  display: flex;
+  gap: 0.4em;
+  justify-content: space-between;
+}
+.sermon .countdown-unit {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2.8em;
+  padding: 0.4em 0.35em;
+  border-radius: 0.4em;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.sermon .countdown-unit span {
+  font-size: var(--fs-h5);
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.sermon .countdown-unit small {
+  margin-top: 0.35em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* --- Player mare (link catre YouTube) --- */
+.sermon a.sermon-player {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5em;
+  overflow: hidden;
+  background-color: #000;
+  text-decoration: none;
+}
+.sermon .sermon-latest-tag {
+  position: absolute;
+  top: 0.9em;
+  left: 0.9em;
+  z-index: 3;
+  padding: 0.4em 1em;
+  border-radius: 2em;
+  background-color: var(--first-accent-color);
+  color: #fff;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+/* Cand transmisiunea e live, eticheta devine rosie */
+.sermon .sermon-latest-tag.is-live {
+  background-color: hsl(0, 72%, 51%);
+}
+.sermon .sermon-player-poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.sermon .sermon-player-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sermon .sermon-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  background-color: rgba(8, 20, 27, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.sermon .sermon-play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 0.75em 0 0.75em 1.2em;
+  border-color: transparent transparent transparent #fff;
+}
+@media (hover: hover) {
+  .sermon .sermon-player-poster:hover .sermon-play-icon {
+    background-color: var(--first-accent-color);
+  }
+}
+.sermon a.sermon-player:active .sermon-play-icon {
+  background-color: var(--first-accent-color);
+  transform: translate(-50%, -50%) scale(0.94);
+}
+.sermon .sermon-play-icon.small {
+  width: 2.6em;
+  height: 2.6em;
+}
+.sermon .sermon-play-icon.small::before {
+  border-width: 0.45em 0 0.45em 0.75em;
+}
+
+/* --- Recent sermons carousel --- */
+.sermon .recent-sermons {
+  margin-top: 2.5em;
+}
+.sermon .recent-sermons-title {
+  font-size: var(--fs-h4);
+  color: var(--white-text-color);
+  margin-bottom: 1em;
+}
+.sermon .recent-sermons-track {
+  display: flex;
   gap: 1em;
+  overflow-x: auto;
+  padding-bottom: 0.5em;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Bara de scroll ascunsa - navigarea se face prin sageti */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.sermon .youtube-btn {
-  background-color: transparent;
-  border: 2px solid var(--first-accent-color);
+.sermon .recent-sermons-track::-webkit-scrollbar {
+  display: none;
 }
-.sermon .youtube-btn:hover {
-  border: 2px solid var(--first-accent-color-hover);
+
+/* --- Sageti navigare carusel (jos-dreapta, in afara caruselului) --- */
+.sermon .recent-sermons-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6em;
+  margin-top: 1.25em;
+}
+.sermon .carousel-arrow {
+  width: 3.4em;
+  height: 2.6em;
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+@media (hover: hover) {
+  .sermon .carousel-arrow:hover {
+    background-color: var(--first-accent-color);
+    border-color: var(--first-accent-color);
+  }
+}
+/* Feedback la apasare (merge si pe touch) */
+.sermon .carousel-arrow:active {
+  background-color: var(--first-accent-color);
+  border-color: var(--first-accent-color);
+  transform: scale(0.94);
+}
+.sermon .carousel-arrow[hidden] {
+  display: none;
+}
+.sermon .carousel-arrow span {
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.sermon .carousel-prev span {
+  transform: rotate(-135deg);
+  margin-left: 0.2em;
+}
+.sermon .carousel-next span {
+  transform: rotate(45deg);
+  margin-right: 0.2em;
+}
+.sermon .sermon-card {
+  flex: 0 0 auto;
+  width: 260px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.sermon .sermon-card-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.4em;
+  overflow: hidden;
+  background-color: #000;
+}
+.sermon .sermon-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (hover: hover) {
+  .sermon .sermon-card:hover .sermon-play-icon.small {
+    background-color: var(--first-accent-color);
+  }
+}
+.sermon .sermon-card:active .sermon-play-icon.small {
+  background-color: var(--first-accent-color);
+}
+.sermon .sermon-card:active {
+  opacity: 0.85;
+}
+.sermon .sermon-card-title {
+  font-size: var(--fs-h6);
+  font-weight: 600;
+  color: var(--white-text-color);
+  line-height: var(--lh-heading-small);
+}
+.sermon .sermon-card-date {
+  font-size: var(--fs-small);
+  color: var(--small-text-color-dark);
+}
+
+@media (max-width: 600px) {
+  /* Countdown pe mobil: card full-width, buton + 4 cifre pe un singur rand */
+  .sermon a.live-countdown {
+    display: flex;
+    width: 100%;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    gap: 0.6em;
+    padding: 0.8em 0.9em;
+  }
+  .sermon .live-badge {
+    padding: 0.5em 0.7em;
+    font-size: var(--fs-small);
+  }
+  /* Cifrele se intind ca sa umple cardul full-width */
+  .sermon .countdown-inner {
+    flex: 1 1 auto;
+  }
+  .sermon .countdown-clock {
+    gap: 0.35em;
+    justify-content: space-between;
+  }
+  .sermon .countdown-unit {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.35em 0.25em;
+  }
+  .sermon .countdown-unit span {
+    font-size: var(--fs-h6);
+  }
+  .sermon .countdown-unit small {
+    font-size: 0.55rem;
+  }
+  .sermon .sermon-card {
+    width: 220px;
+  }
 }
 
 /* ===========
@@ -228,6 +564,24 @@
   .donation .donation-container-button {
     align-items: flex-start;
   }
+
+}
+
+/* Pe tableta (601-1025px), cardul de countdown se ajusteaza la continut
+   (latime variabila), fara sa se intinda pe toata latimea. */
+@media (min-width: 601px) and (max-width: 1025px) {
+  .sermon a.live-countdown {
+    width: auto;
+    max-width: 100%;
+    align-self: flex-start;
+  }
+  /* Cifrele nu se mai intind - stau la marimea lor naturala */
+  .sermon .countdown-inner {
+    flex: 0 0 auto;
+  }
+  .sermon .countdown-unit {
+    flex: 0 0 auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -254,10 +608,6 @@
      background: linear-gradient(rgba(8, 20, 27, 0.3)),
     url("../img/index/kids_button_400.webp") center/cover no-repeat;
   position: relative;
-  }
-  .sermon .buttons-group {
-    flex-direction: column;
-    align-items: flex-start;
   }
   .donation .donation-container-button a {
     width: 100%;

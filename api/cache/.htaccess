@@ -1,0 +1,2 @@
+# Cache-ul YouTube nu trebuie accesat direct din browser.
+Deny from all

@@ -1,0 +1,5 @@
+# Cache generat de proxy-ul YouTube (nu trebuie versionat)
+api/cache/*.json
+
+# Config local cu cheia API (daca folosesti varianta cu fisier separat)
+api/config.local.php
