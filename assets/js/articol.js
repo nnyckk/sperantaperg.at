@@ -78,7 +78,7 @@
         if (poze.length === 1) {
           galerieHtml = `
             <div class="articol-galerie fadeIn">
-              <div class="galerie-single galerie-img" data-index="0">
+              <div class="galerie-single">
                 <img src="${poze[0]}" alt="${art.titlu}" loading="eager" onerror="this.parentElement.style.display='none'" />
               </div>
             </div>`;
@@ -90,7 +90,7 @@
 
           galerieHtml = `
             <div class="articol-galerie fadeIn">
-              <div class="galerie-stack" data-index="0">
+              <div class="galerie-stack">
                 <div class="galerie-cover" id="galeriecover">
                   <img id="galerieCoverImg" src="${poze[0]}" alt="${art.titlu}" loading="eager" onerror="this.style.display='none'" />
                   <div class="galerie-cover-overlay">

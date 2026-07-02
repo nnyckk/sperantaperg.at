@@ -29,26 +29,6 @@ body {
   gap: 0.65em;
 }
 
-/* Back link */
-.articol-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: "Montserrat", sans-serif;
-  font-size: var(--fs-small);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  margin-bottom: 0.75em;
-  transition: color 0.2s, gap 0.2s;
-}
-.articol-back:hover {
-  color: #fff;
-  gap: 0.6em;
-}
-
 /* Meta row (badge + categorie) */
 .articol-hero-meta {
   display: flex;
@@ -56,11 +36,6 @@ body {
   gap: 0.6em;
   flex-wrap: wrap;
   margin-bottom: 0.25em;
-}
-.articol-meta-date {
-  font-family: "Montserrat", sans-serif;
-  font-size: var(--fs-small);
-  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Tag/badge overrides în contextul articol-hero
@@ -329,7 +304,7 @@ body {
   border-radius: 0.75em;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  cursor: zoom-in;
 }
 .galerie-single img {
   width: 100%;
@@ -432,9 +407,6 @@ body {
   fill: var(--small-text-color-light);
   flex-shrink: 0;
 }
-.articol-footer-meta .articol-meta-date {
-  color: var(--small-text-color-light);
-}
 
 /* ── Related section ── */
 .articol-related {
@@ -447,45 +419,6 @@ body {
   line-height: var(--lh-heading-small);
   margin-bottom: 1.75em;
   color: var(--dark-text-color);
-}
-
-/* ── Galerie — cursor pointer pe imagini ── */
-.galerie-img {
-  cursor: zoom-in;
-  pointer-events: auto !important;
-}
-
-/* ── Overlay "+N" pentru galerie-3 cu multe poze ── */
-.galerie-thumb-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.25em;
-  height: 100%;
-}
-.galerie-thumb-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-}
-.galerie-more-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 20, 27, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  cursor: zoom-in;
-  pointer-events: auto !important;
-  transition: background 0.2s;
-}
-.galerie-more-overlay:hover {
-  background: rgba(8, 20, 27, 0.75);
 }
 
 /* ── Lightbox ── */
@@ -662,5 +595,4 @@ body {
   .articol-related .stiri-grid {
     grid-template-columns: 1fr;
   }
-}
 }
