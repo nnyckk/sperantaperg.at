@@ -1,14 +1,9 @@
-/* ============================================================
-   Sermons section: live countdown + click-to-play players
-   ============================================================ */
+/* Sermons section: live countdown + player/carousel populated from YouTube */
 (function () {
   "use strict";
 
-  /* -----------------------------------------------------------
-     Helper: suntem in intervalul unui serviciu live acum?
-     Citeste data-service-times ("9-12,18-20") si data-timezone
-     de pe elementul dat. Duminica = ziua serviciilor.
-  ----------------------------------------------------------- */
+  // Are we inside a live service window right now? Reads data-service-times
+  // ("9-12,18-20") and data-timezone. Services are on Sunday.
   function isLiveNow(el) {
     if (!el) return false;
     var tz = el.getAttribute("data-timezone") || "Europe/Vienna";
@@ -17,7 +12,7 @@
       .map(function (item) {
         var p = item.trim().split("-");
         var s = parseInt(p[0], 10);
-        var e = p.length > 1 ? parseInt(p[1], 10) : s + 2; // implicit 2h
+        var e = p.length > 1 ? parseInt(p[1], 10) : s + 2;
         if (isNaN(s)) return null;
         return { start: s * 3600, end: (isNaN(e) ? s + 2 : e) * 3600 };
       })
@@ -36,7 +31,7 @@
       map[part.type] = part.value;
     });
     var weekdays = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-    if (weekdays[map.weekday] !== 0) return false; // doar duminica
+    if (weekdays[map.weekday] !== 0) return false;
     var hour = parseInt(map.hour, 10);
     if (hour === 24) hour = 0;
     var secs = hour * 3600 + parseInt(map.minute, 10) * 60 + parseInt(map.second, 10);
@@ -46,11 +41,8 @@
     return false;
   }
 
-  /* -----------------------------------------------------------
-     Player mare: e un link catre YouTube (tab nou). In timpul
-     serviciului duce la transmisiunea live, in rest la ultima
-     predica. Cardurile din carusel sunt deja linkuri simple.
-  ----------------------------------------------------------- */
+  // Main player is a link to YouTube: live stream during a service,
+  // otherwise the latest sermon.
   var player = document.querySelector(".sermon-player");
 
   function updatePlayer() {
@@ -59,30 +51,25 @@
     var liveUrl = player.getAttribute("data-live-url");
     var live = isLiveNow(player) && liveUrl;
 
-    // Seteaza destinatia link-ului si eticheta din colt.
     player.setAttribute("href", live ? liveUrl : videoUrl);
     var tag = player.querySelector(".sermon-latest-tag");
     if (tag) {
-      tag.textContent = live ? "LIVE ACUM" : "Ultima predică";
+      tag.textContent = live ? "LIVE ACUM" : "Ultimul mesaj";
       tag.classList.toggle("is-live", live);
     }
     player.setAttribute(
       "aria-label",
-      live ? "Urmărește transmisiunea live pe YouTube" : "Urmărește ultima predică pe YouTube"
+      live ? "Urmărește transmisiunea live pe YouTube" : "Urmărește ultimul mesaj pe YouTube"
     );
   }
   updatePlayer();
 
-  /* -----------------------------------------------------------
-     Carusel: navigare cu sagetile stanga/dreapta.
-     Bara de scroll e ascunsa in CSS; scroll-ul se face aici.
-  ----------------------------------------------------------- */
+  // Carousel navigation (scrollbar hidden in CSS)
   var track = document.querySelector(".recent-sermons-track");
   var prevBtn = document.querySelector(".carousel-prev");
   var nextBtn = document.querySelector(".carousel-next");
 
   if (track && prevBtn && nextBtn) {
-    // Cat scroll-uim per click: latimea unui card + gap.
     function stepSize() {
       var card = track.querySelector(".sermon-card");
       if (!card) return track.clientWidth;
@@ -94,7 +81,7 @@
       return track.scrollWidth - track.clientWidth;
     }
 
-    // Loop infinit: la capat, sari la celalalt cap.
+    // Wrap around at the ends
     nextBtn.addEventListener("click", function () {
       if (track.scrollLeft >= maxScroll() - 1) {
         track.scrollTo({ left: 0, behavior: "smooth" });
@@ -111,21 +98,16 @@
     });
   }
 
-  /* -----------------------------------------------------------
-     Live countdown
-     Serviciile au loc duminica la orele din data-service-times
-     (ex: "9,18"), in fusul din data-timezone (ex: Europe/Vienna).
-     Countdown-ul e corect indiferent de fusul vizitatorului,
-     pentru ca lucram cu "wall clock time" in fusul bisericii.
-  ----------------------------------------------------------- */
+  // Live countdown. Services run Sunday at data-service-times in data-timezone.
+  // Works in the church timezone (wall clock), regardless of visitor's timezone.
   var el = document.querySelector(".live-countdown");
   if (!el) return;
 
   var TZ = el.getAttribute("data-timezone") || "Europe/Vienna";
-  var SERVICE_DURATION_MIN = 90; // durata implicita daca se da doar ora de start
+  var SERVICE_DURATION_MIN = 90; // default duration when only a start hour is given
 
-  // Serviciile ca intervale {start, end} in secunde de la miezul noptii.
-  // Format acceptat: "9-12,18-20" (start-end) sau "9,18" (start, +90 min).
+  // Services as {start, end} in seconds from midnight.
+  // Format: "9-12,18-20" (start-end) or "9,18" (start, +90 min).
   var SERVICES = (el.getAttribute("data-service-times") || "9-12,18-20")
     .split(",")
     .map(function (item) {
@@ -152,8 +134,7 @@
   var elMins = el.querySelector(".cd-mins");
   var elSecs = el.querySelector(".cd-secs");
 
-  // Returneaza componentele wall-clock (an, luna, zi, ora, min, sec,
-  // zi-a-saptamanii) ale unui moment `date`, exprimate in fusul TZ.
+  // Wall-clock parts of `date` in timezone TZ
   function partsInTz(date) {
     var fmt = new Intl.DateTimeFormat("en-US", {
       timeZone: TZ,
@@ -172,7 +153,7 @@
     });
     var weekdays = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
     var hour = parseInt(map.hour, 10);
-    if (hour === 24) hour = 0; // unele runtime-uri dau "24" la miezul noptii
+    if (hour === 24) hour = 0;
     return {
       year: parseInt(map.year, 10),
       month: parseInt(map.month, 10),
@@ -184,22 +165,18 @@
     };
   }
 
-  // Cate minute pana la urmatorul serviciu, si daca suntem live acum.
+  // Seconds until next service, and whether we're live now
   function computeState() {
     var now = new Date();
     var p = partsInTz(now);
-
-    // Secunde scurse azi (wall-clock), in fusul bisericii.
     var secsToday = p.hour * 3600 + p.minute * 60 + p.second;
 
-    // Daca e duminica, verifica intai daca suntem in interiorul unui serviciu.
     if (p.weekday === 0) {
       for (var i = 0; i < SERVICES.length; i++) {
         if (secsToday >= SERVICES[i].start && secsToday < SERVICES[i].end) {
           return { live: true };
         }
       }
-      // Urmatorul serviciu mai tarziu azi?
       for (var j = 0; j < SERVICES.length; j++) {
         if (secsToday < SERVICES[j].start) {
           return { live: false, seconds: SERVICES[j].start - secsToday };
@@ -207,9 +184,8 @@
       }
     }
 
-    // Altfel: numara zilele pana la duminica si adauga primul serviciu.
     var daysUntilSunday = (7 - p.weekday) % 7;
-    if (daysUntilSunday === 0) daysUntilSunday = 7; // duminica dar dupa ultimul serviciu
+    if (daysUntilSunday === 0) daysUntilSunday = 7;
     var firstService = SERVICES[0].start;
     var seconds = daysUntilSunday * 86400 - secsToday + firstService;
     return { live: false, seconds: seconds };
@@ -221,13 +197,9 @@
 
   function render() {
     var state = computeState();
-    // Butonul e mereu vizibil (link permanent catre YouTube), dar isi
-    // schimba aspectul: rosu "LIVE ACUM" cand suntem live, altfel albastru
-    // "Live in curand".
     if (badge) badge.classList.toggle("is-live", state.live);
     if (badgeText) badgeText.textContent = state.live ? "LIVE ACUM" : "Live începe în";
 
-    // Cand suntem live: timer-ul ramane vizibil dar arata 00 peste tot.
     if (state.live) {
       if (elDays) elDays.textContent = "00";
       if (elHours) elHours.textContent = "00";
@@ -253,12 +225,9 @@
   render();
   setInterval(render, 1000);
 
-  /* -----------------------------------------------------------
-     Populare din YouTube (prin proxy-ul PHP api/youtube.php).
-     Daca reuseste, inlocuieste placeholderele: player-ul mare =
-     ultima predica, caruselul = restul. Daca esueaza, raman
-     placeholderele din HTML (fallback grativos).
-  ----------------------------------------------------------- */
+  // Populate from YouTube via api/youtube.php. On success, the main player
+  // becomes the latest sermon and the carousel the rest. On failure, the
+  // HTML placeholders remain.
   var LUNI = [
     "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie",
     "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie",
@@ -269,28 +238,37 @@
     return d.getDate() + " " + LUNI[d.getMonth()] + " " + d.getFullYear();
   }
 
+  // Strip the trailing "| Speranța Perg" suffix from titles
+  function cleanTitle(t) {
+    return (t || "").replace(/\s*\|\s*Speran[țt]a\s+Perg\s*$/i, "").trim();
+  }
+
   function populateFromYouTube(videos) {
     if (!videos || !videos.length) return;
 
-    // Player-ul mare = prima (cea mai noua) predica.
     if (player) {
       var latest = videos[0];
       player.setAttribute("data-video-url", latest.url);
       var img = player.querySelector(".sermon-player-poster img");
-      if (img && latest.thumbnail) {
-        img.src = latest.thumbnail;
-        img.alt = latest.title || "Ultima predică";
+      if (img && (latest.thumbnail_hi || latest.thumbnail)) {
+        // Prefer the high-res thumbnail; fall back if maxres is missing (404)
+        if (latest.thumbnail_hi && latest.thumbnail) {
+          img.onerror = function () {
+            img.onerror = null;
+            img.src = latest.thumbnail;
+          };
+        }
+        img.src = latest.thumbnail_hi || latest.thumbnail;
+        img.alt = cleanTitle(latest.title) || "Ultimul mesaj";
       }
-      updatePlayer(); // recalculeaza href/eticheta (live vs. ultima predica)
+      updatePlayer();
     }
 
-    // Caruselul = restul predicilor (dupa prima).
     var cards = document.querySelectorAll(".sermon-card");
     var rest = videos.slice(1);
     cards.forEach(function (card, i) {
       var v = rest[i];
       if (!v) {
-        // Mai multe carduri decat videoclipuri: ascunde surplusul.
         card.hidden = true;
         return;
       }
@@ -299,10 +277,10 @@
       var img = card.querySelector(".sermon-card-thumb img");
       if (img && v.thumbnail) {
         img.src = v.thumbnail;
-        img.alt = v.title || "";
+        img.alt = cleanTitle(v.title) || "";
       }
       var title = card.querySelector(".sermon-card-title");
-      if (title) title.textContent = v.title || "";
+      if (title) title.textContent = cleanTitle(v.title) || "";
       var date = card.querySelector(".sermon-card-date");
       if (date) date.textContent = formatDateRo(v.date);
     });
@@ -316,8 +294,6 @@
       .then(function (data) {
         if (data && data.videos) populateFromYouTube(data.videos);
       })
-      .catch(function () {
-        /* raman placeholderele din HTML */
-      });
+      .catch(function () {});
   }
 })();

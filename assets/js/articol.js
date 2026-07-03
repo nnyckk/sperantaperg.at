@@ -52,16 +52,14 @@
         document.getElementById('articolHeroAuthor').innerHTML =
           `${PERSON_ICON} ${art.autor} &nbsp;·&nbsp; ${formatData(art.data)}`;
 
-        // Body
-        // `text` poate fi HTML simplu (paragrafe, titluri etc.)
-        // Dacă e string simplu, îl împachetăm în <p>
+        // Body: `text` may already be HTML, otherwise wrap in <p>
         let bodyHtml = '';
         if (art.text) {
-          // Dacă textul conține deja tag-uri HTML, îl folosim direct
+          // If it already contains HTML tags, use it as-is
           if (/<[a-z][\s\S]*>/i.test(art.text)) {
             bodyHtml = art.text;
           } else {
-            // Plain text: fiecare linie nouă devine paragraf
+            // Plain text: each blank line becomes a paragraph
             bodyHtml = art.text
               .split(/\n\n+/)
               .map(p => `<p class="paragraph">${p.replace(/\n/g, '<br>')}</p>`)
@@ -83,9 +81,12 @@
               </div>
             </div>`;
         } else if (poze.length >= 2) {
+          // Strip uses small thumbnails from a /thumbs/ subfolder; falls back
+          // to the full image if a thumbnail is missing.
+          const thumbSrc = p => p.replace(/([^/]+)$/, 'thumbs/$1');
           const thumbsHtml = poze.map((p, i) => `
             <div class="galerie-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
-              <img src="${p}" alt="${art.titlu} ${i+1}" loading="lazy" onerror="this.parentElement.style.display='none'" />
+              <img src="${thumbSrc(p)}" alt="${art.titlu} ${i+1}" loading="lazy" onerror="this.onerror=null;this.src='${p}'" />
             </div>`).join('');
 
           galerieHtml = `
@@ -213,7 +214,7 @@
           openBtn.addEventListener('click', e => { e.stopPropagation(); lbShow(0); });
         }
 
-        // Thumbnail click — schimbă cover + marchează activ
+        // Thumbnail click — swap cover + mark active
         document.querySelectorAll('.galerie-thumb').forEach(thumb => {
           thumb.addEventListener('click', () => {
             if (thumbStrip._dragging) return;
@@ -225,29 +226,23 @@
           });
         });
 
-        // ── Thumbnail strip: scroll pe desktop, drag pe mobile ──
+        // Thumbnail strip: scroll on desktop, drag on mobile
         const thumbStrip = document.getElementById('galerieThumbs');
         if (thumbStrip) {
-          // Înfășoară strip-ul într-un wrap pentru fade gradient
+          // Wrap the strip so it can scroll horizontally
           const wrap = document.createElement('div');
           wrap.className = 'galerie-thumbs-wrap';
           thumbStrip.parentNode.insertBefore(wrap, thumbStrip);
           wrap.appendChild(thumbStrip);
 
-          function updateFade() {
-            const atStart = thumbStrip.scrollLeft > 4;
-            const atEnd = thumbStrip.scrollLeft + thumbStrip.clientWidth >= thumbStrip.scrollWidth - 4;
-            wrap.classList.toggle('at-start', atStart);
-            wrap.classList.toggle('at-end', atEnd);
-          }
-          updateFade();
-          thumbStrip.addEventListener('scroll', updateFade, { passive: true });
-
-          // Desktop: wheel orizontal
+          // Desktop: vertical wheel scrolls horizontally.
+          // Normalize deltaY (px/line/page) so every device feels the same.
           thumbStrip.addEventListener('wheel', e => {
             if (e.deltaY === 0) return;
+            if (thumbStrip.scrollWidth <= thumbStrip.clientWidth) return;
             e.preventDefault();
-            thumbStrip.scrollLeft += e.deltaY;
+            const unit = e.deltaMode === 1 ? 16 : (e.deltaMode === 2 ? thumbStrip.clientWidth : 1);
+            thumbStrip.scrollLeft += e.deltaY * unit;
           }, { passive: false });
 
           // Mobile: drag touch
@@ -297,7 +292,7 @@
       function renderRelated(currentArt, allArticole) {
         const usedIds = new Set([currentArt.id]);
 
-        // 1. Un articol cu nou:true, random (dacă există)
+        // 1. A random article flagged nou:true (if any)
         const nouArticole = allArticole.filter(a => a.nou && !usedIds.has(a.id));
         let nouRandom = null;
         if (nouArticole.length > 0) {
@@ -305,14 +300,14 @@
           usedIds.add(nouRandom.id);
         }
 
-        // 2. Articole din aceeași categorie
+        // 2. Articles from the same category
         const sameCat = allArticole
           .filter(a => a.categorie === currentArt.categorie && !usedIds.has(a.id))
           .sort((a, b) => new Date(b.data) - new Date(a.data))
           .slice(0, nouRandom ? 2 : 3);
         sameCat.forEach(a => usedIds.add(a.id));
 
-        // 3. Completăm până la 3 cu cele mai recente din orice categorie
+        // 3. Fill up to 3 with the most recent from any category
         const needed = 3 - (nouRandom ? 1 : 0) - sameCat.length;
         const extra = needed > 0
           ? allArticole

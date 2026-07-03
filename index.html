@@ -10,10 +10,10 @@
   <meta name="description" content="Biserica Penticostală Speranța Perg, Austria, o comunitate vie pentru Isus. Servicii duminicale la 9:00 și 18:00. Ești binevenit!" />
   <link rel="canonical" href="https://sperantaperg.at/" />
   <meta name="theme-color" content="#08141b" />
-  <link rel="stylesheet" href="assets/css/index.css?v=7" />
-  <link rel="stylesheet" href="assets/css/layout.css?v=5" />
-  <link rel="stylesheet" href="assets/css/nav_footer.css?v=5" />
-  <link rel="stylesheet" href="assets/css/cookie.css?v=5" />
+  <link rel="stylesheet" href="assets/css/index.css?v=8.1" />
+  <link rel="stylesheet" href="assets/css/layout.css?v=8.1" />
+  <link rel="stylesheet" href="assets/css/nav_footer.css?v=8.1" />
+  <link rel="stylesheet" href="assets/css/cookie.css?v=8.1" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="https://js.churchcenter.com/modal/v1" defer></script>
   <!-- Favicons -->
@@ -243,12 +243,12 @@
     <div class="container">
       <div class="container-item-wrapper flex-start">
 
-        <!-- Stânga: card 50% -->
+        <!-- Left: card 50% -->
         <div class="container-item index-stire-card-col" id="indexFeaturedStire">
-          <!-- generat dinamic din stiri.json -->
+          <!-- populated from stiri.json -->
         </div>
 
-        <!-- Dreapta: text + buton 50% -->
+        <!-- Right: text + button 50% -->
         <div class="container-item index-stire-text-col">
           <div class="index-stire-text-title">
             <h2 class="small-text index-stire-label-text">Noutăți & Evenimente</h2>
@@ -280,14 +280,13 @@
           <div>
             <p class="paragraph">
               Mesaje relevante din Cuvântul lui Dumnezeu, menite să te
-              zidească spiritual. Urmărește mai jos cea mai recentă predică,
-              redă predicile anterioare sau alătură-te nouă în direct, în
+              zidească spiritual. Urmărește cel mai recent mesaj sau
+              redă mesajele anterioare. Poți de asemenea să te alături nouă în direct, în
               fiecare duminică, de la ora 9:00 și 18:00!
             </p>
-            <!-- <p class="paragraph"><strong>1 Corinteni 12:1</strong></p> -->
           </div>
           <hr class="plus-line" />
-          <!-- Countdown live. Tot cardul e link catre YouTube. -->
+          <!-- Live countdown. Whole card is a YouTube link. -->
           <a class="live-countdown" href="https://www.youtube.com/@sperantaperg" target="_blank"
             rel="noopener noreferrer" aria-label="Urmărește live stream-ul pe YouTube"
             data-service-times="9-12,18-20" data-timezone="Europe/Vienna">
@@ -305,19 +304,18 @@
           </a>
         </div>
         <div class="container-item">
-          <!-- Player mare = thumbnail care deschide predica pe YouTube (tab nou).
-               In timpul serviciului duce la live, in rest la ultima predica.
-               - data-video-url: link-ul ultimei predici (YouTube).
-               - data-live-url: link-ul transmisiunii live a canalului. -->
+          <!-- Main player: opens the sermon on YouTube. Live stream during a
+               service, latest sermon otherwise.
+               data-video-url: latest sermon; data-live-url: channel live. -->
           <a class="sermon-player" target="_blank" rel="noopener noreferrer"
-            aria-label="Urmărește ultima predică pe YouTube"
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            data-video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            aria-label="Urmărește ultimul mesaj pe YouTube"
+            href="https://www.youtube.com/@sperantaperg"
+            data-video-url="https://www.youtube.com/@sperantaperg"
             data-live-url="https://www.youtube.com/@sperantaperg/live"
             data-service-times="9-12,18-20" data-timezone="Europe/Vienna">
-            <span class="sermon-latest-tag">Ultima predică</span>
+            <span class="sermon-latest-tag">Ultimul mesaj</span>
             <span class="sermon-player-poster">
-              <img src="assets/img/index/church_pray_700.webp" alt="Ultima predică" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="Ultimul mesaj" loading="lazy" />
               <span class="sermon-play-icon" aria-hidden="true"></span>
             </span>
           </a>
@@ -325,87 +323,87 @@
 
       </div>
 
-      <!-- Predici anterioare - scroll orizontal. Fiecare card e link catre YouTube:
-           inlocuieste href, thumbnail-ul (i.ytimg.com/vi/<ID>/...), titlul si data. -->
+      <!-- Recent sermons - horizontal scroll. Each card is a YouTube link
+           (href, thumbnail, title and date filled from the API). -->
       <div class="recent-sermons">
-        <h3 class="recent-sermons-title">Predici anterioare</h3>
+        <h3 class="recent-sermons-title">Mesaje anterioare</h3>
         <div class="recent-sermons-viewport">
           <div class="recent-sermons-track" role="list">
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 1</span>
             <span class="sermon-card-date">29 iunie 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 2</span>
             <span class="sermon-card-date">22 iunie 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 3</span>
             <span class="sermon-card-date">15 iunie 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 4</span>
             <span class="sermon-card-date">8 iunie 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 5</span>
             <span class="sermon-card-date">1 iunie 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 6</span>
             <span class="sermon-card-date">25 mai 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 7</span>
             <span class="sermon-card-date">18 mai 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 8</span>
             <span class="sermon-card-date">11 mai 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 9</span>
             <span class="sermon-card-date">4 mai 2025</span>
           </a>
-          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a class="sermon-card" role="listitem" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sperantaperg">
             <span class="sermon-card-thumb">
-              <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="" loading="lazy" />
+              <img src="assets/img/index/video-notworking.webp" alt="" loading="lazy" />
               <span class="sermon-play-icon small" aria-hidden="true"></span>
             </span>
             <span class="sermon-card-title">Titlul predicii 10</span>
@@ -414,7 +412,7 @@
           </div>
         </div>
         <div class="recent-sermons-controls">
-          <button class="carousel-arrow carousel-prev" type="button" aria-label="Predici anterioare">
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Mesaje anterioare">
             <span aria-hidden="true"></span>
           </button>
           <button class="carousel-arrow carousel-next" type="button" aria-label="Predici următoare">
@@ -622,11 +620,11 @@
     </div>
   </div>
 
-  <script src="assets/js/index-stiri.js?v=5" defer></script>
-  <script src="assets/js/sermons.js?v=7" defer></script>
-  <script src="assets/js/navigation.js?v=5" defer></script>
-  <script src="assets/js/effects.js?v=5" defer></script>
-  <script src="assets/js/cookie.js?v=5" defer></script>
+  <script src="assets/js/index-stiri.js?v=8.1" defer></script>
+  <script src="assets/js/sermons.js?v=8.1" defer></script>
+  <script src="assets/js/navigation.js?v=8.1" defer></script>
+  <script src="assets/js/effects.js?v=8.1" defer></script>
+  <script src="assets/js/cookie.js?v=8.1" defer></script>
 </body>
 
 </html>

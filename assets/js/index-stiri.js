@@ -1,4 +1,4 @@
-// ── Featured știre pe index ────────────────────────────────
+// Featured news on index
       fetch('stiri.json')
         .then(r => r.json())
         .then(data => {

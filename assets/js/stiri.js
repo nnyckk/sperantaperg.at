@@ -143,7 +143,7 @@
 
       // ── Hamburger ─────────────────────────────────────────────
 
-      // ── Filter bar compact — doar când atinge nav-ul ──────────
+      // Filter bar goes compact once it reaches the nav
       const filterBar = document.querySelector('.stiri-filter-bar');
       const nav = document.getElementById('navigationWrapper');
       const mobileBar = document.getElementById('nav-mobile-bar');
