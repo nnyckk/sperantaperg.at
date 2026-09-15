@@ -3,3 +3,6 @@ api/cache/*.json
 
 # Config local cu cheia API (daca folosesti varianta cu fisier separat)
 api/config.local.php
+
+# Imagini OG generate automat de stiri/og-image.php (se refac singure)
+stiri/og-cache/

@@ -28,7 +28,7 @@
               <h2 class="subtitle">${art.titlu}</h2>
               <p class="small-text-light">${PERSON_ICON} ${art.autor} &nbsp;·&nbsp; ${formatData(art.data)}</p>
               <p class="paragraph">${art.rezumat}</p>
-              <a href="articol.html?id=${art.id}" class="btn">Citește mai mult</a>
+              <a href="/articol.html?id=${art.id}" class="btn">Citește mai mult</a>
             </div>
           </div>`;
       }
@@ -37,7 +37,7 @@
       function renderCard(art) {
         return `
           <article class="stiri-card fadeIn" data-category="${art.categorie}" data-id="${art.id}">
-            <a href="articol.html?id=${art.id}" class="stiri-card-link">
+            <a href="/articol.html?id=${art.id}" class="stiri-card-link">
               <div class="stiri-card-image">
                 ${art.poza ? `<img src="${art.poza}" alt="${art.titlu}" loading="lazy" onerror="this.style.display='none'" />` : ''}
                 ${art.nou ? `<span class="stiri-badge-nou badge-new">Nou</span>` : ''}
@@ -105,7 +105,7 @@
       document.querySelectorAll('.fadeInDelay').forEach(el => fadeObs.observe(el));
 
       // ── Load JSON ─────────────────────────────────────────────
-      fetch('stiri.json')
+      fetch('/stiri/stiri.json')
         .then(r => r.json())
         .then(data => {
           // Sort by date descending (newest first)
@@ -143,7 +143,7 @@
 
       // ── Hamburger ─────────────────────────────────────────────
 
-      // ── Filter bar compact — doar când atinge nav-ul ──────────
+      // Filter bar goes compact once it reaches the nav
       const filterBar = document.querySelector('.stiri-filter-bar');
       const nav = document.getElementById('navigationWrapper');
       const mobileBar = document.getElementById('nav-mobile-bar');

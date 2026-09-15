@@ -1,0 +1,18 @@
+# Unlike api/cache, this folder stays public: the browser loads stiri.js and
+# stiri.json from here, and crawlers request og-image.php.
+
+Options -Indexes
+
+# Generated OG images are served through og-image.php, not directly.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^og-cache">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Short cache: the global 1-year rule would hide new articles.
+  <FilesMatch "\.(json|JSON)$">
+    Header set Cache-Control "public, max-age=300"
+  </FilesMatch>
+</IfModule>

@@ -12,6 +12,15 @@ RewriteBase /
 # Pagina implicită
 DirectoryIndex index.html
 
+# Articles go through PHP for the Open Graph tags; the URL stays the same,
+# so links already shared keep working.
+RewriteRule ^articol\.html$ stiri/articol.php [L,QSA]
+RewriteRule ^articol/?$ stiri/articol.php [L,QSA]
+
+# Needed because the /stiri folder exists: the generic rule below skips real
+# directories (!-d), which would break the news page.
+RewriteRule ^stiri/?$ stiri.html [L]
+
 # Rewrite simplu pentru pagini fără extensie
 # Exemplu: /despre → /despre.html
 RewriteCond %{REQUEST_FILENAME} !-f
