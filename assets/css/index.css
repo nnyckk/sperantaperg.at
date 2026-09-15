@@ -159,7 +159,7 @@
   padding-top: 0;
 }
 
-/* --- Live countdown (tot cardul e link catre YouTube) --- */
+/* --- Live countdown (whole card is a YouTube link) --- */
 .sermon a.live-countdown {
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   transition: background-color 0.25s ease;
 }
-/* Cand suntem live: rosu + bulina palpaind */
+/* Live state: red + pulsing dot */
 .sermon .live-badge.is-live {
   background-color: hsl(0, 72%, 51%);
 }
@@ -212,7 +212,7 @@
   border-radius: 50%;
   background-color: #fff;
 }
-/* Bulina apare doar cand suntem live (buton rosu) */
+/* Dot shows only when live */
 .sermon .live-badge.is-live .live-dot {
   display: inline-block;
   animation: live-pulse 1.4s ease-in-out infinite;
@@ -262,7 +262,7 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* --- Player mare (link catre YouTube) --- */
+/* --- Main player (YouTube link) --- */
 .sermon a.sermon-player {
   display: block;
   position: relative;
@@ -278,15 +278,16 @@
   top: 0.9em;
   left: 0.9em;
   z-index: 3;
-  padding: 0.4em 1em;
-  border-radius: 2em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.28em 0.75em;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
   background-color: var(--first-accent-color);
   color: #fff;
-  font-size: var(--fs-small);
-  font-weight: 600;
-  letter-spacing: 0.03em;
 }
-/* Cand transmisiunea e live, eticheta devine rosie */
+/* Tag turns red when live */
 .sermon .sermon-latest-tag.is-live {
   background-color: hsl(0, 72%, 51%);
 }
@@ -357,7 +358,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  /* Bara de scroll ascunsa - navigarea se face prin sageti */
+  /* Scrollbar hidden - navigation via arrows */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -365,12 +366,18 @@
   display: none;
 }
 
-/* --- Sageti navigare carusel (jos-dreapta, in afara caruselului) --- */
+/* --- Carousel nav arrows (bottom-right, outside the carousel) --- */
 .sermon .recent-sermons-controls {
   display: flex;
   justify-content: flex-end;
   gap: 0.6em;
   margin-top: 1.25em;
+}
+/* Hide arrows on mobile/tablet — users swipe instead */
+@media (max-width: 1025px) {
+  .sermon .recent-sermons-controls {
+    display: none;
+  }
 }
 .sermon .carousel-arrow {
   width: 3.4em;
@@ -391,7 +398,7 @@
     border-color: var(--first-accent-color);
   }
 }
-/* Feedback la apasare (merge si pe touch) */
+/* Press feedback (works on touch too) */
 .sermon .carousel-arrow:active {
   background-color: var(--first-accent-color);
   border-color: var(--first-accent-color);
@@ -456,18 +463,24 @@
   opacity: 0.85;
 }
 .sermon .sermon-card-title {
-  font-size: var(--fs-h6);
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--white-text-color);
-  line-height: var(--lh-heading-small);
+  line-height: 1.35;
+  /* Clamp to 2 lines so cards stay even */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .sermon .sermon-card-date {
   font-size: var(--fs-small);
   color: var(--small-text-color-dark);
+  margin-top: -0.3em;
 }
 
 @media (max-width: 600px) {
-  /* Countdown pe mobil: card full-width, buton + 4 cifre pe un singur rand */
+  /* Mobile countdown: full-width card, button + 4 digits on one row */
   .sermon a.live-countdown {
     display: flex;
     width: 100%;
@@ -480,7 +493,7 @@
     padding: 0.5em 0.7em;
     font-size: var(--fs-small);
   }
-  /* Cifrele se intind ca sa umple cardul full-width */
+  /* Digits stretch to fill the full-width card */
   .sermon .countdown-inner {
     flex: 1 1 auto;
   }
@@ -567,15 +580,14 @@
 
 }
 
-/* Pe tableta (601-1025px), cardul de countdown se ajusteaza la continut
-   (latime variabila), fara sa se intinda pe toata latimea. */
+/* Tablet (601-1025px): countdown card fits its content instead of full width */
 @media (min-width: 601px) and (max-width: 1025px) {
   .sermon a.live-countdown {
     width: auto;
     max-width: 100%;
     align-self: flex-start;
   }
-  /* Cifrele nu se mai intind - stau la marimea lor naturala */
+  /* Digits keep their natural size */
   .sermon .countdown-inner {
     flex: 0 0 auto;
   }
@@ -618,7 +630,7 @@
   }
 }
 
-/* ── Featured știre pe index ── */
+/* --- Featured news on index --- */
 .index-featured-stire {
   padding-top: 4em;
   padding-bottom: 5em;
