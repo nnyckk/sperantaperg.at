@@ -40,14 +40,12 @@ body {
 
 /* Tag/badge overrides for articol-hero (base styles in stiri.css) */
 .articol-hero-meta .stiri-tag {
-  border-radius: 999px;
   pointer-events: none;
 }
 .articol-hero-meta .stiri-badge-nou {
   position: static;
   top: auto;
   left: auto;
-  border-radius: 999px;
   font-size: 0.68rem;
   padding: 0.28em 0.75em;
   letter-spacing: 0.06em;
@@ -176,7 +174,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   padding: 0.4em 1em;
   color: #fff;
   font-family: "Montserrat", sans-serif;
@@ -197,7 +195,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   padding: 0.4em 1em;
   color: #fff;
   font-family: "Montserrat", sans-serif;
@@ -207,10 +205,17 @@ body {
   text-transform: uppercase;
   pointer-events: auto !important;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.08s ease;
 }
-.galerie-open-btn:hover {
-  background: rgba(255, 255, 255, 0.28);
+@media (hover: hover) {
+  .galerie-open-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+}
+/* Press feedback (works on touch too) */
+.galerie-open-btn:active {
+  background: rgba(255, 255, 255, 0.34);
+  transform: scale(0.94);
 }
 
 /* Thumbnail strip sub stack */
@@ -442,21 +447,27 @@ body {
   right: 1.5em;
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  width: 2.5em;
-  height: 2.5em;
+  border-radius: 0.25rem;
+  width: 2.6em;
+  height: 2.6em;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.08s ease;
   z-index: 10000;
 }
-.lb-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
+@media (hover: hover) {
+  .lb-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+/* Press feedback (works on touch too) */
+.lb-close:active {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(0.94);
 }
 
 /* Controls row (prev · counter · next) */
@@ -471,23 +482,41 @@ body {
 .lb-nav {
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  width: 3em;
-  height: 3em;
+  border-radius: 0.25rem;
+  width: 3.4em;
+  height: 2.6em;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.08s ease;
 }
-.lb-nav:hover {
-  background: rgba(255, 255, 255, 0.22);
-  transform: scale(1.08);
+@media (hover: hover) {
+  .lb-nav:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
 }
-.lb-prev svg { transform: rotate(180deg); }
-.lb-nav svg { display: block; }
+/* Press feedback (works on touch too) */
+.lb-nav:active {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(0.94);
+}
+.lb-nav span {
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.lb-prev span {
+  transform: rotate(-135deg);
+  margin-left: 0.2em;
+}
+.lb-next span {
+  transform: rotate(45deg);
+  margin-right: 0.2em;
+}
 
 /* Counter */
 .lb-counter {
@@ -502,7 +531,7 @@ body {
 
 @media (max-width: 600px) {
   .lb-controls { gap: 1em; }
-  .lb-nav  { width: 2.5em; height: 2.5em; font-size: 1rem; }
+  .lb-nav  { width: 3em; height: 2.3em; font-size: 1rem; }
 }
 .articol-loading {
   text-align: center;

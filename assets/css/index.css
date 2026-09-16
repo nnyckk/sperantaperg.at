@@ -282,7 +282,7 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.28em 0.75em;
-  border-radius: 999px;
+  border-radius: 0.25rem;
   letter-spacing: 0.06em;
   background-color: var(--first-accent-color);
   color: #fff;
@@ -689,7 +689,7 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.28em 0.75em;
-  border-radius: 999px;
+  border-radius: 0.25rem;
   letter-spacing: 0.06em;
   align-self: flex-start;
 }

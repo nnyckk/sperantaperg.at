@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/assets/css/layout.css?v=5" />
     <link rel="stylesheet" href="/assets/css/nav_footer.css?v=5" />
     <link rel="stylesheet" href="/assets/css/cookie.css?v=5" />
-    <link rel="stylesheet" href="/assets/css/stiri.css?v=5" />
+    <link rel="stylesheet" href="/assets/css/stiri.css?v=6" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://js.churchcenter.com/modal/v1" defer></script>
      <!-- Favicons -->
@@ -144,8 +144,13 @@
         <!-- Cards grid — generat dinamic -->
         <div class="stiri-grid" id="stiriGrid"></div>
 
+        <!-- Stare goală — titlul, textul și butonul se schimbă din JS,
+             după cum lipsa rezultatelor vine din căutare sau din filtru -->
         <div class="no-results" id="noResults" style="display:none;">
-          <p class="paragraph">Nu am găsit niciun articol pentru criteriile selectate.</p>
+          <span class="no-results-icon" aria-hidden="true"></span>
+          <h3 class="no-results-title" id="noResultsTitle"></h3>
+          <p class="paragraph" id="noResultsText"></p>
+          <button class="btn" id="noResultsReset" type="button" hidden></button>
         </div>
 
         <div class="stiri-load-more">
@@ -262,7 +267,7 @@
     </div>
 
     <script src="/assets/js/cookie.js?v=5" defer></script>
-    <script src="/stiri/stiri.js?v=6" defer></script>
+    <script src="/stiri/stiri.js?v=7" defer></script>
     <script src="/assets/js/navigation.js?v=5" defer></script>
     <script src="/assets/js/effects.js?v=5" defer></script>
   </body>

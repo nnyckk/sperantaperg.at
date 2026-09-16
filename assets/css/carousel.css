@@ -97,17 +97,21 @@ img {
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   border-radius: 0.25rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.25s ease, transform 0.08s ease;
   backdrop-filter: blur(5px);
   line-height: 1;
 }
 
-.carousel-btn:hover {
-  background-color: var(--second-accent-color);
+@media (hover: hover) {
+  .carousel-btn:hover {
+    background-color: var(--second-accent-color);
+  }
 }
 
+/* Press feedback (works on touch too) */
 .carousel-btn:active {
   background-color: var(--second-accent-color-hover);
+  transform: scale(0.94);
 }
 
 /* Mobile Responsiveness */

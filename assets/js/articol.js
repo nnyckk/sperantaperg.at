@@ -13,7 +13,7 @@
 
       const PERSON_ICON = `<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="currentColor"><path d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>`;
 
-      const ARROW_ICON = `<svg class="stiri-arrow-icon" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>`;
+      const ARROW_ICON = `<span class="stiri-arrow-icon" aria-hidden="true"></span>`;
 
       function getIdFromUrl() {
         const params = new URLSearchParams(window.location.search);
@@ -142,11 +142,11 @@
               </div>
               <div class="lb-controls">
                 <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  <span aria-hidden="true"></span>
                 </button>
                 <div class="lb-counter" id="lbCounter"></div>
                 <button class="lb-nav lb-next" id="lbNext" aria-label="Următor">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  <span aria-hidden="true"></span>
                 </button>
               </div>
             </div>

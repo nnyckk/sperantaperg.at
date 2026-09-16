@@ -52,11 +52,11 @@
   flex: 1;
 }
 
-/* pill-style filter buttons */
+/* filter buttons */
 .filter-btn {
   background: transparent;
   border: 1.5px solid rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   padding: 0.35em 1.1em;
   font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
@@ -65,7 +65,7 @@
   letter-spacing: 0.04em;
   color: var(--small-text-color-light);
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, font-size 0.25s ease, min-height 0.25s ease;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
 .filter-btn:hover {
   border-color: var(--first-accent-color);
@@ -100,7 +100,7 @@
 /* Search input */
 .stiri-search {
   border: 1.5px solid rgba(0, 0, 0, 0.12);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   padding: 0.45em 1.1em 0.45em 2.4em;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
@@ -203,7 +203,7 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.35em 0.9em;
-  border-radius: 999px;
+  border-radius: 0.25rem;
   letter-spacing: 0.07em;
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
@@ -217,7 +217,7 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.28em 0.75em;
-  border-radius: 999px;
+  border-radius: 0.25rem;
   letter-spacing: 0.06em;
   text-decoration: none;
 }
@@ -338,11 +338,13 @@
   text-transform: uppercase;
   letter-spacing: 0.07em;
   border: 1.5px solid var(--first-accent-color);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   background: transparent;
   transition: background 0.22s, color 0.22s, border-color 0.22s, transform 0.18s,
     box-shadow 0.22s;
 }
+.stiri-card:hover .stiri-link,
+.stiri-featured:hover .stiri-link,
 .stiri-link:hover {
   background: var(--first-accent-color);
   color: #fff;
@@ -350,17 +352,64 @@
   box-shadow: 0 4px 14px rgba(45, 140, 188, 0.28);
 }
 .stiri-arrow-icon {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
   transition: transform 0.2s ease;
-  vertical-align: middle;
+  margin-left: 0.1em;
+  margin-right: 0.15em;
+  flex-shrink: 0;
 }
-.stiri-card:hover .stiri-arrow-icon {
-  transform: translateX(4px);
+.stiri-card:hover .stiri-arrow-icon,
+.stiri-featured:hover .stiri-arrow-icon,
+.stiri-link:hover .stiri-arrow-icon {
+  transform: rotate(45deg) translate(3px, -3px);
 }
 
 /* ── No results ── */
 .no-results {
   text-align: center;
-  padding: 4em 0;
+  padding: 4.5em 1.5em 5em;
+  max-width: 30em;
+  margin: 0 auto;
+}
+/* Lupă desenată din CSS: cerc + coadă, fără dependență de un SVG */
+.no-results-icon {
+  display: block;
+  width: 2.1em;
+  height: 2.1em;
+  margin: 0 auto 1.2em;
+  border: 2.5px solid rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  position: relative;
+}
+.no-results-icon::after {
+  content: "";
+  position: absolute;
+  top: 1.75em;
+  left: 1.6em;
+  width: 0.85em;
+  height: 2.5px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.18);
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+.no-results-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading-small);
+  margin-bottom: 0.5em;
+  color: var(--dark-text-color);
+}
+.no-results .paragraph {
+  color: var(--small-text-color-light);
+  margin-bottom: 1.75em;
+}
+.no-results .btn {
+  display: inline-block;
 }
 
 /* ── Load more ── */
@@ -436,6 +485,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 12px;
   }
   .filter-buttons::-webkit-scrollbar {
     display: none;
@@ -445,9 +496,5 @@
     font-size: 0.75rem;
     padding: 0.5em 1em;
     min-height: 36px;
-  }
-  .stiri-filter-bar.compact .filter-btn {
-    font-size: 0.6rem;
-    min-height: 29px;
   }
 }
